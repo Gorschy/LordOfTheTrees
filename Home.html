@@ -8,22 +8,30 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <style>
+        
+        .navbar-light {
+          border-bottom: 1px solid slategray;
+        }
         .navbar-nav > li{
             padding-left:15px;
             padding-right:15px;
             }
         .btn-primary{
             background-color: #A3C586 !important;
+            border-color: seagreen !important;
             width: 100px;
             height: 40px;
           }
+        
+        a:hover {
+          color: #A3C586 !important;
+        }
 
-        .
         /* nav link active state, hover state and change base color */
     </style>
     
   </head>
-  <body>
+  <body style="background-color:#E5E5E5;">
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
@@ -51,7 +59,7 @@
 
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item ms-auto">
-                  <a class="nav-link active" aria-current="page" href="#">Need An Account?</a>
+                  <a class="nav-link active" aria-current="page" href="Register.html">Need An Account?</a>
                 </li>
                 <li class="nav-item">
                   <button type="button" className = "login-button" class="btn btn-primary" >Login</button>
@@ -62,8 +70,21 @@
         </div>
       </nav>
 
-
-
-
+      <div class="position-fixed">
+       
+        <div class="position-absolute top-0 start-45">
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="card-link">Card link</a>
+              <a href="#" class="card-link">Another link</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    
   </body>
 </html>
