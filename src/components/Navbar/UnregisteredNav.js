@@ -1,6 +1,12 @@
 import { Menu, Button } from 'antd';
 import './Navbar.css';
 import logo from '../../assets/RPPLogoPlaceholder.png';
+import PATH from '../../_constants/paths';
+import { BrowserRouter as Router, Link } from 'react-router-dom';
+
+//Pages
+
+import calculator from '../../pages/calculator.js';
 
 const { Item } = Menu;
 
@@ -33,7 +39,9 @@ const UnregisteredNav = () => {
                     </Item>
                     
                     <Item key="Calculator">
-                        <div>Calculator</div>
+                        <Router>
+                            <Link to="../../pages/calculator.js">Calculator</Link>
+                        </Router> 
                     </Item>
                                         
                     <Item key="ContactUs">

@@ -1,8 +1,10 @@
 const PATH = {
-    home: '/',
-    login: '/login',
-    register: '/register',
-    calculator: '/calculator',
-    contactUs: '/contactUs',
+    home: '',
+    login: '',
+    register: '',
+    calculator: '',
+    contactUs: '',
     
 }
+
+export default PATH;
