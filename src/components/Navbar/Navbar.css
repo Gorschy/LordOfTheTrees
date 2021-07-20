@@ -1,0 +1,12 @@
+.logo {
+    float: left;
+    width: auto;
+    height: 30px;
+    margin: 16px 24px 16px 0;
+    justify-content: center;
+}
+  
+.loginButton {
+    width: 150px;
+    height: 40px;
+}
