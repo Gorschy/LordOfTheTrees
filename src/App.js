@@ -16,9 +16,11 @@ function App() {
         <div>
             
             <Layout className="layout">
+                
                 <Header  className="site-layout-header">
                     <Navbar />
                 </Header>
+                
                 <Content style={{ padding: '50px 50px' }}>
                     <div className="site-layout-content">
                         <AmplifySignOut />
