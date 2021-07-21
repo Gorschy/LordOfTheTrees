@@ -32,7 +32,7 @@ function App() {
                     </Header>
                     
                     <Content style={{ padding: '50px 50px' }}>
-                        <div className="site-layout-content">
+                        <div>
                             <AmplifySignOut />
                             
                             <Switch>
