@@ -35,16 +35,16 @@ function App() {
                         <div className="site-layout-content">
                             <AmplifySignOut />
                             
-                                <Switch>
-                                    <Route exact path="/home" component={home} />
-                                    <Route exact path="/">
+                            <Switch>
+                                <Route exact path="/home" component={home} />
+                                <Route exact path="/">
                                     <Redirect to="/home" />
-                                    </Route>
-                                    <Route exact path="/calculator" component={calculator} />
-                                    <Route exact path="/contactUs" component={contactUs} />
-                                    <Route exact path="/register" component={register} />
-                                    <Route exact path="/login" component={login} />
-                                </Switch>
+                                </Route>
+                                <Route exact path="/calculator" component={calculator} />
+                                <Route exact path="/contactUs" component={contactUs} />
+                                <Route exact path="/register" component={register} />
+                                <Route exact path="/login" component={login} />
+                            </Switch>
                           
                                 
                         </div>

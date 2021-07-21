@@ -4,19 +4,7 @@ import { Menu, Button } from 'antd';
 import './Navbar.css';
 import logo from '../../assets/RPPLogoPlaceholder.png';
 
-
-//Pages
-
-import calculator from '../../pages/calculator.js';
-
 const { Item } = Menu;
-
-const rightStyle = {
-    position: 'absolute',
-    top: 0,
-    right: 0,
-    padding: 11.5
-}
 
 /* TODO:
     - add light dark mode functionality
@@ -32,7 +20,7 @@ const UnregisteredNav = () => {
             
             <Menu theme="light" mode="horizontal" defaultSelectedKeys={["Home"]}>
                     <Item style={{borderBottom:'none'}}>
-                        <img className="logo" src={logo}/>
+                        <img className="logo" src={logo} alt="Logo"/>
                     </Item>
                     
                     <Item key="Home">
@@ -50,9 +38,9 @@ const UnregisteredNav = () => {
                     </Item>                 
             </Menu>
 
-            <Menu theme="light" mode="horizontal"  style={ rightStyle }>
+            <Menu theme="light" mode="horizontal" className="rightStyle">
                 <Link to='/register'>
-                    <Button type="link"  style={{paddingRight: 30, paddingTop: 8}}>Need an Account?</Button>
+                    <Button type="link"  style={{paddingRight: 30}}>Need an Account?</Button>
                 </Link>
                 <Link to='/login'>
                     <Button className="loginButton">Login</Button>   

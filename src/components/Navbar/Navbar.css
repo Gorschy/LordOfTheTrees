@@ -10,3 +10,11 @@
     width: 150px;
     height: 40px;
 }
+
+.rightStyle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 11.5 !important;
+    padding-bottom: 0;
+}
