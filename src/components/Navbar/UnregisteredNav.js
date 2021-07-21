@@ -18,24 +18,22 @@ const UnregisteredNav = () => {
     return (
         <div>
             
-            <Menu theme="light" mode="horizontal" defaultSelectedKeys={["Home"]}>
-                    <Item style={{borderBottom:'none'}}>
-                        <img className="logo" src={logo} alt="Logo"/>
-                    </Item>
+            <Menu theme="light" mode="horizontal" defaultSelectedKeys={["Home"]} className="leftStyle">
+                <Item style={{borderBottom:'none'}}>
+                    <Link to='/home'><img className="logo" src={logo} alt="Logo"/></Link>
+                </Item>
                     
-                    <Item key="Home">
-                        <Link to='/home'>Home</Link>
-                    </Item>
+                <Item key="Home">
+                    <Link to='/home'>Home</Link>
+                </Item>
                     
-                    <Item key="Calculator">
-                        
-                        <Link to='/calculator'>Calculator</Link>
-                         
-                    </Item>
+                <Item key="Calculator">        
+                    <Link to='/calculator'>Calculator</Link>     
+                </Item>
                                         
-                    <Item key="ContactUs">
-                        <Link to='/contactUs'>Contact Us</Link>
-                    </Item>                 
+                <Item key="ContactUs">
+                    <Link to='/contactUs'>Contact Us</Link>
+                </Item>                 
             </Menu>
 
             <Menu theme="light" mode="horizontal" className="rightStyle">

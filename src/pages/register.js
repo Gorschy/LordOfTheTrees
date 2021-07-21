@@ -19,8 +19,7 @@ const register = () => {
 
     return (
         <div>
-            <Card>
-                <h1>Sign Up</h1>
+            <Card title="Sign Up">
 
                 <Form
                     name="register"

@@ -5,7 +5,6 @@ import awsconfig from './aws-exports';
 import { AmplifySignOut, withAuthenticator } from '@aws-amplify/ui-react';
 import Navbar from './components/Navbar/Navbar';
 import { Layout } from 'antd';
-
 import { Route, Switch, Redirect } from 'react-router-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 import home from './pages/home';
@@ -31,7 +30,7 @@ function App() {
                         <Navbar />
                     </Header>
                     
-                    <Content style={{ padding: '50px 50px' }}>
+                    <Content className="contentContainer">
                         <div>
                             <AmplifySignOut />
                             

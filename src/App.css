@@ -1,9 +1,8 @@
 @import '~antd/dist/antd.css';
 
-.site-layout-content {
-  min-height: 100vh;
-  padding: 24px;
-  background: #fff;
+.contentContainer {
+  height: 100vh;
+  padding: 10px 10px;
 }
 
 .site-layout-header {

@@ -14,10 +14,8 @@ const login = () => {
     return (  
           
         <div>
-            <Card>
-                
-                <h1>Login</h1>
-
+            <Card title="Login">
+        
                 <Form
                     name="login"
                     layout="vertical"
