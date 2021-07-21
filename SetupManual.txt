@@ -1,0 +1,5 @@
+//Go to this link and download and install nodejs "https://nodejs.org/en/download/"
+(close and reopen IDE) 
+//type "npm install react-scripts --save" in the IDE terminal
+//after the above install is completed type "npm audit fix"  in the IDE terminal
+// finally type "npm start" to host the local server (if you have problems with the local server a computer restart should fix it) 
