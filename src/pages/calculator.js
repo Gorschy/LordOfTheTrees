@@ -1,12 +1,14 @@
-import React from "react";
+import { Form, Input, Button, Checkbox } from 'antd';
 
 const calculator = () => {
-    
+
     return (
         <div>
-            <h3> A Router-Link Test</h3>
+            
+            <h2>calculator</h2>
+                   
         </div>
     );
-};
+}
 
 export default calculator;

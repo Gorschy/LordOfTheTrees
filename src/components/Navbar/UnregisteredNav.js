@@ -1,8 +1,9 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
 import { Menu, Button } from 'antd';
 import './Navbar.css';
 import logo from '../../assets/RPPLogoPlaceholder.png';
-import PATH from '../../_constants/paths';
-import { BrowserRouter as Router, Link } from 'react-router-dom';
+
 
 //Pages
 
@@ -35,23 +36,27 @@ const UnregisteredNav = () => {
                     </Item>
                     
                     <Item key="Home">
-                        <div>Home</div>
+                        <Link to='/home'>Home</Link>
                     </Item>
                     
                     <Item key="Calculator">
-                        <Router>
-                            <Link to="../../pages/calculator.js">Calculator</Link>
-                        </Router> 
+                        
+                        <Link to='/calculator'>Calculator</Link>
+                         
                     </Item>
                                         
                     <Item key="ContactUs">
-                        <div>Contact Us</div>
+                        <Link to='/contactUs'>Contact Us</Link>
                     </Item>                 
             </Menu>
 
             <Menu theme="light" mode="horizontal"  style={ rightStyle }>
-                <Button type="link" style={{paddingRight: 30, paddingTop: 8}}>Need an Account?</Button>
-                <Button className="loginButton">Login</Button>     
+                <Link to='/register'>
+                    <Button type="link"  style={{paddingRight: 30, paddingTop: 8}}>Need an Account?</Button>
+                </Link>
+                <Link to='/login'>
+                    <Button className="loginButton">Login</Button>   
+                </Link>  
             </Menu>           
                    
         </div>
