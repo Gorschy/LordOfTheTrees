@@ -4,7 +4,7 @@ const PATH = {
     register: '',
     calculator: '',
     contactUs: '',
-    
+    dashboard: '',
 }
 
 export default PATH;

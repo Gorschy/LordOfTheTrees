@@ -12,6 +12,7 @@ import calculator from './pages/calculator';
 import contactUs from './pages/contactUs';
 import register from './pages/register';
 import login from './pages/login';
+import dashboard from './pages/dashboard';
 
 
 
@@ -43,6 +44,7 @@ function App() {
                                 <Route exact path="/contactUs" component={contactUs} />
                                 <Route exact path="/register" component={register} />
                                 <Route exact path="/login" component={login} />
+                                <Route exact path="/dashboard" component={dashboard} />
                             </Switch>
                           
                                 

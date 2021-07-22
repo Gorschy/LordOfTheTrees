@@ -27,6 +27,10 @@ const UnregisteredNav = () => {
                     <Link to='/home'>Home</Link>
                 </Item>
                     
+                <Item key="Dashboard">        
+                    <Link to='/dashboard'>Dashboard</Link>     
+                </Item>
+
                 <Item key="Calculator">        
                     <Link to='/calculator'>Calculator</Link>     
                 </Item>
