@@ -24,17 +24,14 @@ const dashboard = () => { return(
 
         <br/>
 
-        <Card 
-            style={{ height: '200px' }} >
-
-            <div className="sprayImageWrapper">
-                <img className="sprayImage" src={DashImg1} alt="Spray"/>
-            </div>
-        </Card>
-
-    // TO DO: FIX IMAGE WRAPPING
+        <Row justify="space-around">
+            <Card> <img className="sprayImage" src={DashImg1} alt="Spray" style={{maxWidth: "100%", minWidth:"10%"}}/> </Card>
+        </Row>
+        
 
 
     </div>
 );}
 export default dashboard;
+
+// TO DO: FIX IMAGE WRAPPING
