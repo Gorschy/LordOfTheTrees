@@ -1,12 +1,11 @@
 div.CardHeader {
     color: #A3C586;
     Font-Family: 'Poppins';
-    Font-Style: 'Bold';
+    Font-Weight: 'Bold';
     Font-Size: 34px;
     Line-Height: 51px;
-    Text-Align: 'centre';
+    Text-Align: 'Center';
     Vertical-Align: Top;
-    Text-Align: Center;
 }
 
 img.CardImage {
@@ -15,13 +14,4 @@ img.CardImage {
     width: auto;
     margin-left: auto;
     margin-right: auto;
-}
-
-img.sprayImageWrapper {
-    max-width: 100px;
-    max-height: 100px;
-    height: 30%;
-    width: 100%;
-    overflow: hidden;
-
 }
