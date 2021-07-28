@@ -3,3 +3,5 @@
 //type "npm install react-scripts --save" in the IDE terminal
 //after the above install is completed type "npm audit fix"  in the IDE terminal
 // finally type "npm start" to host the local server (if you have problems with the local server a computer restart should fix it) 
+
+//For the mail server to work for the contactUS Page install emailjs by typing "npm install emailjs-com --save" in the IDE terminal
