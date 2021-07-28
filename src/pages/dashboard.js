@@ -32,7 +32,7 @@ const dashboard = () => { return(
             </div>
         </Card>
 
-    // TO DO: FIX IMAGE WRAPPING
+    {/* TO DO: FIX IMAGE WRAPPING */}
 
 
     </div>

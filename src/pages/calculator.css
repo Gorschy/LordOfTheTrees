@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+
+/*
+Style Guide for inputs:
+    Input inner Text
+        - font-size: 15px;
+        - font-family: 'Poppins', sans-serif;
+        - font-weight: 400;
+
+    Input Border
+        Default
+        - border-color: #A3C586;
+        - border-radius: 6px;
+        Hover
+        - border-color: green;
+        - border-right-width: 1px !important;
+        Focus
+        - border-color: green;
+        - border-right-width: 1px !important;
+        - outline: 0;
+        - box-shadow: 0 0 0 2px rgb(49 130 74 / 20%);
+
+    Input Labels
+        - font-size: 10px;
+        - font-family: 'Poppins', sans-serif;
+        - font-weight: 600;
+        - color: #5E5E5E;
+
+TODO: 
+    - clean up css(remove unecessary properties)
+    - set page specific styling classnames etc
+*/
+
+/* antd input box styling override */
+
+.ant-input {
+    border-color: #A3C586;
+    border-radius: 6px;
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    margin: 0;
+    width: 300px;
+}
+
+.ant-input:hover {
+    border-color: green;
+    border-right-width: 1px !important;
+}
+
+.ant-input:focus, .ant-input-focused {
+    border-color: green;
+    border-right-width: 1px !important;
+    outline: 0;
+    box-shadow: 0 0 0 2px rgb(49 130 74 / 20%);
+}
+
+/* antd selection box styling override */
+
+.ant-select {
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+}
+
+.ant-select:not(.ant-select-customize-input) .ant-select-selector {
+    margin: 0;
+    position: relative;
+    background-color: #fff;
+    border: 1px solid #A3C586;
+    border-radius: 6px;
+    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.ant-select:not(.ant-select-disabled):hover .ant-select-selector {
+    border-color: green;
+    border-right-width: 1px !important;
+
+}
+
+.ant-select-focused:not(.ant-select-disabled).ant-select:not(.ant-select-customize-input) .ant-select-selector {
+    border-color: green;
+    border-right-width: 1px !important;
+    outline: 0;
+    box-shadow: 0 0 0 2px rgb(49 130 74 / 20%);
+}
+
+/* input required error text override */
+.ant-form-item-explain, .ant-form-item-extra {
+    font-size: 10px; 
+}
+
+/* antd label/header override styling */
+
+.ant-form-item-label > label {
+    position: relative;
+    margin: 0;
+    font-size: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: #5E5E5E;
+}
+
+.ant-form-vertical .ant-form-item-label, .ant-col-24.ant-form-item-label, .ant-col-xl-24.ant-form-item-label {
+    padding: 0 0 0;
+    line-height: 1.5715;
+    white-space: initial;
+    text-align: left;
+}
+
+/* headers/tab labels/title */
+
+h3 {
+    font-size: 19px;
+    color: #5B7444;
+}
+
+.ant-card-head {
+    color: #A3C586;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 35px;
+    text-align: center;
+}
+
+/* Misc */
+.site-card-border-less-wrapper {
+    padding: 30px;
+    background: #F0F2F5;
+}
+
+.ant-tabs > .ant-tabs-nav .ant-tabs-nav-wrap, .ant-tabs > div > .ant-tabs-nav .ant-tabs-nav-wrap {
+    position: relative;
+    display: inline-block;
+    display: flex;
+    flex: auto;
+    justify-content: center;
+    
+    align-self: stretch;
+    overflow: hidden;
+    white-space: nowrap;
+    transform: translate(0);
+}
+
+.ant-card-body {
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.calculatorCard {
+    border-radius: 10px;
+}

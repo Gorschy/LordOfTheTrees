@@ -1,5 +1,12 @@
 import React from 'react';
+import './calculator.css';
 import { Form, Input, Button, Checkbox, Card , Select } from 'antd';
+
+/* TODO: 
+    - change form names to individual to stop dupilcate inputs
+    - create std/adv switch with logic to pass basic or adv content
+    - build logic maybe
+*/ 
 
 const { Option } = Select;
 
@@ -53,10 +60,11 @@ const basicContentList = {
 
                     <Form.Item name="dropdown" label="Dropdown" rules={[{ required: true }]}>
                         <Select
+                            style={{ width: 300 }}
                             placeholder="Please Select"
                             allowClear
                         >
-                            <Option value="1">1</Option>
+                            <Option value="1">a</Option>
                             <Option value="2">2</Option>
                             <Option value="3">3</Option>
                         </Select>
@@ -66,17 +74,19 @@ const basicContentList = {
 
                     <Form.Item name="dropdown" label="Dropdown" rules={[{ required: true }]}>
                         <Select
+                            style={{ width: 300 }}
                             placeholder="Please Select"
                             allowClear
                         >
                             <Option value="1">1</Option>
-                            <Option value="2">2</Option>
+                            <Option value="2">4</Option>
                             <Option value="3">3</Option>
                         </Select>
                     </Form.Item>
 
                     <Form.Item name="dropdown" label="Dropdown" rules={[{ required: true }]}>
                         <Select
+                            style={{ width: 300 }}
                             placeholder="Please Select"
                             allowClear
                         >
@@ -90,6 +100,7 @@ const basicContentList = {
 
                     <Form.Item name="dropdown" label="Dropdown" rules={[{ required: true }]}>
                         <Select
+                            style={{ width: 300 }}
                             placeholder="Please Select"
                             allowClear
                         >
@@ -101,6 +112,7 @@ const basicContentList = {
 
                     <Form.Item name="dropdown" label="Dropdown" rules={[{ required: true }]}>
                         <Select
+                            style={{ width: 300 }}
                             placeholder="Please Select"
                             allowClear
                         >
@@ -111,7 +123,7 @@ const basicContentList = {
                     </Form.Item>
 
                     <Form.Item name="input" label="Input" rules={[{ required: true }]}>
-                        <Input placeholder="Enter Input"/>
+                        <Input className="inputBox" placeholder="Enter Input"/>
                     </Form.Item>
 
                 </Form>
@@ -160,6 +172,7 @@ const basicContentList = {
 
                     <Form.Item name="dropdown" label="Dropdown" rules={[{ required: true }]}>
                         <Select
+                            style={{ width: 300 }}
                             placeholder="Please Select"
                             allowClear
                         >
@@ -171,6 +184,7 @@ const basicContentList = {
 
                     <Form.Item name="dropdown" label="Dropdown" rules={[{ required: true }]}>
                         <Select
+                            style={{ width: 300 }}
                             placeholder="Please Select"
                             allowClear
                         >
@@ -196,6 +210,7 @@ const basicContentList = {
                     
                     <Form.Item name="dropdown" label="Dropdown" rules={[{ required: true }]}>
                         <Select
+                            style={{ width: 300 }}
                             placeholder="Please Select"
                             allowClear
                         >
@@ -225,6 +240,7 @@ const basicContentList = {
   
                     <Form.Item name="dropdown" label="Dropdown" rules={[{ required: true }]}>
                         <Select
+                            style={{ width: 300 }}
                             placeholder="Please Select"
                             allowClear
                         >
@@ -250,6 +266,7 @@ const basicContentList = {
   
                     <Form.Item name="dropdown" label="Dropdown" rules={[{ required: true }]}>
                         <Select
+                            style={{ width: 300 }}
                             placeholder="Please Select"
                             allowClear
                         >
@@ -261,6 +278,7 @@ const basicContentList = {
 
                     <Form.Item name="dropdown" label="Dropdown" rules={[{ required: true }]}>
                         <Select
+                            style={{ width: 300 }}
                             placeholder="Please Select"
                             allowClear
                         >
@@ -290,6 +308,7 @@ const basicContentList = {
   
                     <Form.Item name="dropdown" label="Dropdown" rules={[{ required: true }]}>
                         <Select
+                            style={{ width: 300 }}
                             placeholder="Please Select"
                             allowClear
                         >
@@ -360,6 +379,21 @@ const advContentList = {
                     
                     <Form.Item name="dropdown" label="Dropdown" rules={[{ required: true }]}>
                         <Select
+                            className="a"
+                            style={{ width: 300 }}
+                            placeholder="Please Select"
+                            allowClear
+                        >
+                            <Option value="a">a</Option>
+                            <Option value="2">2</Option>
+                            <Option value="3">3</Option>
+                        </Select>
+                    </Form.Item>
+
+                    <Form.Item name="dropdown" label="Dropdown" rules={[{ required: true }]}>
+                        <Select
+                            className="b"
+                            style={{ width: 300 }}
                             placeholder="Please Select"
                             allowClear
                         >
@@ -371,6 +405,7 @@ const advContentList = {
 
                     <Form.Item name="dropdown" label="Dropdown" rules={[{ required: true }]}>
                         <Select
+                            style={{ width: 300 }}
                             placeholder="Please Select"
                             allowClear
                         >
@@ -382,6 +417,7 @@ const advContentList = {
 
                     <Form.Item name="dropdown" label="Dropdown" rules={[{ required: true }]}>
                         <Select
+                            style={{ width: 300 }}
                             placeholder="Please Select"
                             allowClear
                         >
@@ -393,17 +429,7 @@ const advContentList = {
 
                     <Form.Item name="dropdown" label="Dropdown" rules={[{ required: true }]}>
                         <Select
-                            placeholder="Please Select"
-                            allowClear
-                        >
-                            <Option value="1">1</Option>
-                            <Option value="2">2</Option>
-                            <Option value="3">3</Option>
-                        </Select>
-                    </Form.Item>
-
-                    <Form.Item name="dropdown" label="Dropdown" rules={[{ required: true }]}>
-                        <Select
+                            style={{ width: 300 }}
                             placeholder="Please Select"
                             allowClear
                         >
@@ -463,6 +489,7 @@ const advContentList = {
 
                     <Form.Item name="dropdown" label="Dropdown" rules={[{ required: true }]}>
                         <Select
+                            style={{ width: 300 }}
                             placeholder="Please Select"
                             allowClear
                         >
@@ -474,6 +501,7 @@ const advContentList = {
 
                     <Form.Item name="dropdown" label="Dropdown" rules={[{ required: true }]}>
                         <Select
+                            style={{ width: 300 }}
                             placeholder="Please Select"
                             allowClear
                         >
@@ -499,6 +527,7 @@ const advContentList = {
                     
                     <Form.Item name="dropdown" label="Dropdown" rules={[{ required: true }]}>
                         <Select
+                            style={{ width: 300 }}
                             placeholder="Please Select"
                             allowClear
                         >
@@ -528,6 +557,7 @@ const advContentList = {
   
                     <Form.Item name="dropdown" label="Dropdown" rules={[{ required: true }]}>
                         <Select
+                            style={{ width: 300 }}
                             placeholder="Please Select"
                             allowClear
                         >
@@ -553,6 +583,7 @@ const advContentList = {
   
                     <Form.Item name="dropdown" label="Dropdown" rules={[{ required: true }]}>
                         <Select
+                            style={{ width: 300 }}
                             placeholder="Please Select"
                             allowClear
                         >
@@ -564,6 +595,7 @@ const advContentList = {
 
                     <Form.Item name="dropdown" label="Dropdown" rules={[{ required: true }]}>
                         <Select
+                            style={{ width: 300 }}
                             placeholder="Please Select"
                             allowClear
                         >
@@ -593,6 +625,7 @@ const advContentList = {
   
                     <Form.Item name="dropdown" label="Dropdown" rules={[{ required: true }]}>
                         <Select
+                            style={{ width: 300 }}
                             placeholder="Please Select"
                             allowClear
                         >
@@ -662,8 +695,11 @@ class calculator extends React.Component {
 
     render() {
         return (
-            <div>
-                <Card 
+            <div className="site-card-border-less-wrapper">
+                <Card
+                    className="calculatorCard"
+                    bordered={false} 
+                    style={{ width: 1300 }} 
                     title="Carbon Calculator"
                     tabList={tabList}
                     activeTabKey={this.state.key}
