@@ -138,7 +138,6 @@ h3 {
     display: flex;
     flex: auto;
     justify-content: center;
-    
     align-self: stretch;
     overflow: hidden;
     white-space: nowrap;
@@ -152,4 +151,14 @@ h3 {
 
 .calculatorCard {
     border-radius: 10px;
+}
+
+.ant-btn-primary {
+    color: #fff;
+    background: #5B7444;
+    border-color: #5B7444;
+    border-radius: 6px;
+    width: 150px;
+    text-shadow: 0 -1px 0 rgb(0 0 0 / 12%);
+    box-shadow: 0 2px 0 rgb(0 0 0 / 5%);
 }
