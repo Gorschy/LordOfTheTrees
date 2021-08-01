@@ -10,15 +10,16 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import home from './pages/home';
 import calculator from './pages/calculator';
 import contactUs from './pages/contactUs';
-import register from './pages/register';
 import SignIn from './pages/login';
 import dashboard from './pages/dashboard';
 import account from './pages/account';
-import { Button } from 'antd';
-
-
+import { Button, Menu } from 'antd';
+import Register from './pages/register';
+import ConfirmSignUp from './pages/confirmSignUp';
+import logo from './assets/RPPLogoPlaceholder.png';
 
 const { Header, Content } = Layout;
+const { Item } = Menu;
 
 Amplify.configure(awsconfig);
 
@@ -26,19 +27,19 @@ function App() {
 
     const[loggedIn, setLoggedIn] = useState(false);
 
+    useEffect(() => {
+        assessLoggedInState();
+    }, []);
+
     const assessLoggedInState = () => {
         Auth.currentAuthenticatedUser().then(sess => {
             console.log('logged in');
             setLoggedIn(true);
         }).catch(() => {
             console.log('not logged in');
-            setLoggedIn('false');
+            setLoggedIn(false);
         });
     };
-
-    useEffect(() => {
-        assessLoggedInState();
-    }, []);
 
     const signOut = async () => {
         try {
@@ -48,6 +49,12 @@ function App() {
             console.log('error signing out: ', error);
         }
     };
+    //Not sure if this function is really necessary
+    const onSignIn = () => {
+        setLoggedIn(true);
+    };
+
+
 
     return (
         <div>
@@ -55,23 +62,49 @@ function App() {
                 <Layout className="layout">
                     
                     <Header className="site-layout-header">
-                        <Navbar />
-                    </Header>
-                    
-                    <Content className="contentContainer">
-                        <div>
-                           { loggedIn ? (
-                                <Button onClick={signOut} type="primary">
+                            <Menu theme="light" mode="horizontal" defaultSelectedKeys={["Home"]} className="leftStyle">
+                        <Item style={{borderBottom:'none'}}>
+                            <Link to='/home'><img className="logo" src={logo} alt="Logo"/></Link>
+                        </Item>
+                            
+                        <Item key="Home">
+                            <Link to='/home'>Home</Link>
+                        </Item>
+                            
+                        <Item key="Dashboard">        
+                            <Link to='/dashboard'>Dashboard</Link>     
+                        </Item>
+
+                        <Item key="Calculator">        
+                            <Link to='/calculator'>Calculator</Link>     
+                        </Item>
+                                                
+                        <Item key="ContactUs">
+                            <Link to='/contactUs'>Contact Us</Link>
+                        </Item>                 
+                    </Menu>
+
+                    <Menu theme="light" mode="horizontal" className="rightStyle">
+                        <Link to='/register'>
+                            <Button type="link"  style={{paddingRight: 30}}>Need an Account?</Button>
+                        </Link>
+                        { loggedIn ? (
+                                <Button onClick={signOut} className="loginButtonNav" type="primary">
                                     Sign Out
-                                    
                                 </Button> 
                             ) : ( 
                                 <Link to="/login">    
-                                    <Button type="primary">
+                                    <Button className="loginButtonNav" type="primary">
                                         Log In
                                     </Button>
                                 </Link>
                             )}
+                    </Menu>           
+                    </Header>
+                    
+                    <Content className="contentContainer">
+                        <div>
+                           
                             
                             <Switch>
                                 <Route exact path="/home" component={home} />
@@ -80,9 +113,14 @@ function App() {
                                 </Route>
                                 <Route exact path="/calculator" component={calculator} />
                                 <Route exact path="/contactUs" component={contactUs} />
-                                <Route exact path="/register" component={register} />
+                                <Route exact path="/register">
+                                    <Register /> 
+                                </Route>
+                                <Route exact path="/confirmSignUp">
+                                    <ConfirmSignUp />
+                                </Route>
                                 <Route exact path="/login"> 
-                                    <SignIn onSignin={assessLoggedInState} />     
+                                    <SignIn onSignin={onSignIn} />     
                                 </Route>
                                 <Route exact path="/dashboard" component={dashboard} />
                                 <Route exact path="/account" component={account} />

@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { Auth } from 'aws-amplify';
 import { Form, Input, Button, Checkbox, Card } from 'antd';
 import { Link, useHistory } from 'react-router-dom';
-
-const Signin = ({ onSignin }) => {
+import './login.css';
+const SignIn = ({ onSignin }) => {
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -23,26 +23,38 @@ const Signin = ({ onSignin }) => {
 
 
     return (  
-          
-        <div>
-            <Input 
-                id="username"
-                label="Username" 
-                value={username}
-                onChange={e => setUsername(e.target.value)}
-            />
-            <Input 
-                id="password"
-                label="Password" 
-                value={password}
-                onChange={e => setPassword(e.target.value)}
-            />
-
-            <Button id="signinButton" onClick={signIn} type="primary">
-                Sign In                  
-            </Button> 
+        <div id="test">
+            <Card className="loginCard" title="Login" bordered={false} style={{ width: 300 }}>
+                <p>Username</p>
+                <Input className="loginField"
+                    id="username"
+                    label="Username" 
+                    value={username}
+                    onChange={e => setUsername(e.target.value)}
+                />
+                <p>Password</p>
+                <Input className="loginField"
+                    id="password"
+                    label="Password" 
+                    value={password}
+                    onChange={e => setPassword(e.target.value)}
+                />
+                
+                <Button className="loginButton" id="signinButton" onClick={signIn} type="primary">
+                    Sign In                  
+                </Button>
+            </Card> 
         </div>
     );
 }
 
-export default Signin;
+export default SignIn;
+
+
+
+
+
+    
+    
+    
+

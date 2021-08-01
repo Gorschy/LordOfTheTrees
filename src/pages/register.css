@@ -1,0 +1,26 @@
+.registerCard {
+    width: 567px !important;
+    position: fixed !important; /* or absolute */
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+}
+
+.registerField {
+    margin-bottom: 25px !important;
+    margin:0 auto !important;
+    display:block !important;
+
+    width: 326px !important;
+    height: 48px !important;
+    border-radius: 8px !important;
+}
+
+.registerButton {
+    margin-bottom: 25px !important;
+    margin: 25px auto !important;
+    display:block !important;
+    width: 326px !important;
+    height: 48px !important;
+    border-radius: 8px !important;
+}

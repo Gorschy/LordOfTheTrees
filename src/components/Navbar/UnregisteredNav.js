@@ -45,7 +45,7 @@ const UnregisteredNav = () => {
                     <Button type="link"  style={{paddingRight: 30}}>Need an Account?</Button>
                 </Link>
                 <Link to='/login'>
-                    <Button className="loginButton">Login</Button>   
+                    <Button className="loginButtonNav">Login</Button>   
                 </Link>  
             </Menu>           
                    
