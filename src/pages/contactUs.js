@@ -1,8 +1,8 @@
 import emailjs from 'emailjs-com';
 import React from 'react';
-import { Form, Input, Button, Row, Col, Select, Checkbox, Card, Menu, Dropdown, Space, message } from 'antd';
+import { Form, Input, Button, Row, Col, Select, Checkbox, Card, Menu, Dropdown, Space, message} from 'antd';
 import { DownOutlined, UserOutlined } from '@ant-design/icons';
-import image1 from '../assets/Nature1.png'
+import contactDetailsImage from '../assets/Nature1.png'
 import './contactUs.css';
 export default function contactUs() {
 
@@ -19,6 +19,8 @@ export default function contactUs() {
                 console.log(error.text);
             });
         e.target.reset();
+
+        e.target.resetFields()
     }
 
     const { Option } = Select;
@@ -28,44 +30,64 @@ export default function contactUs() {
         console.log(`selected ${value}`);
     }
 
+
     return (
         <div>
 
             <Row>
                 <Col span={10}>
-                    <Card title="Contact Details" bordered={true} style={{ width: 700 }}>
-                        <p>Our Email Address: contact_email@lordofTrees.com.au</p>
-                        <p> Businesss Phone Line: #0474690899</p>
+                    <div id="contactDetailsCard" >
+                    <Card className = "contactDetails" title="Contact Details" bordered={true} style={{ width: 700 }}>
+                        <div id="contactDetailsText">
+                            <div id="contactDetailsLeft">        
+                                <p>Our Email Address: </p>
+                                <p>Businesss Phone Line: </p>
+                            </div>
+                            <div id="contactDetailsRight"> 
+                                <p> contact_email@lordofTrees.com.au</p>
+                                <p> 0474690899</p>
+                            </div>
+                        </div>
                     </Card>
-                    <img className="image1" src={image1} alt="asset" />
+                    </div>
+                    <img className="contactDetailsImage" src={contactDetailsImage} alt="asset" />
                 </Col>
                 <Col span={7}>
-                    <Card title="Submit Support Ticket" bordered={false} style={{ width: 700 }}>
+                    <Card title="Submit Support Ticket" bordered={false} style={{ width: 1000 }}>
                         <form onSubmit={sendEmail}>
-                            <div className>
+                            <div id="submitSupportTicket">
+                             <div className>
                                 <div>
-                                    <Form.Item name="email" label="Email" rules={[{ required: true }]}>
-                                        <input type="email" className="form-control" placeholder="Enter Your Email" name="email" />
+                                <div id="submitSupportTicketLeft"> 
+                                <label for="email">Email</label>
+                                    <Form.Item name="email" rules={[{ required: true }]}>
+                                        <Input type="email" className="form-control" placeholder="Enter Your Email" name="email" />
                                     </Form.Item>
+                                    </div>
                                 </div>
                                 <div>
-                                    <Form.Item name="name" label="Name" rules={[{ required: true }]}>
-
-                                        <input type="text" className="form-control" placeholder="Enter Your Name" name="name" />
+                                <div id="submitSupportTicketRight"> 
+                                    <label for="name">Name</label>
+                                    <Form.Item name="name" rules={[{ required: true }]}>
+                                        <Input type="text" className="form-control" placeholder="Enter Your Name" name="name" />
                                     </Form.Item>
+                                    </div>
                                 </div>
-                                <div>
-                                    <Select defaultValue="option1" style={{ width: 200 }} onChange={handleChange}>
+                                <div id= "submitSupportTicketSelectReason">
+                                    <Select defaultValue="option5" style={{ width: 270 }} onChange={handleChange}>
+                                        <option value="option5" disabled name="subject" >Select Ticket Reason</option>
                                         <option value="option1" name="subject" >General Enquiries</option>
                                         <option value="option2" name="subject" >Technical Support</option>
                                         <option value="option3" name="subject" >Feedback</option>
                                     </Select>
                                 </div>
                             </div>
-                            <textarea className="form-control" id="" cols="80" rows="8" placeholder="Enter your text here" name="message" />
-                            <div className="col-8 pt-3 mc audto">
-                                <input type="submit" className="btn btn-info" value="Send Message"></input>
-
+                            <div id="contactUsTextArea">
+                            <textarea className="testform-control" cols="120" rows="12" placeholder="Enter your text here" name="message"  />
+                            </div>
+                            <div id="contactUsSubmitButton">
+                                <Input type="submit"  className="btn btn-info" value="Send Message"></Input>
+                            </div>
                             </div>
                         </form>
                     </Card>

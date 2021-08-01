@@ -1,6 +1,51 @@
-.image1 {
+.contactDetailsImage {
 
-    padding: 10px;
-    width: 708px;
+    padding-top: 20px;
+    padding-left: 030px;
+    width: 730px;
     height: 460px;
+      box-shadow: 0 10px 10px 0 rgb(131, 131, 131), 0 8px 8px 0 rgba(0, 0, 0, 0.10);
+}
+
+
+#contactDetailsCard {
+  border-radius: 200px ;
+  padding-left: 30px;
+}
+
+#contactDetailsLeft {
+  float: left;
+}
+
+#contactDetailsRight {
+  float: right;
+}
+#submitSupportTicketLeft {
+  float: left;
+}
+#submitSupportTicketRight {
+  float: right;
+}
+
+#submitSupportTicketSelectReason {
+  padding-top: 100px ;
+}
+
+#contactUsSubmitButton {
+  padding-top: 15px;
+}
+.contactDetails {
+  width: 360px;
+  height: 192px;
+  border-radius: 0px;
+  margin-right: 24px;
+  box-shadow: 5px 8px 24px 5px rgba(208, 216, 243, 0.6);
+}
+
+
+#contactUsTextArea {
+  padding-top: 40px;
+
+
+
 }
