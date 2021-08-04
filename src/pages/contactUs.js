@@ -1,7 +1,6 @@
 import emailjs from 'emailjs-com';
 import React from 'react';
-import { Form, Input, Button, Row, Col, Select, Checkbox, Card, Menu, Dropdown, Space, message} from 'antd';
-import { DownOutlined, UserOutlined } from '@ant-design/icons';
+import { Form, Input, Row, Col, Select, Card} from 'antd';
 import contactDetailsImage from '../assets/Nature1.png'
 import './contactUs.css';
 export default function contactUs() {
@@ -23,7 +22,7 @@ export default function contactUs() {
         e.target.resetFields()
     }
 
-    const { Option } = Select;
+
 
     /* Dropdown value is not currently being collected properly, its not showing up on the email. The input is getting reset with the onclick function as it should */
     function handleChange(value) {

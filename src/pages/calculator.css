@@ -162,3 +162,9 @@ h3 {
     text-shadow: 0 -1px 0 rgb(0 0 0 / 12%);
     box-shadow: 0 2px 0 rgb(0 0 0 / 5%);
 }
+
+.ant-tabs-tabpane {
+    flex: none;
+    width: 50%;
+    
+}
