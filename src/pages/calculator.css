@@ -168,3 +168,5 @@ h3 {
     width: 50%;
     
 }
+
+select:invalid { color: rgb(155, 32, 32); }

@@ -1,493 +1,443 @@
-import React from 'react';
-import { Form, Input, Button, Card , Select, Tabs, Layout } from 'antd';
+import React, { useState } from 'react';
+import { Input, Button, Card , Tabs, Layout } from 'antd';
 import './calculator.css';
 
 
 /* TODO: 
     - create std/adv switch with logic to pass basic or adv content
-    - OUTPUT DATA TO SECONDARY CARD (TABLE MAYBE)
     - build logic maybe
 */ 
 
 const { Content } = Layout;
 const { TabPane } = Tabs;
-const { Option } = Select;
 
-const Calculator = () => {
-
-    const [form] = Form.useForm();
-    
-    function addEmissions() {
-        
-        const values = form.getFieldValue();
-        
-        const emissionValues = {
-           
-            transportValues: {
-                vehicleType: values.vehicleType,
-                cabinClass: values.cabinClass,
-                airDistance: values.airDistance,
-                transportMethod: values.transportMethod,
-                transportType: values.transportType,
-                pubDistance: values.pubDistance,
-            },
-           
-            electricityValues: {
-                consumption: values.consumption
-            },
-
-            gasValues: {
-                lpgConsumption: values.lpgConsumption,
-                gasConsumption: values.gasConsumption,
-                unitOfMeasurement: values.unitOfMeasurement,
-                stateOrTerritory: values.stateOrTerritory
-            },
-
-            wasteValues: {
-                wasteType: values.wasteType,
-                wasteWeight: values.wasteWeight 
-            },
-
-            waterValues: {
-                waterUtilityLocation: values.waterUtilityLocation
-            },
-            
-            paperValues: {
-                source: values.source,
-                paperType: values.paperType,
-                paperWeight: values.paperWeight
-            },
-
-            foodAndDrinkValues: {
-                foodType: values.foodType,
-                expenditure: values.expenditure
-            },
-
-            eventsValues: {
-                totalAccommodation: values.totalAccommodation,
-                totalMeals: values.totalMeals,
-                totalDrinks: values.totalDrinks,
-                totalBeer: values.totalBeer,
-                totalWine: values.totalWine,
-                totalSpirits: values.totalSpirits,
-                totalEventProducts: values.totalEventProducts
-            }
-        };
-        
-        //output = calculateEmissions(emissionValues);
-
-        
-       
-        console.log(emissionValues);
-        
-        
-    }
-
-    function sum( obj ) {
-        var sum = 0;
-        for( var el in obj ) {
-          if( obj.hasOwnProperty( el ) ) {
-            sum += parseFloat( obj[el] );
-          }
-        }
-        return sum;
-      }
-
-    function callback(key) {
-        console.log(key);
-    }
-
-    return (
-           
-        <div>
-            <Card
-                className="calculatorCard"
-                bordered={false} 
-                style={{ width: 1300 }} 
-                title="Carbon Calculator"
-            >
+function Calculator() {
   
-                    <Tabs defaultActiveKey="Transport" onChange={callback}>                          
+  const [emission, setEmissions] = useState({
+  
+    //transportValues:
+    vehicleType: '',
+    cabinClass: '',
+    airDistance: '',
+    transportMethod: '',
+    transportType: '',
+    pubDistance: '',
+        
+    //electricityValues:
+    consumption: '',
+        
+    //gasValues:
+    lpgConsumption: '',
+    gasConsumption: '',
+    unitOfMeasurement: '',
+    stateOrTerritory: '',
+      
+    //wasteValues:
+    wasteType: '',
+    wasteWeight: '',
+        
+    //waterValues:
+    waterUtilityLocation: '',
+      
+    //paperValues:
+    source: '',
+    paperType: '',
+    paperWeight: '',
+        
+    //foodAndDrinkValues:
+    foodType: '',
+    expenditure: '',
+        
+    //eventsValues:
+    totalAccommodation: '',
+    totalMeals: '',
+    totalDrinks: '',
+    totalBeer: '',
+    totalWine: '',
+    totalSpirits: '',
+    totalEventProducts: ''
+  });
+    
+  
+  const handleSubmit = (evt) => {
+    evt.preventDefault();
+    alert(`Submitting emission ${JSON.stringify(emission, null, 2)}`)
+}
 
-                        <TabPane tab="Transport" key="Transport">
-                                    <div>    
-                                        <Form
-                                            form={form}
-                                            onFinish={addEmissions}
-                                            name="basicTransport"
-                                            layout="vertical"
-                                            scrollToFirstError
-                                        >
+  function callback(key) {
+    console.log(key);
+  }
 
-                                            <h3>Vehicle</h3>
+  return (  
+    <div>
+      <Card
+        className="calculatorCard"
+        bordered={false} 
+        style={{ width: 1300 }} 
+        title="Carbon Calculator"
+      >
+        <Tabs defaultActiveKey="Transport" onChange={callback}>                          
 
-                                            <Form.Item name="vehicleType" label="Vehicle Type">
-                                                <Select
-                                                    style={{ width: 300 }}
-                                                    placeholder="Please Select"
-                                                    allowClear       
-                                                >
-                                                    <Option value="1">1</Option>
-                                                    <Option value="2">2</Option>
-                                                    <Option value="3">3</Option>
-                                                </Select>
-                                            </Form.Item>
+          <TabPane tab="Transport" key="Transport">
+            <div>    
+              <form className='basicTransportForm' onSubmit={handleSubmit}>
 
-                                            <h3>Air Travel</h3>
+                <h3>Vehicle</h3>
 
-                                            <Form.Item name="cabinClass" label="Cabin Class">
-                                                <Select
-                                                    style={{ width: 300 }}
-                                                    placeholder="Please Select"
-                                                    allowClear
-                                                >
-                                                    <Option value="1">1</Option>
-                                                    <Option value="2">2</Option>
-                                                    <Option value="3">3</Option>
-                                                </Select>
-                                            </Form.Item>
+                <label className='calculatorLabel'>Vehicle Type</label>
+                <select
+                  className = 'calculatorDropdown'
+                  onChange = {e => setEmissions({ ...emission, vehicleType: e.target.value})}
+                >
+                  <option disabled selected hidden>Please Select</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                </select>
 
-                                            <Form.Item name="airDistance" label="Distance">
-                                                <Select
-                                                    style={{ width: 300 }}
-                                                    placeholder="Please Select"
-                                                    allowClear
-                                                >
-                                                    <Option value="1">1</Option>
-                                                    <Option value="2">2</Option>
-                                                    <Option value="3">3</Option>
-                                                </Select>
-                                            </Form.Item>
+                <h3>Air Travel</h3>
 
-                                            <h3>Public Transport</h3>
+                <label className='calculatorLabel'>Cabin Class</label>
+                <select
+                  className = 'calculatorDropdown'
+                  onChange = {e => setEmissions({ ...emission, cabinClass: e.target.value})}
+                >
+                  <option disabled selected hidden>Please Select</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                </select>
 
-                                            <Form.Item name="transportMethod" label="Transport Method">
-                                                <Select
-                                                    style={{ width: 300 }}
-                                                    placeholder="Please Select"
-                                                    allowClear
-                                                >
-                                                    <Option value="1">1</Option>
-                                                    <Option value="2">2</Option>
-                                                    <Option value="3">3</Option>
-                                                </Select>
-                                            </Form.Item>
+                <label className='calculatorLabel'>Distance</label>
+                <select
+                  className = 'calculatorDropdown'
+                  onChange = {e => setEmissions({ ...emission, airDistance: e.target.value})}
+                >
+                  <option disabled selected hidden>Please Select</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                </select>
 
-                                            <Form.Item name="transportType" label="Transport Type">
-                                                <Select
-                                                    style={{ width: 300 }}
-                                                    placeholder="Please Select"
-                                                    allowClear
-                                                >
-                                                    <Option value="1">1</Option>
-                                                    <Option value="2">2</Option>
-                                                    <Option value="3">3</Option>
-                                                </Select>
-                                            </Form.Item>
+                <h3>Public Transport</h3>
+                          
+                <label className='calculatorLabel'>Transport Method</label>
+                <select
+                  className = 'calculatorDropdown'
+                  onChange = {e => setEmissions({ ...emission, transportMethod: e.target.value})}
+                >
+                  <option disabled selected hidden>Please Select</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                </select>
 
-                                            <Form.Item name="pubDistance" label="Distance">
-                                                <Input className="inputBox" type='number' placeholder="Kilometres" />
-                                            </Form.Item>
+                <label className='calculatorLabel'>Transport Type</label>
+                <select
+                  className = 'calculatorDropdown'
+                  onChange = {e => setEmissions({ ...emission, transportType: e.target.value})}
+                >
+                  <option disabled selected hidden>Please Select</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                </select>
 
-                                            <Form.Item className="addEmissionButton">
-                                                <Button type="primary" htmlType="submit">
-                                                    Add
-                                                </Button>
-                                            </Form.Item>
-                                        </Form>                
-                                    </div>
-                                </TabPane>
-
-                        <TabPane tab="Electricity" key="Electricity">
-                                    <div>                            
-                                        <Form
-                                            form={form}
-                                            onFinish={addEmissions}
-                                            name="basicElectricity"
-                                            layout="vertical"
-                                            scrollToFirstError
-                                        >
-
-                                            <Form.Item name="consumption" label="Electricity Consumption">
-                                                <Input className="inputBox" type='number' placeholder="Kilowatt Hours"/>
-                                            </Form.Item>
-
-                                            <Form.Item className="addEmissionButton">
-                                                <Button type="primary" htmlType="submit">
-                                                    Add
-                                                </Button>
-                                            </Form.Item>
-                                        </Form>                
-                                    </div>
-                                </TabPane>
-
-                        <TabPane tab="Gas" key="Gas">
-                                    <div>
-                                        <Form
-                                            form={form}
-                                            onFinish={addEmissions}
-                                            name="basicGas"
-                                            layout="vertical"
-                                            scrollToFirstError
-                                        >
-
-                                            <Form.Item name="lpgConsumption" label="LPG Consumption">
-                                                <Input className="inputBox" type='number' placeholder="Litres"/>
-                                            </Form.Item>
-                                                
-                                            <span>OR</span><br/><br/>
-
-                                            <Form.Item name="gasConsumption" label="Gas Consumption">
-                                                <Input className="inputBox" type='number' placeholder="Litres"/>
-                                            </Form.Item>
-
-                                            <Form.Item name="unitOfMeasurement" label="Unit of Measurement">
-                                                <Select
-                                                    style={{ width: 300 }}
-                                                    placeholder="Please Select"
-                                                    allowClear
-                                                >
-                                                    <Option value="1">1</Option>
-                                                    <Option value="2">2</Option>
-                                                    <Option value="3">3</Option>
-                                                </Select>
-                                            </Form.Item>
-
-                                            <Form.Item name="stateOrTerritory" label="State or Territory">
-                                                <Select
-                                                    style={{ width: 300 }}
-                                                    placeholder="Please Select"
-                                                    allowClear
-                                                >
-                                                    <Option value="1">1</Option>
-                                                    <Option value="2">2</Option>
-                                                    <Option value="3">3</Option>
-                                                </Select>
-                                            </Form.Item>
-
-                                            <Form.Item className="addEmissionButton">
-                                                <Button type="primary" htmlType="submit">
-                                                    Add
-                                                </Button>
-                                            </Form.Item>
-                                        </Form>
-                                    </div>
-                                </TabPane>
-
-                        <TabPane tab="Waste" key="Waste">
-                                    <div>    
-                                        <Form
-                                            form={form}
-                                            onFinish={addEmissions}
-                                            name="basicWaste"
-                                            layout="vertical"                                    
-                                            scrollToFirstError
-                                        >
-                                                
-                                            <Form.Item name="wasteType" label="Waste Type">
-                                                <Select
-                                                    style={{ width: 300 }}
-                                                    placeholder="Please Select"
-                                                    allowClear
-                                                >
-                                                    <Option value="1">1</Option>
-                                                    <Option value="2">2</Option>
-                                                    <Option value="3">3</Option>
-                                                </Select>
-                                            </Form.Item>
-
-                                            <Form.Item name="wasteWeight" label="Weight">
-                                                <Input className="inputBox" type='number' placeholder="Tonnes"/>
-                                            </Form.Item>
-
-                                            <Form.Item className="addEmissionButton">
-                                                <Button type="primary" htmlType="submit">
-                                                    Add
-                                                </Button>
-                                            </Form.Item>
-                                        </Form>
-                                    </div>
-                                </TabPane>
-
-                        <TabPane tab="Water" key="Water">
-                                    <div>    
-                                        <Form
-                                            form={form}
-                                            onFinish={addEmissions}
-                                            name="basicWater"
-                                            layout="vertical"
-                                            scrollToFirstError
-                                        >
-
-                                            <Form.Item name="waterUtilityLocation" label="Water Utility Location">
-                                                <Select
-                                                    style={{ width: 300 }}
-                                                    placeholder="Please Select"
-                                                    allowClear
-                                                >
-                                                    <Option value="1">1</Option>
-                                                    <Option value="2">2</Option>
-                                                    <Option value="3">3</Option>
-                                                </Select>
-                                            </Form.Item>
-
-                                            <Form.Item className="addEmissionButton">
-                                                <Button type="primary" htmlType="submit">
-                                                    Add
-                                                </Button>
-                                            </Form.Item>
-                                        </Form>
-                                    </div>
-                                </TabPane>
-
-                        <TabPane tab="Paper" key="Paper">
-                                    <div>
-                                        <Form
-                                            form={form}
-                                            onFinish={addEmissions}
-                                            name="basicPaper"
-                                            layout="vertical"
-                                            scrollToFirstError
-                                        >
-
-                                            <Form.Item name="source" label="Source">
-                                                <Select
-                                                    style={{ width: 300 }}
-                                                    placeholder="Please Select"
-                                                    allowClear
-                                                >
-                                                    <Option value="1">1</Option>
-                                                    <Option value="2">2</Option>
-                                                    <Option value="3">3</Option>
-                                                </Select>
-                                            </Form.Item>
-
-                                            <Form.Item name="paperType" label="Paper Type">
-                                                <Select
-                                                    style={{ width: 300 }}
-                                                    placeholder="Please Select"
-                                                    allowClear
-                                                >
-                                                    <Option value="1">1</Option>
-                                                    <Option value="2">2</Option>
-                                                    <Option value="3">3</Option>
-                                                </Select>
-                                            </Form.Item>
-
-                                            <Form.Item name="paperWeight" label="Paper Weight">
-                                                <Input className="inputBox" type='number' placeholder="Kilograms"/>
-                                            </Form.Item>
-
-                                            <Form.Item className="addEmissionButton">
-                                                <Button type="primary" htmlType="submit">
-                                                    Add
-                                                </Button>
-                                            </Form.Item>
-                                        </Form>
-                                    </div>
-                                </TabPane>
-
-                        <TabPane tab="Food & Drink" key="FoodAndDrink">
-                                    <div>
-                                        <Form
-                                            form={form}
-                                            onFinish={addEmissions}
-                                            name="basicFoodAndDrink"
-                                            layout="vertical"
-                                            scrollToFirstError
-                                        >
-
-                                            <Form.Item name="foodType" label="Food Type">
-                                                <Select
-                                                    style={{ width: 300 }}
-                                                    placeholder="Please Select"
-                                                    allowClear
-                                                >
-                                                    <Option value="1">1</Option>
-                                                    <Option value="2">2</Option>
-                                                    <Option value="3">3</Option>
-                                                </Select>
-                                            </Form.Item>
-
-                                            <Form.Item name="expenditure" label="Expenditure">
-                                                <Input className="inputBox" type='number' placeholder="$ Amount"/>
-                                            </Form.Item>
-
-                                            <Form.Item className="addEmissionButton">
-                                                <Button type="primary" htmlType="submit">
-                                                    Add
-                                                </Button>
-                                            </Form.Item>
-                                        </Form>
-                                    </div>
-                                </TabPane>
-
-                        <TabPane tab="Events" key="Events">
-                                <div>
-                                    <Form
-                                        form={form}
-                                        onFinish={addEmissions}
-                                        name="basicEvents"
-                                        layout="vertical"
-                                        scrollToFirstError
-                                    >
-                                        <h3>Accommodation</h3>
-
-                                        <Form.Item name="totalAccommodation" label="Total Spent on Accommodation">
-                                            <Input className="inputBox" type='number' placeholder="$ Amount"/>
-                                        </Form.Item>
-
-                                        <h3>Food & Drink</h3>
+                <label className='calculatorLabel'>Distance</label>   
+                <Input
+                  value = {emission.pubDistance}
+                  onChange = {e => setEmissions({ ...emission, pubDistance: e.target.value})}
+                  className='calculatorInput' 
+                  type='number' 
+                  placeholder='Kilometres'
+                />
+               
+                <input className='addEmissionButton' type='submit' value='Add'/>
                                             
-                                        <Form.Item name="totalMeals" label="Total Spent on Meals">
-                                            <Input className="inputBox" type='number' placeholder="$ Amount"/>
-                                        </Form.Item>
+              </form>                
+            </div>
+          </TabPane>
+            
+          <TabPane tab="Electricity" key="Electricity">
+            <div>    
+              <form className='basicElectricityForm'>
 
-                                        <Form.Item name="totalDrinks" label="Total Spent on Non-Alcoholic Drinks">
-                                            <Input className="inputBox" type='number' placeholder="$ Amount"/>
-                                        </Form.Item>
-
-                                        <Form.Item name="totalBeer" label="Total Spent on Beer">
-                                            <Input className="inputBox" type='number' placeholder="$ Amount"/>
-                                        </Form.Item>
-
-                                        <Form.Item name="totalWine" label="Total Spent on Wine">
-                                            <Input className="inputBox" type='number' placeholder="$ Amount"/>
-                                        </Form.Item>
-
-                                        <Form.Item name="totalSpirits" label="Total Spent on Spirits">
-                                            <Input className="inputBox" type='number' placeholder="$ Amount"/>
-                                        </Form.Item>
+                <label className='calculatorLabel'>Consumption</label>
+                <input
+                  value = {emission.consumption}
+                  onChange = {e => setEmissions({ ...emission, consumption: e.target.value})}
+                  className='calculatorInput' type='number' placeholder='Kilowatt Hours'
+                />
+               
+                <Button className='addEmissionButton' type='submit'>Add</Button>
                                             
-                                        <h3>Giveaways & Promotional Materials</h3>
+              </form>                
+            </div>
+          </TabPane>
 
-                                        <Form.Item name="totalEventProducts" label="Total Spent on Plastic Products">
-                                            <Input className="inputBox" type='number' placeholder="$ Amount"/>
-                                        </Form.Item>
+          <TabPane tab="Gas" key="Gas">
+            <div>    
+              <form className='basicGasForm'>
 
-                                        <Form.Item className="addEmissionButton">
-                                            <Button type="primary" htmlType="submit">
-                                                Add
-                                            </Button>
-                                        </Form.Item>
-                                    </Form>
-                                </div>
-                            </TabPane> 
+                <label className='calculatorLabel'>LPG Consumption</label>
+                <input
+                  value = {emission.lpgConsumption}
+                  onChange = {e => setEmissions({ ...emission, lpgConsumption: e.target.value})}
+                  className='calculatorInput' type='number' placeholder='Litres'
+                />
+
+                <h3>Or</h3>
+                
+                <label className='calculatorLabel'>Gas Consumption</label>
+                <input
+                  value = {emission.gasConsumption}
+                  onChange = {e => setEmissions({ ...emission, gasConsumption: e.target.value})}
+                  className='calculatorInput' type='number' placeholder='Litres'
+                />
+
+                <label className='calculatorLabel'>Unit of Measurement</label>
+                <select
+                  className = 'calculatorDropdown'
+                  onChange = {e => setEmissions({ ...emission, unitOfMeasurement: e.target.value})}
+                >
+                  <option disabled selected hidden>Please Select</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                </select>
+
+                <label className='calculatorLabel'>State or Territory</label>
+                <select
+                  className = 'calculatorDropdown'
+                  onChange = {e => setEmissions({ ...emission, stateOrTerritory: e.target.value})}
+                >
+                  <option disabled selected hidden>Please Select</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                </select>
+
+                <button className='addEmissionButton' type='submit'>Add</button>
+                                            
+              </form>                
+            </div>
+          </TabPane>
+
+          <TabPane tab="Waste" key="Waste">
+            <div>    
+              <form className='basicWasteForm'>
+                
+                <label className='calculatorLabel'>Waste Type</label>
+                <select
+                  className = 'calculatorDropdown'
+                  onChange = {e => setEmissions({ ...emission, wasteType: e.target.value})}
+                >
+                  <option disabled selected hidden>Please Select</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                </select>
+
+                <label className='calculatorLabel'>Weight</label>
+                <input
+                  value = {emission.wasteWeight}
+                  onChange = {e => setEmissions({ ...emission, wasteWeight: e.target.value})}
+                  className='calculatorInput' type='number' placeholder='Tonnes'
+                />
+
+                <button className='addEmissionButton' type='submit'>Add</button>
+                                            
+              </form>                
+            </div>
+          </TabPane>
+
+          <TabPane tab="Water" key="Water">
+            <div>    
+              <form className='basicWaterForm'>
+                
+                <label className='calculatorLabel'>Water Utility Location</label>
+                <select
+                  className = 'calculatorDropdown'
+                  onChange = {e => setEmissions({ ...emission, waterUtilityLocation: e.target.value})}
+                >
+                  <option disabled selected hidden>Please Select</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                </select>
+
+                <button className='addEmissionButton' type='submit'>Add</button>
+                                            
+              </form>                
+            </div>
+          </TabPane>
+
+          <TabPane tab="Paper" key="Paper">
+            <div>    
+              <form className='basicPaperForm'>
+                
+                <label className='calculatorLabel'>Source</label>
+                <select
+                  className = 'calculatorDropdown'
+                  onChange = {e => setEmissions({ ...emission, source: e.target.value})}
+                >
+                  <option disabled selected hidden>Please Select</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                </select>
+                
+                <label className='calculatorLabel'>Paper Type</label>
+                <select
+                  className = 'calculatorDropdown'
+                  onChange = {e => setEmissions({ ...emission, paperType: e.target.value})}
+                >
+                  <option disabled selected hidden>Please Select</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                </select>
+
+                <label className='calculatorLabel'>Weight</label>
+                <input
+                  value = {emission.paperWeight}
+                  onChange = {e => setEmissions({ ...emission, paperWeight: e.target.value})}
+                  className='calculatorInput' type='number' placeholder='Kilograms'
+                />
+
+                <button className='addEmissionButton' type='submit'>Add</button>
+                                            
+              </form>                
+            </div>  
+          </TabPane>
+
+          <TabPane tab="Food & Drink" key="FoodAndDrink">
+            <div>    
+              <form className='basicFoodAndDrinkForm'>
+                
+                <label className='calculatorLabel'>Food Type</label>
+                <select
+                  className = 'calculatorDropdown'
+                  onChange = {e => setEmissions({ ...emission, foodType: e.target.value})}
+                >
+                  <option disabled selected hidden>Please Select</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                </select>
+
+                <label className='calculatorLabel'>Expenditure</label>
+                <input
+                  value = {emission.expenditure}
+                  onChange = {e => setEmissions({ ...emission, expenditure: e.target.value})}
+                  className='calculatorInput' type='number' placeholder='$ Amount'
+                />
+
+                <button className='addEmissionButton' type='submit'>Add</button>
+                                            
+              </form>                
+            </div>  
+          </TabPane>
+
+          <TabPane tab="Events" key="Events">
+            <div>    
+              <form className='basicEventsForm'>
+
+                <h3>Accommodation</h3>
+
+                <label className='calculatorLabel'>Total Spent on Accommodation</label>   
+                <input
+                  value = {emission.totalAccommodation}
+                  onChange = {e => setEmissions({ ...emission, totalAccommodation: e.target.value})}
+                  className='calculatorInput' type='number' placeholder='$ Amount'
+                />
+
+                <h3>Food & Drink</h3>
+
+                <label className='calculatorLabel'>Total Spent on Meals</label>   
+                <input
+                  value = {emission.totalMeals}
+                  onChange = {e => setEmissions({ ...emission, totalMeals: e.target.value})}
+                  className='calculatorInput' type='number' placeholder='$ Amount'
+                />
+
+                <label className='calculatorLabel'>Total Spent on Non-Alcoholic Drinks</label>   
+                <input
+                  value = {emission.totalDrinks}
+                  onChange = {e => setEmissions({ ...emission, totalDrinks: e.target.value})}
+                  className='calculatorInput' type='number' placeholder='$ Amount'
+                />
+                          
+                <label className='calculatorLabel'>Total Spent on Beer</label>   
+                <input
+                  value = {emission.totalBeer}
+                  onChange = {e => setEmissions({ ...emission, totalBeer: e.target.value})}
+                  className='calculatorInput' type='number' placeholder='$ Amount'
+                />
+
+                <label className='calculatorLabel'>Total Spent on Wine</label>   
+                <input
+                  value = {emission.totalWine}
+                  onChange = {e => setEmissions({ ...emission, totalWine: e.target.value})}
+                  className='calculatorInput' type='number' placeholder='$ Amount'
+                />
+
+                <label className='calculatorLabel'>Total Spent on Spirits</label>   
+                <input
+                  value = {emission.totalSpirits}
+                  onChange = {e => setEmissions({ ...emission, totalSpirits: e.target.value})}
+                  className='calculatorInput' type='number' placeholder='$ Amount'
+                />
+
+                <h3>Giveaways & Promotional Materials</h3>
+
+                <label className='calculatorLabel'>Total Spent on Plastic Products</label>   
+                <input
+                  value = {emission.totalEventProducts}
+                  onChange = {e => setEmissions({ ...emission, totalEventProducts: e.target.value})}
+                  className='calculatorInput' type='number' placeholder='$ Amount'
+                />
+
+                <button className='addEmissionButton' type='submit'>Add</button>
+                                            
+              </form>                
+            </div>  
+          </TabPane> 
                         
-                        <Layout>
-                            <Content>
-                                <Card                    
-                                    type="inner"
-                                    title="Carbon Report"                    
-                                >
-                                    
-                                </Card>
-                            </Content>
-                        </Layout>       
-                   </Tabs>
-            </Card>                                                
-        </div>
-    );
+          <Layout>
+            <Content>
+              <Card                    
+                type="inner"
+                title="Carbon Report"                    
+              >
+              <h4>Transport:</h4>
+              <h5>Vehicle:</h5>
+              <h6>Vehicle Type: {emission.vehicleType}</h6>
+              <h5>Air Travel:</h5>
+              <h6>Cabin Class: {emission.cabinClass}</h6>
+              <h6>Distance: {emission.airDistance}</h6>
+              <h5>Public Transport:</h5>
+              <h6>Transport Method: {emission.transportMethod}</h6>
+              <h6>Transport Type: {emission.transportType}</h6>
+              <h6>Distance: {emission.pubDistance}</h6>
+              <h4>Electricity:</h4>
+              <h5>Consumption: {emission.consumption}</h5>
+              <h4>Gas:</h4>
+              <h4>Waste:</h4>
+              <h4>Water:</h4>
+              <h4>Paper:</h4>
+              <h4>Food & Drink:</h4>
+              <h4>Events:</h4>
+              <br/><h4>Total:</h4>
+              
+
+              </Card>
+            </Content>
+          </Layout>       
+        </Tabs>
+      </Card>                                                
+    </div>
+  );
 }
 
 export default Calculator;
