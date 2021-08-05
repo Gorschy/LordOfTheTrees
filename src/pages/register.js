@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Auth } from 'aws-amplify';
-import { Form, Input, Button, Checkbox, Card } from 'antd';
-import { Link, useHistory } from 'react-router-dom';
+import { Input, Button, Card } from 'antd';
+import { useHistory } from 'react-router-dom';
 import './register.css';
 const Register = () => {
 
