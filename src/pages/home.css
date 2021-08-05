@@ -8,9 +8,9 @@
 .homeImage2 {
     margin-left: 0.7vw;
     margin-bottom: 0.7vw;
-    margin-top: 35vh;
-    width: 15vw;
-    height: 15vh;
+    margin-top: 30vh;
+    width: 19.2vw;
+    height: 20vh;
 }
 
 
@@ -19,13 +19,16 @@
     height: 30vh;
 }
 
-.homeOurTeamCard {
+.homeOurTeamCard  {
     margin-bottom: 0.7vw;
-    width: 50vw;
+    width: 40vw;
     height: 50vh;
     font-size: 0.75vw;
 }
 
+.homeOurTeamCard > title {
+    font-size: 0.75vw;
+}
 .homeFAQCard {
     margin-left: 0.7vw;
     width: 50vw;
