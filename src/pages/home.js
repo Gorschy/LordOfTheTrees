@@ -4,6 +4,7 @@ import homeImage1 from '../assets/homeImage1.jpg';
 import homeImage2 from '../assets/homeImage2.png';
 import homeImage3 from '../assets/homeImage3.png';
 
+
 const home = () => {
 
     return ( 

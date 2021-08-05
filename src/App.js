@@ -87,10 +87,15 @@ function App() {
                         <Link to='/register'>
                             <Button type="link"  style={{paddingRight: 30}}>Need an Account?</Button>
                         </Link>
+                        
+                        
+                        
                         { loggedIn ? (
-                                <Button onClick={signOut} className="loginButtonNav" type="primary">
-                                    Sign Out
-                                </Button> 
+                                <Link to="/">  
+                                    <Button onClick={signOut} className="loginButtonNav" type="primary">
+                                        Sign Out
+                                    </Button>
+                                </Link> 
                             ) : ( 
                                 <Link to="/login">    
                                     <Button className="loginButtonNav" type="primary">

@@ -1,26 +1,22 @@
 .loginCard {
-    width: 567px !important;
-    position: fixed !important; /* or absolute */
-    top: 50% !important;
-    left: 50% !important;
-    transform: translate(-50%, -50%) !important;
+    width: 20vw !important;
+    position: fixed; /* or absolute */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .loginField {
-    margin-bottom: 25px !important;
-    margin:0 auto !important;
-    display:block !important;
-    width: 326px !important;
-    height: 48px !important;
-    border-radius: 8px !important;
+    width: 12vw;
+    height: 4vh;
+    border-radius: 8px;
 }
 
 .loginButton {
-    margin-bottom: 25px !important;
-    margin: 25px auto !important;
-    display:block !important;
-    width: 326px !important;
-    height: 48px !important;
-    border-radius: 8px !important;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    width: 12vw;
+    height: 4vh;
+    border-radius: 8px;
 }
 
