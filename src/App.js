@@ -69,10 +69,13 @@ function App() {
                         <Item key="Home">
                             <Link to='/home'>Home</Link>
                         </Item>
-                            
-                        <Item key="Dashboard">        
-                            <Link to='/dashboard'>Dashboard</Link>     
-                        </Item>
+
+                         {loggedIn ? (
+                            <Item key="Dashboard">        
+                                <Link to='/dashboard'>Dashboard</Link>     
+                            </Item>
+                         ) : null }   
+                     
 
                         <Item key="Calculator">        
                             <Link to='/calculator'>Calculator</Link>     
