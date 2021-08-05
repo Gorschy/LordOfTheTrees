@@ -1,30 +1,38 @@
-.image1 {
-    padding-left: 15px;
-    padding-bottom: 15px;
-    width: 377px;
-    height: 421px;
-    top: 73px;
-    left: 674px;
-    border-radius: 5px;
-    
+.homeImage1 {
+    margin-left: 0.7vw;
+    margin-bottom: 0.7vw;
+    width: 20vw;
+    height: 50vh;   
 }
 
-.image2 {
-    width: 369px;
-    height: 208px;
-    top: 286px;
-    left: 1060px;
-    border-radius: 5px;
-    margin-top: 200px; 
+.homeImage2 {
+    margin-left: 0.7vw;
+    margin-bottom: 0.7vw;
+    margin-top: 30vh;
+    width: 19.2vw;
+    height: 20vh;
 }
 
 
-.image3 {
-    padding-right: 15px;
-    width: 435px;
-    height: 268px;
-    top: 286px;
-    left: 1060px;
-    border-radius: 5px;
-    float: right;
+.homeImage3 {
+    width: 30vw;
+    height: 30vh;
 }
+
+.homeOurTeamCard  {
+    margin-bottom: 0.7vw;
+    width: 40vw;
+    height: 50vh;
+    font-size: 0.75vw;
+}
+
+.homeOurTeamCard > title {
+    font-size: 0.75vw;
+}
+.homeFAQCard {
+    margin-left: 0.7vw;
+    width: 50vw;
+    height: 30vh;
+    font-size: 0.75vw;
+}
+

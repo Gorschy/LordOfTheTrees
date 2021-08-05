@@ -2,8 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './App.css';
 import Amplify, { Auth } from 'aws-amplify';
 import awsconfig from './aws-exports';
-import { AmplifySignOut, withAuthenticator } from '@aws-amplify/ui-react';
-import Navbar from './components/Navbar/Navbar';
+import './components/Navbar/Navbar.css';
 import { Layout } from 'antd';
 import { Route, Switch, Redirect, Link } from 'react-router-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
@@ -70,10 +69,13 @@ function App() {
                         <Item key="Home">
                             <Link to='/home'>Home</Link>
                         </Item>
-                            
-                        <Item key="Dashboard">        
-                            <Link to='/dashboard'>Dashboard</Link>     
-                        </Item>
+
+                         {loggedIn ? (
+                            <Item key="Dashboard">        
+                                <Link to='/dashboard'>Dashboard</Link>     
+                            </Item>
+                         ) : null }   
+                     
 
                         <Item key="Calculator">        
                             <Link to='/calculator'>Calculator</Link>     
@@ -88,10 +90,15 @@ function App() {
                         <Link to='/register'>
                             <Button type="link"  style={{paddingRight: 30}}>Need an Account?</Button>
                         </Link>
+                        
+                        
+                        
                         { loggedIn ? (
-                                <Button onClick={signOut} className="loginButtonNav" type="primary">
-                                    Sign Out
-                                </Button> 
+                                <Link to="/">  
+                                    <Button onClick={signOut} className="loginButtonNav" type="primary">
+                                        Sign Out
+                                    </Button>
+                                </Link> 
                             ) : ( 
                                 <Link to="/login">    
                                     <Button className="loginButtonNav" type="primary">

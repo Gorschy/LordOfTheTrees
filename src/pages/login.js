@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Auth } from 'aws-amplify';
-import { Form, Input, Button, Checkbox, Card } from 'antd';
-import { Link, useHistory } from 'react-router-dom';
+import { Input, Button, Card } from 'antd';
+import { useHistory } from 'react-router-dom';
 import './login.css';
 const SignIn = ({ onSignin }) => {
 
@@ -23,7 +23,7 @@ const SignIn = ({ onSignin }) => {
 
 
     return (  
-        <div id="test">
+        <div>
             <Card className="loginCard" title="Login" bordered={false} style={{ width: 300 }}>
                 <p>Username</p>
                 <Input className="loginField"
