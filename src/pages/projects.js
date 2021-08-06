@@ -21,14 +21,14 @@ const projectList = [
 
 const projectLeader = [{
     name: "Bill Big",
-    email: "bbigp@gmail.com",
+    email: "bbig@gmail.com",
     icon: "https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
 }]
 
 const teamList = [{
     name: "Billiam Biggus", 
     rank: "Project Leader",
-    email: "bbigpeen@gmail.com",
+    email: "bigman@gmail.com",
     icon: "https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
 }, {
     name: "Sarah Short", 
