@@ -27,53 +27,57 @@ function Calculator() {
   const [emission, setEmissions] = useState({
   
     //transportValues:
-    vehicleType: '',
-    cabinClass: '',
-    airDistance: '',
-    transportMethod: '',
-    transportType: '',
-    pubDistance: '',
+    vehicleType: 0,
+    cabinClass: 0,
+    airDistance: 0,
+    transportMethod: 0,
+    transportType: 0,
+    pubDistance: 0,
         
     //electricityValues:
-    consumption: '',
+    consumption: 0,
         
     //gasValues:
-    lpgConsumption: '',
-    gasConsumption: '',
-    unitOfMeasurement: '',
-    stateOrTerritory: '',
+    lpgConsumption: 0,
+    gasConsumption: 0,
+    unitOfMeasurement: 0,
+    stateOrTerritory: 0,
       
     //wasteValues:
-    wasteType: '',
-    wasteWeight: '',
+    wasteType: 0,
+    wasteWeight: 0,
         
     //waterValues:
-    waterUtilityLocation: '',
+    waterUtilityLocation: 0,
       
     //paperValues:
-    source: '',
-    paperType: '',
-    paperWeight: '',
+    source: 0,
+    paperType: 0,
+    paperWeight: 0,
         
     //foodAndDrinkValues:
-    foodType: '',
-    expenditure: '',
+    foodType: 0,
+    expenditure: 0,
         
     //eventsValues:
-    totalAccommodation: '',
-    totalMeals: '',
-    totalDrinks: '',
-    totalBeer: '',
-    totalWine: '',
-    totalSpirits: '',
-    totalEventProducts: ''
+    totalAccommodation: 0,
+    totalMeals: 0,
+    totalDrinks: 0,
+    totalBeer: 0,
+    totalWine: 0,
+    totalSpirits: 0,
+    totalEventProducts: 0
   });
     
-  
+  const totalEmissions = () => {
+    return Object.values(emission).reduce((total, value) => total + parseInt(value), 0)  
+  }
+
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    alert(`Submitting emission ${JSON.stringify(emission, null, 2)}`)
-}
+    alert(`Submitting emission ${JSON.stringify(emission, null, 2)}`);
+    
+  }
 
   function callback(key) {
     console.log(key);
@@ -94,7 +98,7 @@ function Calculator() {
                           Transport
                         </span>} key="Transport">
             <div>    
-              <form className='basicForm' onSubmit={handleSubmit}>
+              <form className='basicForm'>
 
                 <h3>Vehicle</h3>
 
@@ -167,11 +171,12 @@ function Calculator() {
                   value = {emission.pubDistance}
                   onChange = {e => setEmissions({ ...emission, pubDistance: e.target.value})}
                   className='calculatorInput' 
+                  
                   type='number' 
                   placeholder='Kilometres'
                 />
                
-                <Button type='primary'>Add</Button>
+                <Button type='primary' onClick={handleSubmit}>Add</Button>
                                             
               </form>                
             </div>
@@ -475,7 +480,7 @@ function Calculator() {
               <h4>Paper:</h4>
               <h4>Food & Drink:</h4>
               <h4>Events:</h4>
-              <br/><h4>Total:</h4>
+              <br/><h4>Total: {totalEmissions()}</h4>
               
 
               </Card>

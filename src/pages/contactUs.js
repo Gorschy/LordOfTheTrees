@@ -46,10 +46,10 @@ export default function contactUs() {
                                 <p> contact_email@lordofTrees.com.au</p>
                                 <p> 0474690899</p>
                             </div>
-                        </div>
+                        </div><img className="contactDetailsImage" src={contactDetailsImage} alt="asset" />
                     </Card>
                     </div>
-                    <img className="contactDetailsImage" src={contactDetailsImage} alt="asset" />
+                    
                 </Col>
                 <Col span={7}>
                     <Card title="Submit Support Ticket" bordered={false} style={{ width: 1000 }}>
