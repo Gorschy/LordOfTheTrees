@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Input, Button, Card , Tabs, Layout } from 'antd';
+import { Button, Card , Tabs, Layout } from 'antd';
 import './calculator.css';
 
 
@@ -69,7 +69,7 @@ function Calculator() {
   }
 
   return (  
-    <div>
+    <div className='calculatorContent'>
       <Card
         className="calculatorCard"
         bordered={false} 
@@ -86,10 +86,11 @@ function Calculator() {
 
                 <label className='calculatorLabel'>Vehicle Type</label>
                 <select
+                  required
                   className = 'calculatorDropdown'
                   onChange = {e => setEmissions({ ...emission, vehicleType: e.target.value})}
                 >
-                  <option disabled selected hidden>Please Select</option>
+                  <option value="" disabled selected hidden>Please Select</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -99,10 +100,11 @@ function Calculator() {
 
                 <label className='calculatorLabel'>Cabin Class</label>
                 <select
+                  required
                   className = 'calculatorDropdown'
                   onChange = {e => setEmissions({ ...emission, cabinClass: e.target.value})}
                 >
-                  <option disabled selected hidden>Please Select</option>
+                  <option value="" disabled selected hidden>Please Select</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -110,10 +112,11 @@ function Calculator() {
 
                 <label className='calculatorLabel'>Distance</label>
                 <select
+                  required
                   className = 'calculatorDropdown'
                   onChange = {e => setEmissions({ ...emission, airDistance: e.target.value})}
                 >
-                  <option disabled selected hidden>Please Select</option>
+                  <option value="" disabled selected hidden>Please Select</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -123,10 +126,11 @@ function Calculator() {
                           
                 <label className='calculatorLabel'>Transport Method</label>
                 <select
+                  required
                   className = 'calculatorDropdown'
                   onChange = {e => setEmissions({ ...emission, transportMethod: e.target.value})}
                 >
-                  <option disabled selected hidden>Please Select</option>
+                  <option value="" disabled selected hidden>Please Select</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -134,17 +138,18 @@ function Calculator() {
 
                 <label className='calculatorLabel'>Transport Type</label>
                 <select
+                  required
                   className = 'calculatorDropdown'
                   onChange = {e => setEmissions({ ...emission, transportType: e.target.value})}
                 >
-                  <option disabled selected hidden>Please Select</option>
+                  <option value="" disabled selected hidden>Please Select</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
                 </select>
 
                 <label className='calculatorLabel'>Distance</label>   
-                <Input
+                <input
                   value = {emission.pubDistance}
                   onChange = {e => setEmissions({ ...emission, pubDistance: e.target.value})}
                   className='calculatorInput' 
@@ -152,7 +157,7 @@ function Calculator() {
                   placeholder='Kilometres'
                 />
                
-                <input className='addEmissionButton' type='submit' value='Add'/>
+                <Button type='primary'>Add</Button>
                                             
               </form>                
             </div>
@@ -169,7 +174,7 @@ function Calculator() {
                   className='calculatorInput' type='number' placeholder='Kilowatt Hours'
                 />
                
-                <Button className='addEmissionButton' type='submit'>Add</Button>
+                <Button type='primary'>Add</Button>
                                             
               </form>                
             </div>
@@ -197,10 +202,11 @@ function Calculator() {
 
                 <label className='calculatorLabel'>Unit of Measurement</label>
                 <select
+                  required
                   className = 'calculatorDropdown'
                   onChange = {e => setEmissions({ ...emission, unitOfMeasurement: e.target.value})}
                 >
-                  <option disabled selected hidden>Please Select</option>
+                  <option value="" disabled selected hidden>Please Select</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -208,16 +214,17 @@ function Calculator() {
 
                 <label className='calculatorLabel'>State or Territory</label>
                 <select
+                  required
                   className = 'calculatorDropdown'
                   onChange = {e => setEmissions({ ...emission, stateOrTerritory: e.target.value})}
                 >
-                  <option disabled selected hidden>Please Select</option>
+                  <option value="" disabled selected hidden>Please Select</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
                 </select>
 
-                <button className='addEmissionButton' type='submit'>Add</button>
+                <Button type='primary'>Add</Button>
                                             
               </form>                
             </div>
@@ -229,10 +236,11 @@ function Calculator() {
                 
                 <label className='calculatorLabel'>Waste Type</label>
                 <select
+                  required
                   className = 'calculatorDropdown'
                   onChange = {e => setEmissions({ ...emission, wasteType: e.target.value})}
                 >
-                  <option disabled selected hidden>Please Select</option>
+                  <option value="" disabled selected hidden>Please Select</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -245,7 +253,7 @@ function Calculator() {
                   className='calculatorInput' type='number' placeholder='Tonnes'
                 />
 
-                <button className='addEmissionButton' type='submit'>Add</button>
+                <Button type='primary'>Add</Button>
                                             
               </form>                
             </div>
@@ -257,16 +265,17 @@ function Calculator() {
                 
                 <label className='calculatorLabel'>Water Utility Location</label>
                 <select
+                  required
                   className = 'calculatorDropdown'
                   onChange = {e => setEmissions({ ...emission, waterUtilityLocation: e.target.value})}
                 >
-                  <option disabled selected hidden>Please Select</option>
+                  <option value="" disabled selected hidden>Please Select</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
                 </select>
 
-                <button className='addEmissionButton' type='submit'>Add</button>
+                <Button type='primary'>Add</Button>
                                             
               </form>                
             </div>
@@ -278,10 +287,11 @@ function Calculator() {
                 
                 <label className='calculatorLabel'>Source</label>
                 <select
+                  required
                   className = 'calculatorDropdown'
                   onChange = {e => setEmissions({ ...emission, source: e.target.value})}
                 >
-                  <option disabled selected hidden>Please Select</option>
+                  <option value="" disabled selected hidden>Please Select</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -289,10 +299,11 @@ function Calculator() {
                 
                 <label className='calculatorLabel'>Paper Type</label>
                 <select
+                  required
                   className = 'calculatorDropdown'
                   onChange = {e => setEmissions({ ...emission, paperType: e.target.value})}
                 >
-                  <option disabled selected hidden>Please Select</option>
+                  <option value="" disabled selected hidden>Please Select</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -305,7 +316,7 @@ function Calculator() {
                   className='calculatorInput' type='number' placeholder='Kilograms'
                 />
 
-                <button className='addEmissionButton' type='submit'>Add</button>
+                <Button type='primary'>Add</Button>
                                             
               </form>                
             </div>  
@@ -317,10 +328,11 @@ function Calculator() {
                 
                 <label className='calculatorLabel'>Food Type</label>
                 <select
+                  required
                   className = 'calculatorDropdown'
                   onChange = {e => setEmissions({ ...emission, foodType: e.target.value})}
                 >
-                  <option disabled selected hidden>Please Select</option>
+                  <option value="" disabled selected hidden>Please Select</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -333,7 +345,7 @@ function Calculator() {
                   className='calculatorInput' type='number' placeholder='$ Amount'
                 />
 
-                <button className='addEmissionButton' type='submit'>Add</button>
+                <Button type='primary'>Add</Button>
                                             
               </form>                
             </div>  
@@ -398,7 +410,7 @@ function Calculator() {
                   className='calculatorInput' type='number' placeholder='$ Amount'
                 />
 
-                <button className='addEmissionButton' type='submit'>Add</button>
+                <Button type='primary'>Add</Button>
                                             
               </form>                
             </div>  

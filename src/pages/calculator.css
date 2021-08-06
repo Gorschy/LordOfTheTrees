@@ -32,83 +32,6 @@ TODO:
     - set page specific styling classnames etc
 */
 
-/* antd input box styling override */
-
-.ant-input {
-    border-color: #A3C586;
-    border-radius: 6px;
-    font-size: 15px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 400;
-    margin: 0;
-    width: 300px;
-}
-
-.ant-input:hover {
-    border-color: green;
-    border-right-width: 1px !important;
-}
-
-.ant-input:focus, .ant-input-focused {
-    border-color: green;
-    border-right-width: 1px !important;
-    outline: 0;
-    box-shadow: 0 0 0 2px rgb(49 130 74 / 20%);
-}
-
-/* antd selection box styling override */
-
-.ant-select {
-    font-size: 15px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 400;
-}
-
-.ant-select:not(.ant-select-customize-input) .ant-select-selector {
-    margin: 0;
-    position: relative;
-    background-color: #fff;
-    border: 1px solid #A3C586;
-    border-radius: 6px;
-    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-
-.ant-select:not(.ant-select-disabled):hover .ant-select-selector {
-    border-color: green;
-    border-right-width: 1px !important;
-
-}
-
-.ant-select-focused:not(.ant-select-disabled).ant-select:not(.ant-select-customize-input) .ant-select-selector {
-    border-color: green;
-    border-right-width: 1px !important;
-    outline: 0;
-    box-shadow: 0 0 0 2px rgb(49 130 74 / 20%);
-}
-
-/* input required error text override */
-.ant-form-item-explain, .ant-form-item-extra {
-    font-size: 10px; 
-}
-
-/* antd label/header override styling */
-
-.ant-form-item-label > label {
-    position: relative;
-    margin: 0;
-    font-size: 10px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    color: #5E5E5E;
-}
-
-.ant-form-vertical .ant-form-item-label, .ant-col-24.ant-form-item-label, .ant-col-xl-24.ant-form-item-label {
-    padding: 0 0 0;
-    line-height: 1.5715;
-    white-space: initial;
-    text-align: left;
-}
-
 /* headers/tab labels/title */
 
 h3 {
@@ -161,6 +84,12 @@ h3 {
     width: 150px;
     text-shadow: 0 -1px 0 rgb(0 0 0 / 12%);
     box-shadow: 0 2px 0 rgb(0 0 0 / 5%);
+    margin: 8px 0;
+    display: block;
+    /* font control */
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
 }
 
 .ant-tabs-tabpane {
@@ -169,4 +98,98 @@ h3 {
     
 }
 
-select:invalid { color: rgb(155, 32, 32); }
+/* INPUT/SELECT CONTROL */
+
+.calculatorInput {
+    /* dimensions/border control */
+    width: 300px;
+    border-radius: 6px;
+    padding: 5px 9px;
+    margin: 1px;
+    margin-bottom:20px;
+    display: inline-block;
+    border: 1px solid #A3C586;
+    box-sizing: border-box;
+    
+    /* font control */
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    
+}
+
+.calculatorInput:hover {
+    border-color: green;
+    border-width: 1px !important;
+}
+
+.calculatorInput:focus {
+    border-color: green;
+    border-right-width: 1px !important;
+    outline: 0;
+    box-shadow: 0 0 0 2px rgb(49 130 74 / 20%);
+}
+
+.calculatorDropdown {
+    /* dimensions/border control */
+    width: 300px;
+    border-radius: 6px;
+    padding: 5px 9px;
+    margin: 1px;
+    margin-bottom:20px;
+    display: inline-block;
+    border: 1px solid #A3C586;
+    box-sizing: border-box;
+    
+    /* font control */
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+}
+
+.calculatorDropdown:hover {
+    border-color: green;
+    border-width: 1px !important;
+}
+
+.calculatorDropdown:focus {
+    border-color: green;
+    border-right-width: 1px !important;
+    outline: 0;
+    box-shadow: 0 0 0 2px rgb(49 130 74 / 20%);
+}
+
+.calculatorDropdown:invalid{
+    color: rgb(118, 118, 118);
+}
+
+
+/* LABEL CONTROL */
+
+.calculatorLabel {
+    display: block;
+    font-size: 12px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: #5E5E5E;
+    padding-left: 2px;
+    
+}
+
+.addEmissionButton {
+    width: 100px;
+    border-radius: 6px;
+    padding: 5px 9px;
+    margin: 8px 0;
+    background-color: #5B7444;
+    border: none;
+    display: block;
+    box-sizing: border-box;
+    color: #fff;
+    
+    
+    /* font control */
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+}
