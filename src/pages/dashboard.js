@@ -1,4 +1,5 @@
 import { Card, Col, Row } from 'antd';
+import { Link } from 'react-router-dom';
 import './dashboard.css';
 import DashIcon1 from '../assets/DashIcon1.png';
 import DashIcon2 from '../assets/DashIcon2.png';
@@ -8,29 +9,41 @@ import DashImg1 from '../assets/DashImg1.png';
 const dashboard = () => { return(
     <div>
         <Row justify="space-around" gutter={24}>
-        <Col span={8}> <Card title="Account Info" className="CardClass" hoverable headStyle={{color: '#A3C586',
+        <Col span={8}> 
+        <Link to="/account">
+        <Card title="Account Info" className="CardClass" hoverable headStyle={{color: '#A3C586',
             fontFamily: 'Poppins', fontWeight: 'bold', fontSize: '34px', lineHeight: '34px',
             textAlign: 'center', verticalAlign: 'Top'}} > 
             <Row justify="space-around" gutter={24}>
                 <img className="CardImage" src={DashIcon1} alt="Account" /> <br/>
             </Row>
             
-        </Card> </Col>
-        <Col span={8}> <Card title="Carbon Reports" className="CardClass" hoverable headStyle={{color: '#A3C586',
+        </Card> 
+        </Link>
+        </Col>
+        <Col span={8}> 
+        
+        <Card title="Carbon Reports" className="CardClass" hoverable headStyle={{color: '#A3C586',
             fontFamily: 'Poppins', fontWeight: 'bold', fontSize: '34px', lineHeight: '34px',
             textAlign: 'center', verticalAlign: 'Top'}} > 
             <Row justify="space-around" gutter={24}>
             <img className="CardImage" src={DashIcon2} alt="Carbon Report" /> <br/>
             </Row>
             
-        </Card> </Col>
-        <Col span={8}> <Card title="Projects" className="CardClass" hoverable headStyle={{color: '#A3C586',
+        </Card> 
+        
+        </Col>
+        <Col span={8}> 
+        <Link to="/projects">
+        <Card title="Projects" className="CardClass" hoverable headStyle={{color: '#A3C586',
             fontFamily: 'Poppins', fontWeight: 'bold', fontSize: '34px', lineHeight: '34px',
             textAlign: 'center', verticalAlign: 'Top'}} > 
             <Row justify="space-around" gutter={24}>
                 <img className="CardImage" src={DashIcon3} alt="Projects" /> <br/>
             </Row>
-        </Card> </Col>
+        </Card> 
+        </Link>
+        </Col>
         </Row>
 
         <br/>
