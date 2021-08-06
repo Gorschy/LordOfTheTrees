@@ -84,10 +84,21 @@ h3 {
     padding-top: 0;
     padding-left: 0;
     padding-right: 0;
+    height: 80vh;
+}
+
+.calculatorContent {
+    display: -webkit-box;  
+    display: -ms-flexbox;  
+    display: -webkit-flex; 
+    display: flex;         
+    justify-content: center;
+    align-items: center;
 }
 
 .calculatorCard {
     border-radius: 10px;
+    width: 60vw !important;
 }
 
 .ant-btn-primary {
@@ -98,8 +109,24 @@ h3 {
     width: 150px;
     text-shadow: 0 -1px 0 rgb(0 0 0 / 12%);
     box-shadow: 0 2px 0 rgb(0 0 0 / 5%);
-    margin: 8px 0;
+    
+    /* font control */
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+}
+
+.formButton {
+    color: #fff;
+    background: #5B7444;
+    border-color: #5B7444;
+    border-radius: 6px;
+    width: 150px;
+    text-shadow: 0 -1px 0 rgb(0 0 0 / 12%);
+    box-shadow: 0 2px 0 rgb(0 0 0 / 5%);
     display: block;
+    margin: 0 auto;
+
     /* font control */
     font-size: 15px;
     font-family: 'Poppins', sans-serif;
@@ -191,6 +218,7 @@ h3 {
 }
 
 .addEmissionButton {
+    
     width: 100px;
     border-radius: 6px;
     padding: 5px 9px;
@@ -209,7 +237,43 @@ h3 {
 }
 
 .basicForm {
-    padding-left: 10vw;
-    padding-top: 2vh;
-    padding-bottom: 2vh;
+    float: right;
+    margin-left: 10vw;
+    margin-right: 1vw;
+    margin-top: 1vh;
+    margin-bottom: 2vh;
+}
+
+.ant-card-type-inner .ant-card-head {
+    text-align: center;
+    background: #fcfcfc;
+}
+
+.ant-card-type-inner {
+    width: 300px;
+    height: 60vh;
+    margin-left: 1vw;
+    margin-right: 10vw;
+    margin-top: 1vh;
+    margin-bottom: 2vh;
+    border-radius: 6px;
+}
+
+.outputTags {
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    text-align: right;
+    padding-right: 6vw;
+    padding-bottom: 5px;
+}
+
+.outputTotal {
+    font-size: 17px; 
+    color: #5B7444;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    text-align: right;
+    padding-right: 6vw;
+    padding-bottom: 5px;
 }
