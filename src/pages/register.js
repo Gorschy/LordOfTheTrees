@@ -33,6 +33,7 @@ const Register = () => {
                 />
                 <p className="registerLabels">Password</p>
                 <Input className="registerField"
+                    type="password"
                     id="password"
                     label="Password" 
                     value={password}

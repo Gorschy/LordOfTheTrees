@@ -34,6 +34,7 @@ const SignIn = ({ onSignin }) => {
                 />
                 <p className="loginLabels">Password</p>
                 <Input className="loginField"
+                    type="password"
                     id="password"
                     label="Password" 
                     value={password}
