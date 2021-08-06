@@ -24,14 +24,14 @@ const Register = () => {
           
         <div>
             <Card className="registerCard" title="Sign Up" bordered={false}>
-                <p>Username</p>
+                <p className="registerLabels">Username</p>
                 <Input className="registerField"
                     id="username"
                     label="Username" 
                     value={username}
                     onChange={e => setUsername(e.target.value)}
                 />
-                <p>Password</p>
+                <p className="registerLabels">Password</p>
                 <Input className="registerField"
                     id="password"
                     label="Password" 

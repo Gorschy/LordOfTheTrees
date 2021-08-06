@@ -25,14 +25,14 @@ const SignIn = ({ onSignin }) => {
     return (  
         <div>
             <Card className="loginCard" title="Login" bordered={false} style={{ width: 300 }}>
-                <p>Username</p>
+                <p className="loginLabels">Username</p>
                 <Input className="loginField"
                     id="username"
                     label="Username" 
                     value={username}
                     onChange={e => setUsername(e.target.value)}
                 />
-                <p>Password</p>
+                <p className="loginLabels">Password</p>
                 <Input className="loginField"
                     id="password"
                     label="Password" 

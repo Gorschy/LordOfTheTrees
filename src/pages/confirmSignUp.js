@@ -25,14 +25,14 @@ const ConfirmSignUp = () => {
           
         <div>
             <Card className="authCard" title="Sign Up" bordered={false}>
-                <p>Username</p>
+                <p className="authLabels">Username</p>
                 <Input className="authField"
                     id="username"
                     label="Username" 
                     value={username}
                     onChange={e => setUsername(e.target.value)}
                 />
-                <p>Authorization Code</p>
+                <p className="authLabels">Authorization Code</p>
                 <Input className="authField"
                     id="authCode"
                     label="AuthCode" 
