@@ -64,12 +64,26 @@ h3 {
     align-self: stretch;
     overflow: hidden;
     white-space: nowrap;
-    transform: translate(0);
+    color: rgb(118, 118, 118);
+    background: rgb(230 230 231 / 60%);
+}
+
+.ant-tabs-tab {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 0;
+    font-size: 14px;
+    background: transparent;
+    border: 0;
+    outline: none;
+    cursor: pointer;
 }
 
 .ant-card-body {
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-top: 0;
+    padding-left: 0;
+    padding-right: 0;
 }
 
 .calculatorCard {
@@ -192,4 +206,10 @@ h3 {
     font-size: 15px;
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
+}
+
+.basicForm {
+    padding-left: 10vw;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
 }

@@ -1,6 +1,17 @@
 import React, { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTint, faLightbulb, faTrashAlt, faBurn, faFile, faUtensils, faIcons, faRoute } from '@fortawesome/free-solid-svg-icons'
 import { Button, Card , Tabs, Layout } from 'antd';
 import './calculator.css';
+
+const transportIcon = <FontAwesomeIcon style={{marginRight: 8}} icon={faRoute} />;
+const electricityIcon = <FontAwesomeIcon style={{marginRight: 8}} icon={faLightbulb} />;
+const gasIcon = <FontAwesomeIcon style={{marginRight: 8}} icon={faBurn} />;
+const wasteIcon = <FontAwesomeIcon style={{marginRight: 8}} icon={faTrashAlt} />;
+const waterIcon = <FontAwesomeIcon style={{marginRight: 8}} icon={faTint} />;
+const paperIcon = <FontAwesomeIcon style={{marginRight: 8}} icon={faFile} />;
+const foodAndDrinkIcon = <FontAwesomeIcon style={{marginRight: 8}} icon={faUtensils} />;
+const eventsIcon = <FontAwesomeIcon style={{marginRight: 8}} icon={faIcons} />;
 
 
 /* TODO: 
@@ -78,9 +89,12 @@ function Calculator() {
       >
         <Tabs defaultActiveKey="Transport" onChange={callback}>                          
 
-          <TabPane tab="Transport" key="Transport">
+          <TabPane tab={<span>
+                          {transportIcon}
+                          Transport
+                        </span>} key="Transport">
             <div>    
-              <form className='basicTransportForm' onSubmit={handleSubmit}>
+              <form className='basicForm' onSubmit={handleSubmit}>
 
                 <h3>Vehicle</h3>
 
@@ -163,9 +177,12 @@ function Calculator() {
             </div>
           </TabPane>
             
-          <TabPane tab="Electricity" key="Electricity">
+          <TabPane tab={<span>
+                          {electricityIcon}
+                          Electricity
+                        </span>} key="Electricity">
             <div>    
-              <form className='basicElectricityForm'>
+              <form className='basicForm'>
 
                 <label className='calculatorLabel'>Consumption</label>
                 <input
@@ -180,9 +197,12 @@ function Calculator() {
             </div>
           </TabPane>
 
-          <TabPane tab="Gas" key="Gas">
+          <TabPane tab={<span>
+                          {gasIcon}
+                          Gas
+                        </span>} key="Gas">
             <div>    
-              <form className='basicGasForm'>
+              <form className='basicForm'>
 
                 <label className='calculatorLabel'>LPG Consumption</label>
                 <input
@@ -230,9 +250,12 @@ function Calculator() {
             </div>
           </TabPane>
 
-          <TabPane tab="Waste" key="Waste">
+          <TabPane tab={<span>
+                          {wasteIcon}
+                          Waste
+                        </span>} key="Waste">
             <div>    
-              <form className='basicWasteForm'>
+              <form className='basicForm'>
                 
                 <label className='calculatorLabel'>Waste Type</label>
                 <select
@@ -259,9 +282,12 @@ function Calculator() {
             </div>
           </TabPane>
 
-          <TabPane tab="Water" key="Water">
+          <TabPane tab={<span>
+                          {waterIcon}
+                          Water
+                        </span>} key="Water">
             <div>    
-              <form className='basicWaterForm'>
+              <form className='basicForm'>
                 
                 <label className='calculatorLabel'>Water Utility Location</label>
                 <select
@@ -281,9 +307,12 @@ function Calculator() {
             </div>
           </TabPane>
 
-          <TabPane tab="Paper" key="Paper">
+          <TabPane tab={<span>
+                          {paperIcon}
+                          Paper
+                        </span>} key="Paper">
             <div>    
-              <form className='basicPaperForm'>
+              <form className='basicForm'>
                 
                 <label className='calculatorLabel'>Source</label>
                 <select
@@ -322,9 +351,12 @@ function Calculator() {
             </div>  
           </TabPane>
 
-          <TabPane tab="Food & Drink" key="FoodAndDrink">
+          <TabPane tab={<span>
+                          {foodAndDrinkIcon}
+                          Food & Drink
+                        </span>} key="FoodAndDrink">
             <div>    
-              <form className='basicFoodAndDrinkForm'>
+              <form className='basicForm'>
                 
                 <label className='calculatorLabel'>Food Type</label>
                 <select
@@ -351,9 +383,12 @@ function Calculator() {
             </div>  
           </TabPane>
 
-          <TabPane tab="Events" key="Events">
+          <TabPane tab={<span>
+                          {eventsIcon}
+                          Events
+                        </span>} key="Events">
             <div>    
-              <form className='basicEventsForm'>
+              <form className='basicForm'>
 
                 <h3>Accommodation</h3>
 
