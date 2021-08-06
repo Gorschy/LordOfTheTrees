@@ -7,15 +7,38 @@
 }
 
 .registerField {
+    margin-left: 4vw;
     width: 12vw;
     height: 4vh;
     border-radius: 8px;
+    display: inline-block;
+    border: 1px solid #A3C586;
+    box-sizing: border-box;
+    
+    /* font control */
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+}
+
+.registerField:hover {
+    border-color: green;
+    border-width: 1px !important;
 }
 
 .registerButton {
+    margin-left: 4vw;
     margin-top: 1vh;
     margin-bottom: 1vh;
     width: 12vw;
     height: 4vh;
     border-radius: 8px;
+}
+
+.registerLabels {
+    margin-left: 4vw;
+    font-size: 12px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: #5E5E5E;
 }

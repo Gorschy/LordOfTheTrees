@@ -1,7 +1,7 @@
 import { Card, Col, Row, Form, Input, Button, Divider, Select} from 'antd';
 
 const account = () => { 
-    const { Option } = Select;
+    //const { Option } = Select;
 
     const onFinish = (values) => {
         console.log('Success:', values);
@@ -72,7 +72,7 @@ const account = () => {
     
     <div>
 
-        <Row justify="space-around">
+        <Row justify="space-around" >
         <Card class='CardClass' title="Account Information" headStyle={{color: '#A3C586',
             fontFamily: 'Poppins', fontWeight: 'bold', fontSize: '34px', lineHeight: '34px',
             textAlign: 'center', verticalAlign: 'Top'}} style={{width:'75%'}}>

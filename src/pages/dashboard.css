@@ -1,13 +1,3 @@
-div.CardHeader {
-    color: #A3C586;
-    Font-Family: 'Poppins';
-    Font-Weight: 'Bold';
-    Font-Size: 34px;
-    Line-Height: 51px;
-    Text-Align: 'Center';
-    Vertical-Align: Top;
-}
-
 img.CardImage {
     display: block;
     max-height: 100%;
@@ -15,3 +5,4 @@ img.CardImage {
     margin-left: auto;
     margin-right: auto;
 }
+

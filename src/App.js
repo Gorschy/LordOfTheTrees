@@ -14,6 +14,7 @@ import dashboard from './pages/dashboard';
 import account from './pages/account';
 import { Button, Menu } from 'antd';
 import Register from './pages/register';
+import Projects from './pages/projects';
 import ConfirmSignUp from './pages/confirmSignUp';
 import logo from './assets/RPPLogoPlaceholder.png';
 
@@ -80,6 +81,11 @@ function App() {
                         <Item key="Calculator">        
                             <Link to='/calculator'>Calculator</Link>     
                         </Item>
+
+                        <Item key="Projects">        
+                            <Link to='/projects'>Projects</Link>     
+                        </Item>
+
                                                 
                         <Item key="ContactUs">
                             <Link to='/contactUs'>Contact Us</Link>
@@ -131,6 +137,7 @@ function App() {
                                 </Route>
                                 <Route exact path="/dashboard" component={dashboard} />
                                 <Route exact path="/account" component={account} />
+                                <Route exact path="/projects" component={Projects} />
                             </Switch>
                           
                                 
