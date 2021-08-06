@@ -86,6 +86,7 @@ function Calculator() {
     <div className='calculatorContent'>
       <Card
         className="calculatorCard"
+        id='calculatorCard'
         bordered={false} 
         title="Carbon Calculator"
       >
