@@ -18,8 +18,6 @@ export default function contactUs() {
                 console.log(error.text);
             });
         e.target.reset();
-
-        e.target.resetFields()
     }
 
 

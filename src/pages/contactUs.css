@@ -1,38 +1,51 @@
 .contactDetailsImage {
 
-    padding-top: 20px;
-    padding-left: 030px;
-    width: 730px;
-    height: 460px;
-    box-shadow: 0 10px 10px 0 rgb(131, 131, 131), 0 8px 8px 0 rgba(0, 0, 0, 0.10);
+    padding-top: 45px;;
+    width: 36.4vw;
+    height: 50vh;
+    /* box-shadow: 0 10px 10px 0 rgb(131, 131, 131), 0 8px 8px 0 rgba(0, 0, 0, 0.10); */
 }
 
 
 #contactDetailsCard {
-  border-radius: 200px ;
+  border-radius: 200px;
   padding-left: 30px;
 }
 
 #contactDetailsLeft {
   float: left;
+  padding-left: 50px;
 }
 
 #contactDetailsRight {
   float: right;
+  padding-right: 50px;
 }
 #submitSupportTicketLeft {
   float: left;
+  padding-left: 50px;
+  width: 16.7vw;
 }
+  
+
 #submitSupportTicketRight {
   float: right;
+  margin-left: 2vw;
+  margin-right: 15vw;
+  width: 16vw;
 }
 
 #submitSupportTicketSelectReason {
-  padding-top: 100px ;
+  padding-top: 100px;
+  padding-left: 50px;
 }
 
 #contactUsSubmitButton {
-  padding-top: 15px;
+  padding-top: 20px;
+  padding-left: 50px;
+  width: 300px;
+  height: 40px;
+
 }
 .contactDetails {
   width: 360px;
@@ -45,6 +58,7 @@
 
 #contactUsTextArea {
   padding-top: 40px;
+  padding-left: 50px;
 
 
 
