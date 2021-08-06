@@ -34,7 +34,11 @@ const UnregisteredNav = () => {
                 <Item key="Calculator">        
                     <Link to='/calculator'>Calculator</Link>     
                 </Item>
-                                        
+
+                <Item key="Projects">        
+                    <Link to='/projects'>Projects</Link>     
+                </Item> 
+
                 <Item key="ContactUs">
                     <Link to='/contactUs'>Contact Us</Link>
                 </Item>                 
