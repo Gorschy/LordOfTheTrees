@@ -87,7 +87,6 @@ function Calculator() {
       <Card
         className="calculatorCard"
         bordered={false} 
-        style={{ width: 1300 }} 
         title="Carbon Calculator"
       >
         <Tabs defaultActiveKey="Transport" onChange={callback}>                          
