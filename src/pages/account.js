@@ -1,5 +1,5 @@
 import { Card, Col, Row, Form, Input, Button, Divider, Select} from 'antd';
-
+import "./account.css";
 const account = () => { 
     //const { Option } = Select;
 
@@ -75,7 +75,7 @@ const account = () => {
         <Row justify="space-around" >
         <Card class='CardClass' title="Account Information" headStyle={{color: '#A3C586',
             fontFamily: 'Poppins', fontWeight: 'bold', fontSize: '34px', lineHeight: '34px',
-            textAlign: 'center', verticalAlign: 'Top'}} style={{width:'75%'}}>
+            textAlign: 'center', verticalAlign: 'Top'}} style={{width:'40%'}}>
             
                 <Divider orientation="left">Identification</Divider>
                 
@@ -91,7 +91,7 @@ const account = () => {
 
                 <Row gutter={16}>
                     <Col span={12}>
-                        <Form.Item
+                        <Form.Item className="inputField"
                             label="First Name" name="fName"
                             rules={[{ required: false, message: 'Please input your first name!' }]}
                         >
@@ -99,7 +99,7 @@ const account = () => {
                         </Form.Item>
                     </Col>
                     <Col span={12}>
-                        <Form.Item
+                        <Form.Item className="inputFieldRight"
                             label="Last Name" name="lName"
                             rules={[{ required: false, message: 'Please input your last name!' }]}
                         >
@@ -110,7 +110,7 @@ const account = () => {
 
                 <Row gutter={16}>
                     <Col span={12}>
-                        <Form.Item
+                        <Form.Item className="inputField"
                             label="Email" name="email"
                             rules={[{ type: 'email', message: 'The input is not a valid Email!', },
                                 { required: false, message: 'Please input your Email!', }, ]}
@@ -119,7 +119,7 @@ const account = () => {
                         </Form.Item>
                     </Col>
                     <Col span={12}>
-                        <Form.Item
+                        <Form.Item className="inputFieldRight"
                             label="Phone Number" name="phoneNumber"
                             rules={[{ required: false, message: 'Please input your phone number!' }]}
                         >
@@ -130,7 +130,7 @@ const account = () => {
 
                 <Divider orientation="left">Password</Divider>
 
-                <Form.Item
+                <Form.Item className="inputField"
                     label="Old Password"
                     name="oldPW"
                     rules={[{ required: false, message: 'Please input your old password!' }]}
@@ -138,7 +138,7 @@ const account = () => {
                     <Input.Password />
                 </Form.Item>
 
-                <Form.Item
+                <Form.Item className="inputField"
                     label="New Password"
                     name="newPW"
                     rules={[{ required: false, message: 'Please input your new password!' }]}
@@ -146,7 +146,7 @@ const account = () => {
                     <Input.Password />
                 </Form.Item>
 
-                <Form.Item
+                <Form.Item className="inputField"
                     label="Confirm New Password"
                     name="newPWConfirm"
                     rules={[{ required: false, message: 'Please confirm your new password!' }]}
