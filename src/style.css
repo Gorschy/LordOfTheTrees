@@ -1,0 +1,39 @@
+:root {
+    --card_header_color: #A3C586;
+    --card_header_font_size: 40px;
+    --general_font_family: 'Poppins, sans-serif';
+    --general_font_size: 18px;
+    --card_standard_padding: 0px 10px 0px;
+    --general_text_color: #000000;
+    --icon_image_size: 50px;
+
+
+}
+
+div.cardHeader {
+    color: var(--card_header_color);
+    font-family: var(--general_font_family);
+    font-weight: 800;
+    font-size: var(--card_header_font_size);
+    line-height: 40px;
+    text-align: 'center';
+    vertical-align: top;
+
+}
+
+div.standardText {
+    font-family: var(--general_font_family);
+    font-size: var(--general_font_size);
+    color: var(--general_text_color);
+    text-align: left;
+
+}
+
+div.headerText {
+    font-family: var(--general_font_family);
+    font-size: var(--general_font_size);
+    font-weight: bold;
+    color: var(--general_text_color);
+    text-align: left;
+
+}

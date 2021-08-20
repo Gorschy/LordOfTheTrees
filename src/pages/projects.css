@@ -1,0 +1,81 @@
+:root {
+    --big_image_size: 60%;
+
+}
+
+/* Card Stylings */
+
+#projectListCard {
+    height: 90%;
+}
+
+#currentProjectCard {
+    height: 70%;
+    padding: var(--card_standard_padding);
+}
+
+#projectAdminCard {
+    padding: var(--card_standard_padding);
+    text-align: center;
+    height: calc(var(--big_image_size)+1);
+}
+
+#membersList {
+    padding: var(--card_standard_padding);
+
+}
+
+/* Header ID stylings */
+
+#projectListHeader{
+    text-align: center;
+}
+
+#currentProjectHeader {
+    text-align: left;
+}
+
+#projectAdminHeader {
+    text-align: center;
+
+}
+
+/* Assorted Text Stylings */
+
+#projectListID {
+    height: 80%;
+    padding: var(--card_standard_padding)
+}
+
+
+div.extraText {
+    font-family: var(--general_font_family);
+    font-size: var(--general_font_size);
+    font-weight: bold;
+
+}
+
+#adminName {
+    text-align: center;
+}
+
+#adminEmail {
+    text-align: center;
+}
+
+/* Image CSS */
+#adminImageHolder {
+    display: flex;
+    justify-content: center;
+
+}
+
+#adminImage {
+    width: var(--big_image_size);
+
+}
+
+.imageIcon {
+    width: var(--icon_image_size);
+
+}

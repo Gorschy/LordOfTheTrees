@@ -1,5 +1,6 @@
 import { Card, Col, Row, List, Image } from 'antd';
-import Item from 'antd/lib/list/Item';
+import '../style.css';
+import './projects.css';
 
 const projectList = [
 {
@@ -48,75 +49,74 @@ const Projects = () => { return(
     <Row gutter={12}>
         <Col span={6}> 
 
+            <Card id="projectListCard" title={<div className="cardHeader" id="projectListHeader">Projects</div>}>
             <List
+                id="projectListID"
                 itemLayout="horizontal"
                 dataSource={projectList}
-                bordered
-                header={<div style={{color: '#A3C586',
-                fontFamily: 'Poppins', fontWeight: 'bold', fontSize: '34px', lineHeight: '28px',
-                textAlign: 'center', verticalAlign: 'Top'}}>Projects</div>}
                 style={{backgroundColor:"#ffffff"}}
                 renderItem={item => (
                 <List.Item>
                     <List.Item.Meta
-                    title={item.title}
-                    description={item.description}
+                    title={<div className="headerText">{item.title}</div>}
+                    description={<div className="standardText">{item.description}</div>}
                     />
                 </List.Item>
                 )}
             />
+
+            </Card>
+
         
         </Col>
         <Col span={12}>
-            <Card bordered title="Current Project" headStyle={{color: '#A3C586', fontFamily: 'Poppins', fontWeight: 'bold', 
-            fontSize: '34px', lineHeight: '20px', textAlign: 'left', verticalAlign: 'Top'}} extra="Type: Business" style={{height:'500px'}}>
-                <div style={{textAlign:'left', padding:'0px', width:"100%"}}>
-                <b>Project Title:</b> <i>Lorum Ipsum Salts</i>
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
+            <Card id="currentProjectCard" title={<div className="cardHeader" id="currentProjectHeader">Current Project</div>} extra={<div className="extraText">Type: Business</div>}>
+                <div className="headerText">Project Title</div>
+                <div className="standardText">
+                sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
                 labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
                 nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit 
                 esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt 
-                in culpa qui officia deserunt mollit anim id est laborum."
+                in culpa qui officia deserunt mollit anim id est laborum.
                 </div>
             </Card>
         
         </Col>
         <Col span={6}>
+        <Card id="projectAdminCard" title={<div className="headerText" id="projectAdminHeader">Project Admin</div>}>
+            <div id="adminImageHolder"><Image id="adminImage" src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"/></div>
+            
             <List
                 itemLayout="vertical"
-                bordered
                 dataSource={projectLeader}
-                header={<div style={{color: '#000000', fontFamily: 'Poppins', fontWeight: 'bold', 
-                fontSize: '14px', lineHeight: '20px', textAlign: 'center', verticalAlign: 'Top'}}>Project Admin</div>}
-                style={{backgroundColor:"#ffffff"}}
                 renderItem={item => (
                 <List.Item>
                     <List.Item.Meta
-                    avatar={<Image width = {"100%"} src={item.icon} />}
-                    />
-                    <List.Item.Meta style={{textAlign:"center"}}
-                    title={item.name}
-                    description={item.email}
+                    title={<div className="headerText" id="adminName">{item.name}</div>}
+                    description={<div className="standardText" id="adminEmail">{item.email}</div>}
                     />
                 </List.Item>
                 )}
             />
+            </Card>
 
             <br/>
 
             <List
+                id="membersList"
                 itemLayout="horizontal"
                 bordered
                 dataSource={teamList}
                 style={{backgroundColor:"#ffffff"}}
                 renderItem={item => (
                 <List.Item>
+                    
                     <List.Item.Meta
-                    avatar={<Image width = {50} src={item.icon} />}
-                    title={item.rank}
+                    avatar={<Image className="imageIcon" src={item.icon} />}
+                    title={<div className="headerText">{item.name}</div>}
+                    description={<div className="standardText">{item.email}</div>}
                     />
-                    {item.name} <br/>
-                    {item.email}
+                    <div className="headerText">{item.rank}</div>
                 </List.Item>
                 )}
             />
