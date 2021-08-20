@@ -105,9 +105,7 @@ const Projects = () => { return(
             <List
                 id="membersList"
                 itemLayout="horizontal"
-                bordered
                 dataSource={teamList}
-                style={{backgroundColor:"#ffffff"}}
                 renderItem={item => (
                 <List.Item>
                     

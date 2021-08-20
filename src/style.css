@@ -6,8 +6,8 @@
     --card_standard_padding: 0px 10px 0px;
     --general_text_color: #000000;
     --icon_image_size: 50px;
-
-
+    --general_background_color: #000000; /* Not yet implemented */
+    --foreground_color: #ffffff;
 }
 
 div.cardHeader {

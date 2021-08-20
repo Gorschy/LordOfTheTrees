@@ -22,7 +22,7 @@
 
 #membersList {
     padding: var(--card_standard_padding);
-
+    background-color: var(--foreground_color);
 }
 
 /* Header ID stylings */
