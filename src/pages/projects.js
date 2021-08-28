@@ -54,7 +54,6 @@ const Projects = () => { return(
                 id="projectListID"
                 itemLayout="horizontal"
                 dataSource={projectList}
-                style={{backgroundColor:"#ffffff"}}
                 renderItem={item => (
                 <List.Item>
                     <List.Item.Meta

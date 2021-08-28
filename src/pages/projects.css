@@ -7,6 +7,7 @@
 
 #projectListCard {
     height: 90%;
+    background-color: var(--foreground_color);
 }
 
 #currentProjectCard {

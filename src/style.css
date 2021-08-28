@@ -1,19 +1,43 @@
 :root {
-    --card_header_color: #A3C586;
+
+    /*  From the guidelines sent to us. */
+    --color_forest_green: #134A2C;
+    --color_deep_black: #1D1D1B;
+    --color_hay_yellow: #EFD200;
+    --color_lime_green: #95C11F;
+    --color_green: #4A7634;
+    --color_white: #FFFFFF;
+
+
+    /*  =============================   */
+
+    --card_header_color: var(--color_green);
+    --general_text_color: var(--color_deep_black);
+    --text_header_color: var(--color_forest_green);
+    --foreground_color: var(--color_deep_black);
+
+    --general_font_family: 'Jost';
+
     --card_header_font_size: 40px;
-    --general_font_family: 'Poppins, sans-serif';
+    --card_header_font_weight: 700;
+    
+    --heading_text_font_size: 24px;
+    --heading_text_font_weight: 500;
+
     --general_font_size: 18px;
+    --general_text_font_weight: 400;
+
     --card_standard_padding: 0px 10px 0px;
-    --general_text_color: #000000;
+    
     --icon_image_size: 50px;
-    --general_background_color: #000000; /* Not yet implemented */
-    --foreground_color: #ffffff;
+    
+
 }
 
 div.cardHeader {
     color: var(--card_header_color);
     font-family: var(--general_font_family);
-    font-weight: 800;
+    font-weight: var(--card_header_font_weight);
     font-size: var(--card_header_font_size);
     line-height: 40px;
     text-align: 'center';
@@ -25,6 +49,7 @@ div.standardText {
     font-family: var(--general_font_family);
     font-size: var(--general_font_size);
     color: var(--general_text_color);
+    font-weight: var(--general_text_font_weight);
     text-align: left;
 
 }
@@ -32,8 +57,8 @@ div.standardText {
 div.headerText {
     font-family: var(--general_font_family);
     font-size: var(--general_font_size);
-    font-weight: bold;
-    color: var(--general_text_color);
+    font-weight: var(--heading_text_font_weight);
+    color: var(--text_header_color);
     text-align: left;
 
 }
