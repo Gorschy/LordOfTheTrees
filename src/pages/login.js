@@ -3,6 +3,7 @@ import { Auth } from 'aws-amplify';
 import { Input, Button, Card } from 'antd';
 import { useHistory } from 'react-router-dom';
 import './login.css';
+import '../style.css'
 const SignIn = ({ onSignin }) => {
 
     const [username, setUsername] = useState('');
@@ -24,15 +25,16 @@ const SignIn = ({ onSignin }) => {
 
     return (  
         <div>
-            <Card className="loginCard" title="Login" bordered={false} style={{ width: 300 }}>
-                <p className="loginLabels">Username</p>
+            <Card className="loginCard" title={<div className="cardHeader">Login</div>} bordered={false} >
+                <div className="headerText" id="loginLabel" >Username</div>
                 <Input className="loginField"
                     id="username"
                     label="Username" 
                     value={username}
                     onChange={e => setUsername(e.target.value)}
                 />
-                <p className="loginLabels">Password</p>
+                <br/> <br/>
+                <div className="headerText" id="loginLabel">Password</div>
                 <Input className="loginField"
                     type="password"
                     id="password"
@@ -41,8 +43,9 @@ const SignIn = ({ onSignin }) => {
                     onChange={e => setPassword(e.target.value)}
                 />
                 
+                <br/> <br/>
                 <Button className="loginButton" id="signinButton" onClick={signIn} type="primary">
-                    Sign In                  
+                    Log In      
                 </Button>
             </Card> 
         </div>
