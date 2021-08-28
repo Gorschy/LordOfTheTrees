@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+@import url('http://fonts.cdnfonts.com/css/renner');
 
 
 /*
 Style Guide for inputs:
     Input inner Text
         - font-size: 15px;
-        - font-family: 'Poppins', sans-serif;
+        - font-family: 'Renner*', sans-serif;
         - font-weight: 400;
 
     Input Border
@@ -23,7 +23,7 @@ Style Guide for inputs:
 
     Input Labels
         - font-size: 10px;
-        - font-family: 'Poppins', sans-serif;
+        - font-family: 'Renner*', sans-serif;
         - font-weight: 600;
         - color: #5E5E5E;
 
@@ -37,13 +37,14 @@ TODO:
 h3 {
     font-size: 19px;
     color: #5B7444;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Renner*', sans-serif;
+                                                
     font-weight: 600;
 }
 
 .ant-card-head {
     color: #A3C586;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Renner*', sans-serif;
     font-weight: 600;
     font-size: 35px;
     text-align: center;
@@ -66,6 +67,7 @@ h3 {
     white-space: nowrap;
     color: rgb(118, 118, 118);
     background: rgb(230 230 231 / 60%);
+    font-family: 'Renner*', sans-serif;
 }
 
 .ant-tabs-tab {
@@ -100,7 +102,7 @@ h3 {
     display: -webkit-flex; 
     display: flex;         
     justify-content: center;
-    align-items: center;
+    
 }
 
 .calculatorCard {
@@ -119,7 +121,7 @@ h3 {
     
     /* font control */
     font-size: 15px;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Renner*', sans-serif;
     font-weight: 400;
 }
 
@@ -136,7 +138,7 @@ h3 {
 
     /* font control */
     font-size: 15px;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Renner*', sans-serif;
     font-weight: 400;
 }
 
@@ -161,7 +163,7 @@ h3 {
     
     /* font control */
     font-size: 15px;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Renner*', sans-serif;
     font-weight: 400;
     
 }
@@ -191,7 +193,7 @@ h3 {
     
     /* font control */
     font-size: 15px;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Renner*', sans-serif;
     font-weight: 400;
 }
 
@@ -217,7 +219,7 @@ h3 {
 .calculatorLabel {
     display: block;
     font-size: 12px;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Renner*', sans-serif;
     font-weight: 600;
     color: #5E5E5E;
     padding-left: 2px;
@@ -239,7 +241,7 @@ h3 {
     
     /* font control */
     font-size: 15px;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Renner*', sans-serif;
     font-weight: 400;
 }
 
@@ -268,7 +270,7 @@ h3 {
 
 .outputTags {
     font-size: 15px;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Renner*', sans-serif;
     font-weight: 400;
     text-align: right;
     padding-right: 6vw;
@@ -278,9 +280,78 @@ h3 {
 .outputTotal {
     font-size: 17px; 
     color: #5B7444;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Renner*', sans-serif;
     font-weight: 600;
     text-align: right;
     padding-right: 6vw;
     padding-bottom: 5px;
+}
+
+
+/* test */
+
+
+.switch {
+    display: inline-block;
+    height: 24px;
+    position: relative;
+    width: 40px;
+    vertical-align:middle;
+  }
+  
+  .switch input {
+    display:none;
+  }
+  
+  .slider {
+    background-color: #ccc;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .4s;
+  }
+
+  
+  .slider:before {
+    background-color: #fff;
+    bottom: 4px;
+    content: "";
+    height: 16px;
+    left: 4px;
+    position: absolute;
+    transition: .4s;
+    width: 16px;
+  }
+  
+  input:checked + .slider {
+    background-color: #5B7444;
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(16px);
+  }
+  
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+  .switchContainer {
+    padding-top: 2vh;
+    padding-left: 1vw;
+    
+    display: flex; 
+    align-items: center;   
+  }
+
+.switchLabel {
+    padding-left: 1vw;
+    font-family: 'Renner*', sans-serif;
+    font-weight: 400;
 }
