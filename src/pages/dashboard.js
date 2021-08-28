@@ -2,7 +2,6 @@ import { Card, Col, Row } from 'antd';
 import { Link } from 'react-router-dom';
 import './dashboard.css';
 import '../style.css';
-import '../fonts/fonts.css'
 import DashIcon1 from '../assets/DashIcon1.png';
 import DashIcon2 from '../assets/DashIcon2.png';
 import DashIcon3 from '../assets/DashIcon3.png';

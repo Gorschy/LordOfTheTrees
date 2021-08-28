@@ -2,6 +2,7 @@ import { Card, Col, Row, List, Image } from 'antd';
 import '../style.css';
 import './projects.css';
 
+
 const projectList = [
 {
     title: 'Project Numero Uno',
@@ -69,7 +70,7 @@ const Projects = () => { return(
         
         </Col>
         <Col span={12}>
-            <Card id="currentProjectCard" title={<div className="cardHeader" id="currentProjectHeader">Current Project</div>} extra={<div className="extraText">Type: Business</div>}>
+            <Card id="currentProjectCard" title={<div className="cardHeader" id="currentProjectHeader">Current Project</div>} extra={<div className="headerText">Type: Business</div>}>
                 <div className="headerText">Project Title</div>
                 <div className="standardText">
                 sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 

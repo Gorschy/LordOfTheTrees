@@ -1,4 +1,15 @@
-.contactDetailsImage {
+#contactDetailsCard {
+  padding: var(--card_standard_padding);
+  background-color: var(--foreground_color);
+
+}
+
+#submitTicketCard {
+  padding: var(--card_standard_padding);
+  background-color: var(--foreground_color);
+}
+
+#SprayImage {
 
     padding-top: 45px;;
     width: 36.4vw;
@@ -7,11 +18,7 @@
 }
 
 
-#contactDetailsCard {
-  border-radius: 200px;
-  padding-left: 30px;
-}
-
+/*
 #contactDetailsLeft {
   float: left;
   padding-left: 50px;
@@ -37,16 +44,30 @@
 
 #submitSupportTicketSelectReason {
   padding-top: 100px;
-  padding-left: 50px;
+  padding-left: 0px;
 }
+*/
 
 #contactUsSubmitButton {
-  padding-top: 20px;
-  padding-left: 50px;
-  width: 300px;
-  height: 40px;
+  padding-top: 25px;
+  padding-left: 0px;
+  margin-left: 40%;
+  margin-left: 40%;
+  width: 20%;
+  
+
 
 }
+
+#submitButton {
+  font-family: var(--general_font_family);
+  font-size: var(--general_font_size);
+  color: var(--general_text_color);
+  font-weight: var(--general_text_font_weight);
+
+}
+
+/*
 .contactDetails {
   width: 360px;
   height: 192px;
@@ -55,11 +76,41 @@
   box-shadow: 5px 8px 24px 5px rgba(208, 216, 243, 0.6);
 }
 
-
+*/
 #contactUsTextArea {
-  padding-top: 40px;
-  padding-left: 50px;
+  padding-top: 25px;
+  padding-left: 0px;
+  font-family: var(--general_font_family);
+  font-size: var(--general_font_size);
+  color: var(--general_text_color);
+  font-weight: var(--general_text_font_weight);
+  text-align: left;
+}
 
+#textEntryBody {
+  width: 100%;
 
+}
+
+#reasonSelectBox {
+  width: 100%;
+
+}
+
+#emailInputBox {
+  font-family: var(--general_font_family);
+  font-size: var(--general_font_size);
+  color: var(--general_text_color);
+  font-weight: var(--general_text_font_weight);
+  text-align: left;
+
+}
+
+#nameInputBox {
+  font-family: var(--general_font_family);
+  font-size: var(--general_font_size);
+  color: var(--general_text_color);
+  font-weight: var(--general_text_font_weight);
+  text-align: left;
 
 }

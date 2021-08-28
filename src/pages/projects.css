@@ -13,12 +13,14 @@
 #currentProjectCard {
     height: 70%;
     padding: var(--card_standard_padding);
+    background-color: var(--foreground_color);
 }
 
 #projectAdminCard {
     padding: var(--card_standard_padding);
     text-align: center;
     height: calc(var(--big_image_size)+1);
+    background-color: var(--foreground_color);
 }
 
 #membersList {
@@ -46,14 +48,6 @@
 #projectListID {
     height: 80%;
     padding: var(--card_standard_padding)
-}
-
-
-div.extraText {
-    font-family: var(--general_font_family);
-    font-size: var(--general_font_size);
-    font-weight: bold;
-
 }
 
 #adminName {

@@ -1,3 +1,5 @@
+@import url('./fonts/fonts.css');
+
 :root {
 
     /*  From the guidelines sent to us. */
@@ -14,7 +16,7 @@
     --card_header_color: var(--color_green);
     --general_text_color: var(--color_deep_black);
     --text_header_color: var(--color_forest_green);
-    --foreground_color: var(--color_deep_black);
+    --foreground_color: var(--color_white);
 
     --general_font_family: 'Jost';
 
@@ -27,7 +29,7 @@
     --general_font_size: 18px;
     --general_text_font_weight: 400;
 
-    --card_standard_padding: 0px 10px 0px;
+    --card_standard_padding: 0px 25px 0px;
     
     --icon_image_size: 50px;
     
