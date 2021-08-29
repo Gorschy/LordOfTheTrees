@@ -1,7 +1,63 @@
+import { useEffect } from 'react';
 import { Card, Col, Row, Form, Input, Button, Divider, Select} from 'antd';
+import { Auth } from 'aws-amplify';
 import "./account.css";
-const account = () => { 
+const Account = () => { 
     //const { Option } = Select;
+    
+    useEffect(() => {
+        displayUserDetails();
+    }, []);
+
+    const displayUserDetails = async () => {
+        //Capture current authed user
+        let user = await Auth.currentAuthenticatedUser();
+        const { attributes } = user;
+
+        //Display User Details
+        //First Name
+        if(attributes.given_name !== undefined ){
+            var fNameInput = document.getElementById("firstName");
+            fNameInput.value = attributes.given_name;
+        }
+        //Last Name
+        if(attributes.family_name !== undefined ){
+        var lNameInput = document.getElementById("lastName");
+        lNameInput.value = attributes.family_name;
+        }
+        //Email
+        if(attributes.email !== undefined ){
+        var emailInput = document.getElementById("email");
+        emailInput.value = attributes.email;
+        }
+        //Phone Number
+        if(attributes.phone_number !== undefined ){
+        var phoneNumberInput = document.getElementById("phoneNumber");
+        phoneNumberInput.value = attributes.phone_number;
+        }
+    };
+
+
+    const updateUserDetails = async () => {
+        
+        /*let user = await Auth.currentAuthenticatedUser();
+        const { attributes } = user;
+
+        
+        var fNameInput = document.getElementById("firstName");
+        var lNameInput = document.getElementById("lastName");
+        var emailInput = document.getElementById("email");
+        var phoneNumberInput = document.getElementById("phoneNumber");
+
+        await Auth.updateUserAttributes(user, {
+            'email': emailInput,
+            'given_name': fNameInput,
+            'family_name': lNameInput,
+            'phone_number': phoneNumberInput
+        });*/
+    };
+   
+    
 
     const onFinish = (values) => {
         console.log('Success:', values);
@@ -91,11 +147,11 @@ const account = () => {
 
                 <Row gutter={16}>
                     <Col span={12}>
-                        <Form.Item className="inputField"
+                        <Form.Item className="inputField" 
                             label="First Name" name="fName"
                             rules={[{ required: false, message: 'Please input your first name!' }]}
                         >
-                            <Input />
+                            <input id = 'firstName' />
                         </Form.Item>
                     </Col>
                     <Col span={12}>
@@ -103,7 +159,7 @@ const account = () => {
                             label="Last Name" name="lName"
                             rules={[{ required: false, message: 'Please input your last name!' }]}
                         >
-                            <Input />
+                            <input id= 'lastName' />
                         </Form.Item>
                     </Col>
                 </Row>
@@ -115,7 +171,7 @@ const account = () => {
                             rules={[{ type: 'email', message: 'The input is not a valid Email!', },
                                 { required: false, message: 'Please input your Email!', }, ]}
                         >
-                            <Input />
+                            <input id="email" />
                         </Form.Item>
                     </Col>
                     <Col span={12}>
@@ -123,7 +179,7 @@ const account = () => {
                             label="Phone Number" name="phoneNumber"
                             rules={[{ required: false, message: 'Please input your phone number!' }]}
                         >
-                            <Input /*addonBefore={prefixSelector} style={{ width: '100%' }}*//>
+                            <input id='phoneNumber' /*addonBefore={prefixSelector} style={{ width: '100%' }}*//>
                         </Form.Item>
                     </Col>
                 </Row>
@@ -167,4 +223,4 @@ const account = () => {
     </div>
 ); }
 
-export default account
+export default Account

@@ -10,15 +10,21 @@ const SignIn = ({ onSignin }) => {
     const [password, setPassword] = useState('');
     const history = useHistory();
 
+    const [errors, setErrors] = useState('');
+
 
     const signIn = async () => {
+        
         try {
             const user = await Auth.signIn(username, password);
             history.push('/');
             onSignin();
 
         } catch (error) {
+        
             console.log('error singing in', error);
+            setErrors(error.message);
+
         }
     };
 
@@ -33,8 +39,8 @@ const SignIn = ({ onSignin }) => {
                     value={username}
                     onChange={e => setUsername(e.target.value)}
                 />
-                <br/> <br/>
-                <div className="headerText" id="loginLabel">Password</div>
+                
+                <p className="loginLabels">Password</p>
                 <Input className="loginField"
                     type="password"
                     id="password"
@@ -42,8 +48,7 @@ const SignIn = ({ onSignin }) => {
                     value={password}
                     onChange={e => setPassword(e.target.value)}
                 />
-                
-                <br/> <br/>
+                <span>{errors}</span>
                 <Button className="loginButton" id="signinButton" onClick={signIn} type="primary">
                     Log In      
                 </Button>
