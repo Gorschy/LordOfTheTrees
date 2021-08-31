@@ -20,7 +20,6 @@
     color: var(--general_text_color);
     font-weight: var(--general_text_font_weight);
     text-align: left;
-    
 }
 
 .loginField:hover {
@@ -29,18 +28,9 @@
 }
 
 .loginButton {
-    margin-left: 4vw;
+    margin-left: 14vw;
     margin-top: 1vh;
     margin-bottom: 1vh;
-    width: 32vw;
-    height: 4vh;
-    border-radius: 8px;
-    color: var(--color_green);
-
-    font-family: var(--general_font_family);
-    font-size: var(--general_font_size);
-    font-weight: var(--heading_text_font_weight);
-    color: var(--color_white);
 }
 
 #loginLabel {

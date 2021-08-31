@@ -3,6 +3,7 @@ import { Auth } from 'aws-amplify';
 import { Input, Button, Card } from 'antd';
 import { useHistory } from 'react-router-dom';
 import './confirmSignUp.css';
+import '../style.css';
 const ConfirmSignUp = () => {
 
     const [username, setUsername] = useState('');
@@ -24,21 +25,23 @@ const ConfirmSignUp = () => {
     return (  
           
         <div>
-            <Card className="authCard" title="Sign Up" bordered={false}>
-                <p className="authLabels">Username</p>
+            <Card className="authCard" title={<h1>Sign Up</h1>}>
+                <h2 className="authLabels">Username</h2>
                 <Input className="authField"
                     id="username"
                     label="Username" 
                     value={username}
                     onChange={e => setUsername(e.target.value)}
                 />
-                <p className="authLabels">Authorization Code</p>
+                <br/><br/>
+                <h2 className="authLabels">Authorization Code</h2>
                 <Input className="authField"
                     id="authCode"
                     label="AuthCode" 
                     value={authCode}
                     onChange={e => setAuthCode(e.target.value)}
                 />
+                <br/><br/>
                 <Button className="authButton" id="confirmSignup" onClick={confirmSignUp} type="primary">
                     Confirm Sign Up                
                 </Button>

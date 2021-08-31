@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Auth } from 'aws-amplify';
-import { Input, Button, Card } from 'antd';
+import { Input, Button, Card, Divider } from 'antd';
 import { useHistory } from 'react-router-dom';
 import './register.css';
 const Register = () => {
@@ -35,15 +35,16 @@ const Register = () => {
     return (  
           
         <div>
-            <Card className="registerCard" title="Sign Up" bordered={false}>
-                <p className="registerLabels">Username</p>
+            <Card className="registerCard" title={<h1>Register</h1>}>
+                <h2 className="registerLabels">Username</h2>
                 <Input className="registerField"
                     id="username"
                     label="Username" 
                     value={username}
                     onChange={e => setUsername(e.target.value)}
                 />
-                <p className="registerLabels">Password</p>
+                <br/><br/>
+                <h2 className="registerLabels">Password</h2>
                 <Input className="registerField"
                     type="password"
                     id="password"
@@ -51,15 +52,8 @@ const Register = () => {
                     value={password}
                     onChange={e => setPassword(e.target.value)}
                 />
-                <p className="registerLabels">Phone Number</p>
-                <Input className="registerField"
-                    type="phone_number"
-                    id="phone_number"
-                    label="phone_number" 
-                    value={phone_number}
-                    onChange={e => setPhoneNumber(e.target.value)}
-                />
-                <p className="registerLabels">First Name</p>
+                <br/><br/>
+                <h2 className="registerLabels">First Name</h2>
                 <Input className="registerField"
                     type="given_name"
                     id="given_name"
@@ -67,7 +61,8 @@ const Register = () => {
                     value={given_name}
                     onChange={e => setGivenName(e.target.value)}
                 />
-                <p className="registerLabels">Last Name</p>
+                <br/><br/>
+                <h2 className="registerLabels">Last Name</h2>
                 <Input className="registerField"
                     type="family_name"
                     id="family_name"
@@ -75,6 +70,18 @@ const Register = () => {
                     value={family_name}
                     onChange={e => setFamilyName(e.target.value)}
                 />
+                <br/><br/>
+                <h2 className="registerLabels">Phone Number</h2>
+                <Input className="registerField"
+                    type="phone_number"
+                    id="phone_number"
+                    label="phone_number" 
+                    value={phone_number}
+                    onChange={e => setPhoneNumber(e.target.value)}
+                />
+
+                <br/><br/>
+
                 <Button className="registerButton" id="signUpButton" onClick={signUp} type="primary">
                     Sign up                 
                 </Button> 

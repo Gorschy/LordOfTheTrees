@@ -13,20 +13,19 @@ const dashboard = () => { return(
         <Row justify="space-around" gutter={24}>
         
         <Col span={8}> <Link to="/account">
-        <Card title={<div className="cardHeader">Account</div>} className="CardClass" hoverable > 
+        <Card title={<h1>Account</h1>} className="CardClass" hoverable > 
             <Row justify="space-around" gutter={24}>
                 <img className="CardImage" src={DashIcon1} alt="Account" /> <br/>
             </Row>
         </Card> </Link> </Col>
         
-        
         <Col span={8}> <Link to="/calculator">
-        <Card title={<div className="cardHeader">Carbon Reports</div>} className="CardClass" hoverable > 
+        <Card title={<h1>Carbon Reports</h1>} className="CardClass" hoverable > 
             <Row justify="space-around" gutter={24}> <img className="CardImage" src={DashIcon2} alt="Carbon Report" /> <br/> </Row>  
         </Card> </Link> </Col> 
         
         <Col span={8}> <Link to="/projects">
-        <Card title={<div className="cardHeader">Projects</div>} className="CardClass" hoverable > 
+        <Card title={<h1>Projects</h1>} className="CardClass" hoverable > 
             <Row justify="space-around" gutter={24}>
                 <img className="CardImage" src={DashIcon3} alt="Projects" /> <br/>
             </Row>

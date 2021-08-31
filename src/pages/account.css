@@ -1,10 +1,60 @@
-.inputField {
-    margin-left: 2.5vw;
-    width: 15vw;
+/*    Card CSS    */
+#accountCard {
+    width:40vw;
+    height: 50vh;
+
+    padding: var(--card_standard_padding);
+    background-color: var(--foreground_color);
+
 }
 
-.inputFieldRight {
+
+.inputFieldShort {
+    margin-right: 2vw;
     margin-left: 2vw;
-    width: 15vw;
+    width: 16vw;
+    height: 4vh;
+    border-radius: 8px;
+    display: inline-block;
+    border: 1px solid var(--color_green);
+
+    font-family: var(--general_font_family);
+    font-size: var(--general_font_size);
+    color: var(--general_text_color);
+    font-weight: var(--general_text_font_weight);
+    text-align: left;
 }
 
+.inputFieldLong {
+    margin-left: 2vw;
+    margin-right: 2vw;
+    width: 36vw;
+    height: 4vh;
+    border-radius: 8px;
+    border: 1px solid var(--color_green);
+
+    font-family: var(--general_font_family);
+    font-size: var(--general_font_size);
+    color: var(--general_text_color);
+    font-weight: var(--general_text_font_weight);
+    text-align: left;
+}
+
+.inputHeaderSpacing {
+    margin-left: 2vw;
+    margin-right: 2vw;
+    text-align: left;
+}
+
+#pWSubmitButton {
+    margin-left: 14vw;
+    width: 12vw;
+    height: 4vh;
+    border-radius: 8px;
+    color: var(--color_green);
+
+    font-family: var(--general_font_family);
+    font-size: var(--general_font_size);
+    font-weight: var(--heading_text_font_weight);
+    color: var(--color_white);
+}

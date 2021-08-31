@@ -1,3 +1,25 @@
+/*  Card Stylings   */
+
+.homeOurTeamCard  {
+    margin-bottom: 0.7vw;
+    width: 40vw;
+    height: 50vh;
+
+    padding: var(--card_standard_padding);
+    background-color: var(--foreground_color);
+}
+
+.homeFAQCard {
+    margin-left: 0.7vw;
+    width: 50vw;
+    height: 30vh;
+    font-size: 0.75vw;
+
+    padding: var(--card_standard_padding);
+    background-color: var(--foreground_color);
+}
+
+/*  Image Stylings   */
 .homeImage1 {
     margin-left: 0.7vw;
     margin-bottom: 0.7vw;
@@ -13,26 +35,10 @@
     height: 20vh;
 }
 
-
 .homeImage3 {
     width: 30vw;
     height: 30vh;
 }
 
-.homeOurTeamCard  {
-    margin-bottom: 0.7vw;
-    width: 40vw;
-    height: 50vh;
-    font-size: 0.75vw;
-}
 
-.homeOurTeamCard > title {
-    font-size: 0.75vw;
-}
-.homeFAQCard {
-    margin-left: 0.7vw;
-    width: 50vw;
-    height: 30vh;
-    font-size: 0.75vw;
-}
 

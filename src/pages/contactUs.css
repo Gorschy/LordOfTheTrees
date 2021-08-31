@@ -65,6 +65,11 @@
   color: var(--general_text_color);
   font-weight: var(--general_text_font_weight);
 
+  height: 4vh;
+  border-radius: 8px;
+  color: var(--color_white);
+  background-color: var(--color_green);
+
 }
 
 /*

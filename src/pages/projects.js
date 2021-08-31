@@ -50,7 +50,7 @@ const Projects = () => { return(
     <Row gutter={12}>
         <Col span={6}> 
 
-            <Card id="projectListCard" title={<div className="cardHeader" id="projectListHeader">Projects</div>}>
+            <Card id="projectListCard" title={<h1 id="projectListHeader">Projects</h1>}>
             <List
                 id="projectListID"
                 itemLayout="horizontal"
@@ -58,7 +58,7 @@ const Projects = () => { return(
                 renderItem={item => (
                 <List.Item>
                     <List.Item.Meta
-                    title={<div className="headerText">{item.title}</div>}
+                    title={<h2>{item.title}</h2>}
                     description={<div className="standardText">{item.description}</div>}
                     />
                 </List.Item>
@@ -70,8 +70,8 @@ const Projects = () => { return(
         
         </Col>
         <Col span={12}>
-            <Card id="currentProjectCard" title={<div className="cardHeader" id="currentProjectHeader">Current Project</div>} extra={<div className="headerText">Type: Business</div>}>
-                <div className="headerText">Project Title</div>
+            <Card id="currentProjectCard" title={<h1 id="currentProjectHeader">Current Project</h1>} extra={<h2>Type: Business</h2>}>
+                <h2>Project Title</h2>
                 <div className="standardText">
                 sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
                 labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
@@ -83,7 +83,7 @@ const Projects = () => { return(
         
         </Col>
         <Col span={6}>
-        <Card id="projectAdminCard" title={<div className="headerText" id="projectAdminHeader">Project Admin</div>}>
+        <Card id="projectAdminCard" title= {<h1 id="projectAdminHeader">Project Admin</h1>}>
             <div id="adminImageHolder"><Image id="adminImage" src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"/></div>
             
             <List
@@ -92,7 +92,7 @@ const Projects = () => { return(
                 renderItem={item => (
                 <List.Item>
                     <List.Item.Meta
-                    title={<div className="headerText" id="adminName">{item.name}</div>}
+                    title={<h2 id="adminName">{item.name}</h2>}
                     description={<div className="standardText" id="adminEmail">{item.email}</div>}
                     />
                 </List.Item>
@@ -111,7 +111,7 @@ const Projects = () => { return(
                     
                     <List.Item.Meta
                     avatar={<Image className="imageIcon" src={item.icon} />}
-                    title={<div className="headerText">{item.name}</div>}
+                    title={<h2>{item.name}</h2>}
                     description={<div className="standardText">{item.email}</div>}
                     />
                     <div className="headerText">{item.rank}</div>

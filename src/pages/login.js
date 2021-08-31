@@ -31,8 +31,8 @@ const SignIn = ({ onSignin }) => {
 
     return (  
         <div>
-            <Card className="loginCard" title={<div className="cardHeader">Login</div>} bordered={false} >
-                <div className="headerText" id="loginLabel" >Username</div>
+            <Card className="loginCard" title={<h1>Login</h1>} bordered={false} >
+                <h2 id="loginLabel" >Username</h2>
                 <Input className="loginField"
                     id="username"
                     label="Username" 
@@ -40,7 +40,9 @@ const SignIn = ({ onSignin }) => {
                     onChange={e => setUsername(e.target.value)}
                 />
                 
-                <p className="loginLabels">Password</p>
+                <br/><br/>
+
+                <h2 id="loginLabel">Password</h2>
                 <Input className="loginField"
                     type="password"
                     id="password"
@@ -49,7 +51,8 @@ const SignIn = ({ onSignin }) => {
                     onChange={e => setPassword(e.target.value)}
                 />
                 <span>{errors}</span>
-                <Button className="loginButton" id="signinButton" onClick={signIn} type="primary">
+                <br/><br/>
+                <Button className="buttonType1 loginButton" id="signinButton" onClick={signIn} type="primary">
                     Log In      
                 </Button>
             </Card> 

@@ -35,11 +35,11 @@ export default function contactUs() {
             <Row justify="space-around" gutter={24}>
                 <Col span={8}>
 
-                    <Card id="contactDetailsCard" title={<div className="cardHeader">Contact Details</div>} bordered={true}>
-                        <div className="headerText">Our Email Address:</div>
+                    <Card id="contactDetailsCard" title={<h1>Contact Details</h1>} bordered={true}>
+                        <h2>Our Email Address:</h2>
                         <div className="standardText">contact_email@lordofTrees.com.au</div>
                         <br/>
-                        <div className="headerText">Businesss Phone Line:</div>
+                        <h2 className="headerText">Businesss Phone Line:</h2>
                         <div className="standardText">0474690899</div>
 
                         <Divider />
@@ -50,18 +50,18 @@ export default function contactUs() {
 
                 </Col>
                 <Col span={16}>
-                    <Card id="submitTicketCard" title={<div className="cardHeader">Submit Support Ticket</div>} bordered={false}>
+                    <Card id="submitTicketCard" title={<h1>Submit Support Ticket</h1>} bordered={false}>
                         <form onSubmit={sendEmail}>
                             <div id="submitSupportTicket">
                                 <Row justify="space-around" gutter={24}>
                                     <Col span={12}>
-                                    <label for="email">{<div className="headerText">Email</div>}</label>
+                                    <label for="email">{<h2>Email</h2>}</label>
                                         <Form.Item name="email" rules={[{ required: true }]}>
                                             <Input type="email" id="emailInputBox" className="form-control" placeholder="Enter Your Email" name="email" />
                                         </Form.Item>
                                     </Col>
                                     <Col span={12}>
-                                        <label for="name">{<div className="headerText">Name</div>}</label>
+                                        <label for="name">{<h2>Name</h2>}</label>
                                         <Form.Item name="name" rules={[{ required: true }]}>
                                             <Input type="text" id="nameInputBox" className="form-control" placeholder="Enter Your Name" name="name" />
                                         </Form.Item>

@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { Card, Col, Row, Form, Input, Button, Divider, Select} from 'antd';
 import { Auth } from 'aws-amplify';
 import "./account.css";
+import "../style.css";
 const Account = () => { 
     //const { Option } = Select;
     
@@ -125,15 +126,8 @@ const Account = () => {
      */
     return(
 
-    
-    <div>
-
         <Row justify="space-around" >
-        <Card class='CardClass' title="Account Information" headStyle={{color: '#A3C586',
-            fontFamily: 'Poppins', fontWeight: 'bold', fontSize: '34px', lineHeight: '34px',
-            textAlign: 'center', verticalAlign: 'Top'}} style={{width:'40%'}}>
-            
-                <Divider orientation="left">Identification</Divider>
+        <Card class='CardClass' title={<h1>Account Information</h1>} style={{width:'40%'}}>
                 
                 <Form
                 name="accountForm"
@@ -145,82 +139,76 @@ const Account = () => {
                 onFinishFailed={onFinishFailed}
                 >
 
-                <Row gutter={16}>
+                <Row gutter={0}>
                     <Col span={12}>
-                        <Form.Item className="inputField" 
-                            label="First Name" name="fName"
+                        <Form.Item
+                            label={<h2 className="inputHeaderSpacing">First Name</h2>} name="fName"
                             rules={[{ required: false, message: 'Please input your first name!' }]}
                         >
-                            <input id = 'firstName' />
+                            <input className="inputFieldShort" id ='firstName' />
                         </Form.Item>
                     </Col>
                     <Col span={12}>
-                        <Form.Item className="inputFieldRight"
-                            label="Last Name" name="lName"
+                        <Form.Item
+                            label={<h2 className="inputHeaderSpacing">Last Name</h2>} name="lName"
                             rules={[{ required: false, message: 'Please input your last name!' }]}
                         >
-                            <input id= 'lastName' />
+                            <input className="inputFieldShort" id='lastName' />
                         </Form.Item>
                     </Col>
                 </Row>
 
-                <Row gutter={16}>
+                <Row gutter={0}>
                     <Col span={12}>
-                        <Form.Item className="inputField"
-                            label="Email" name="email"
+                        <Form.Item
+                            label={<h2 className="inputHeaderSpacing">Email</h2>} name="email"
                             rules={[{ type: 'email', message: 'The input is not a valid Email!', },
                                 { required: false, message: 'Please input your Email!', }, ]}
                         >
-                            <input id="email" />
+                            <input className="inputFieldShort" id="email" />
                         </Form.Item>
                     </Col>
                     <Col span={12}>
-                        <Form.Item className="inputFieldRight"
-                            label="Phone Number" name="phoneNumber"
+                        <Form.Item 
+                            label={<h2 className="inputHeaderSpacing">Phone Number</h2>} name="phoneNumber"
                             rules={[{ required: false, message: 'Please input your phone number!' }]}
                         >
-                            <input id='phoneNumber' /*addonBefore={prefixSelector} style={{ width: '100%' }}*//>
+                            <input className="inputFieldShort" id='phoneNumber' /*addonBefore={prefixSelector} style={{ width: '100%' }}*//>
                         </Form.Item>
                     </Col>
                 </Row>
 
-                <Divider orientation="left">Password</Divider>
+                <Divider orientation="left"><h2>Change Password</h2></Divider>
 
-                <Form.Item className="inputField"
-                    label="Old Password"
+                <Form.Item className="space"
+                    label={<h2 className="inputHeaderSpacing">Old Password</h2>}
                     name="oldPW"
                     rules={[{ required: false, message: 'Please input your old password!' }]}
                 >
-                    <Input.Password />
+                    <Input.Password className="inputFieldLong"/>
                 </Form.Item>
 
-                <Form.Item className="inputField"
-                    label="New Password"
+                <Form.Item className="space"
+                    label={<h2 className="inputHeaderSpacing">New Password</h2>}
                     name="newPW"
                     rules={[{ required: false, message: 'Please input your new password!' }]}
                 >
-                    <Input.Password />
+                    <Input.Password className="inputFieldLong"/>
                 </Form.Item>
 
-                <Form.Item className="inputField"
-                    label="Confirm New Password"
+                <Form.Item className="space"
+                    label={<h2 className="inputHeaderSpacing">Confirm New Password</h2>}
                     name="newPWConfirm"
                     rules={[{ required: false, message: 'Please confirm your new password!' }]}
                 >
-                    <Input.Password />
+                    <Input.Password className="inputFieldLong"/>
                 </Form.Item>
-
-                <Row justify="space-around" style={{width:"100%"}}>
+             
                     <Form.Item>
-                        <Button type="primary" htmlType="submit" style={{backgroundColor:"#5B7444"}}>
-                        Update Account
-                        </Button>
+                        <Button type="primary" htmlType="submit" id="pWSubmitButton">Update Account</Button>
                     </Form.Item>
-                </Row>
                 </Form>
         </Card></Row>
-
-    </div>
 ); }
 
 export default Account

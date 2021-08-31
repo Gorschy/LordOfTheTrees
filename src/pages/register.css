@@ -1,44 +1,48 @@
 .registerCard {
-    width: 20vw !important;
+    width: 40vw !important;
     position: fixed; /* or absolute */
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); 
 }
 
 .registerField {
     margin-left: 4vw;
-    width: 12vw;
+    width: 32vw;
     height: 4vh;
     border-radius: 8px;
     display: inline-block;
-    border: 1px solid #A3C586;
+    border: 1px solid var(--color_green);
     box-sizing: border-box;
     
-    /* font control */
-    font-size: 15px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 400;
+    font-family: var(--general_font_family);
+    font-size: var(--general_font_size);
+    color: var(--general_text_color);
+    font-weight: var(--general_text_font_weight);
+    text-align: left;
 }
 
 .registerField:hover {
-    border-color: green;
+    border-color: var(--color_forest_green);
     border-width: 1px !important;
 }
 
 .registerButton {
-    margin-left: 4vw;
+    margin-left: 14vw;
     margin-top: 1vh;
     margin-bottom: 1vh;
     width: 12vw;
     height: 4vh;
     border-radius: 8px;
+
+    color: var(--color_green);
+
+    font-family: var(--general_font_family);
+    font-size: var(--general_font_size);
+    font-weight: var(--heading_text_font_weight);
+    color: var(--color_white);
 }
 
 .registerLabels {
     margin-left: 4vw;
-    font-size: 12px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    color: #5E5E5E;
 }
