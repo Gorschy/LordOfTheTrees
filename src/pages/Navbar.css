@@ -20,3 +20,18 @@
     top: 0;
     right: 0;
 }
+
+#navButton {
+    width: 12vw;
+    height: 4vh;
+    border-radius: 8px;
+
+    color: var(--color_green);
+
+    font-family: var(--general_font_family);
+    font-size: var(--general_font_size);
+    font-weight: var(--heading_text_font_weight);
+    color: var(--color_white);
+
+
+}

@@ -3,6 +3,7 @@ import { UserContext } from './UserContext';
 import { Link } from 'react-router-dom';
 import { Menu, Button } from 'antd';
 import './Navbar.css';
+import '../style.css';
 import logo from '../assets/RPPLogoPlaceholder.png';
 import Amplify, { Auth } from 'aws-amplify';
 const { Item } = Menu;
@@ -36,46 +37,46 @@ const Navbar = () => {
                             </Item>
                             
                             <Item key="Home">
-                                <Link to='/home'>Home</Link>
+                                <Link to='/home'><h3>Home</h3></Link>
                             </Item>
 
                             {loggedIn ? (
                                 <Item key="Dashboard">        
-                                    <Link to='/dashboard'>Dashboard</Link>     
+                                    <Link to='/dashboard'><h3>Dashboard</h3></Link>     
                                 </Item>
                             ) : null }   
                      
 
                             <Item key="Calculator">        
-                                <Link to='/calculator'>Calculator</Link>     
+                                <Link to='/calculator'><h3>Calculator</h3></Link>     
                             </Item>
 
                             {loggedIn ? (<Item key="Projects">        
-                                <Link to='/projects'>Projects</Link>     
+                                <Link to='/projects'><h3>Projects</h3></Link>     
                             </Item>) : null }
 
                                                 
                             <Item key="ContactUs">
-                                <Link to='/contactUs'>Contact Us</Link>
+                                <Link to='/contactUs'><h3>Contact Us</h3></Link>
                             </Item>                 
                         </Menu>
 
                         <Menu theme="light" mode="horizontal" className="rightStyle">
                             <Link to='/register'>
-                                <Button type="link"  style={{paddingRight: 30}}>Need an Account?</Button>
+                                <Button type="link"  style={{paddingRight: 30}}><div className="standardTextLink">Need an Account?</div></Button>
                             </Link>
                             
                             
                             
                             { loggedIn ? (
                                     <Link to="/">  
-                                        <Button onClick={signOut} className="loginButtonNav" type="primary">
+                                        <Button onClick={signOut} id="navButton" className="loginButtonNav" type="primary">
                                             Sign Out
                                         </Button>
                                     </Link> 
                                 ) : ( 
                                     <Link to="/login">    
-                                        <Button className="loginButtonNav" type="primary">
+                                        <Button id="navButton" className="loginButtonNav" type="primary">
                                             Log In
                                         </Button>
                                     </Link>

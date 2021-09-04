@@ -33,21 +33,40 @@ TODO:
 */
 
 /* headers/tab labels/title */
-
-h3 {
-    font-size: 19px;
-    color: #5B7444;
-    font-family: 'Renner*', sans-serif;
-                                                
-    font-weight: 600;
+#totalCard {
+    width: 15vw;
+    height: 50vh;
+    padding: var(--card_standard_padding);
+    background-color: var(--foreground_color);
+    border: 1px solid var(--input_border_color);
 }
 
-.ant-card-head {
-    color: #A3C586;
-    font-family: 'Renner*', sans-serif;
-    font-weight: 600;
-    font-size: 35px;
+
+.userInput {
+    font-family: var(--general_font_family);
+    font-size: var(--general_font_size);
+    color: var(--general_text_color);
+    font-weight: var(--general_text_font_weight);
+    text-align: left;
+    display: inline-block;
+    border: 1px solid #A3C586;
+    box-sizing: border-box;
+    width: 300px;
+    border-radius: 6px;
+    padding: 5px 9px;
+    margin: 1px;
+    margin-bottom:20px;
+}
+
+.userInput:hover {
+    border-color: var(--input_border_hover_color);
+    border-width: 1px !important;
+
+}
+
+#centreContent {
     text-align: center;
+
 }
 
 /* Misc */
@@ -67,7 +86,6 @@ h3 {
     white-space: nowrap;
     color: rgb(118, 118, 118);
     background: rgb(230 230 231 / 60%);
-    font-family: 'Renner*', sans-serif;
 }
 
 .ant-tabs-tab {
@@ -83,17 +101,14 @@ h3 {
 }
 
 .ant-card-body {
-    
     padding-left: 0;
     padding-right: 0;
+    padding-top: 0;
     
 }
 
-#calculatorCard .ant-card-body {
-    padding-top: 0;
-    padding-left: 0;
-    padding-right: 0;
-    
+#calculatorCard {
+    width: 50vw !important;
 }
 
 .calculatorContent {
@@ -105,11 +120,6 @@ h3 {
     
 }
 
-.calculatorCard {
-    border-radius: 10px;
-    width: 60vw !important;
-}
-
 .ant-btn-primary {
     color: #fff;
     background: #5B7444;
@@ -119,10 +129,6 @@ h3 {
     text-shadow: 0 -1px 0 rgb(0 0 0 / 12%);
     box-shadow: 0 2px 0 rgb(0 0 0 / 5%);
     
-    /* font control */
-    font-size: 15px;
-    font-family: 'Renner*', sans-serif;
-    font-weight: 400;
 }
 
 .formButton {
@@ -136,10 +142,6 @@ h3 {
     display: block;
     margin: 0 auto;
 
-    /* font control */
-    font-size: 15px;
-    font-family: 'Renner*', sans-serif;
-    font-weight: 400;
 }
 
 .ant-tabs-tabpane {
@@ -150,29 +152,6 @@ h3 {
 
 /* INPUT/SELECT CONTROL */
 
-.calculatorInput {
-    /* dimensions/border control */
-    width: 300px;
-    border-radius: 6px;
-    padding: 5px 9px;
-    margin: 1px;
-    margin-bottom:20px;
-    display: inline-block;
-    border: 1px solid #A3C586;
-    box-sizing: border-box;
-    
-    /* font control */
-    font-size: 15px;
-    font-family: 'Renner*', sans-serif;
-    font-weight: 400;
-    
-}
-
-.calculatorInput:hover {
-    border-color: green;
-    border-width: 1px !important;
-}
-
 .calculatorInput:focus {
     border-color: green;
     border-right-width: 1px !important;
@@ -180,27 +159,6 @@ h3 {
     box-shadow: 0 0 0 2px rgb(49 130 74 / 20%);
 }
 
-.calculatorDropdown {
-    /* dimensions/border control */
-    width: 300px;
-    border-radius: 6px;
-    padding: 5px 9px;
-    margin: 1px;
-    margin-bottom:20px;
-    display: inline-block;
-    border: 1px solid #A3C586;
-    box-sizing: border-box;
-    
-    /* font control */
-    font-size: 15px;
-    font-family: 'Renner*', sans-serif;
-    font-weight: 400;
-}
-
-.calculatorDropdown:hover {
-    border-color: green;
-    border-width: 1px !important;
-}
 
 .calculatorDropdown:focus {
     border-color: green;
@@ -215,17 +173,6 @@ h3 {
 
 
 /* LABEL CONTROL */
-
-.calculatorLabel {
-    display: block;
-    font-size: 12px;
-    font-family: 'Renner*', sans-serif;
-    font-weight: 600;
-    color: #5E5E5E;
-    padding-left: 2px;
-    
-}
-
 .addEmissionButton {
     
     width: 100px;
@@ -237,12 +184,6 @@ h3 {
     display: block;
     box-sizing: border-box;
     color: #fff;
-    
-    
-    /* font control */
-    font-size: 15px;
-    font-family: 'Renner*', sans-serif;
-    font-weight: 400;
 }
 
 .basicForm {
@@ -253,36 +194,14 @@ h3 {
     margin-bottom: 2vh;
 }
 
-.ant-card-type-inner .ant-card-head {
-    text-align: center;
-    background: #fcfcfc;
-}
-
-.ant-card-type-inner {
-    width: 300px;
-    height: 60vh;
-    margin-left: 1vw;
-    margin-right: 10vw;
-    margin-top: 1vh;
-    margin-bottom: 2vh;
-    border-radius: 6px;
-}
 
 .outputTags {
-    font-size: 15px;
-    font-family: 'Renner*', sans-serif;
-    font-weight: 400;
-    text-align: right;
     padding-right: 6vw;
     padding-bottom: 5px;
 }
 
 .outputTotal {
-    font-size: 17px; 
-    color: #5B7444;
-    font-family: 'Renner*', sans-serif;
-    font-weight: 600;
-    text-align: right;
+    text-align: center;
     padding-right: 6vw;
     padding-bottom: 5px;
 }
@@ -296,7 +215,7 @@ h3 {
     height: 24px;
     position: relative;
     width: 40px;
-    vertical-align:middle;
+    vertical-align: middle;
   }
   
   .switch input {
@@ -352,6 +271,4 @@ h3 {
 
 .switchLabel {
     padding-left: 1vw;
-    font-family: 'Renner*', sans-serif;
-    font-weight: 400;
 }
