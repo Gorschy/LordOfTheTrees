@@ -1,11 +1,22 @@
-import { useEffect } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { Card, Col, Row, Form, Input, Button, Divider, Select} from 'antd';
+import { UserContext } from './UserContext';
 import { Auth } from 'aws-amplify';
 import "./account.css";
 import "../style.css";
+import { Route, Redirect } from 'react-router'
 const Account = () => { 
     //const { Option } = Select;
-    
+    const {loggedIn, setLoggedIn} = useContext(UserContext);
+
+    const [givenName, setGivenName] = useState('');
+    const [familyName, setFamilyName] = useState('');
+    const [email, setEmail] = useState('');
+    const [phoneNumber, setPhoneNumber] = useState('');
+    const [currentPassword, setCurrentPassword] = useState('');
+    const [newPassword, setNewPassword] = useState('');
+    const [confirmNewPassword, setConfirmNewPassword] = useState('');
+
     useEffect(() => {
         displayUserDetails();
     }, []);
@@ -38,28 +49,19 @@ const Account = () => {
         }
     };
 
-
     const updateUserDetails = async () => {
+        let user = await Auth.currentAuthenticatedUser();
         
-        /*let user = await Auth.currentAuthenticatedUser();
-        const { attributes } = user;
+        //check if password is valid
+            await Auth.updateUserAttributes(user, {
+                'email': email,
+                'given_name': givenName,
+                'family_name': familyName,
+                'phone_number': phoneNumber
+            });
 
-        
-        var fNameInput = document.getElementById("firstName");
-        var lNameInput = document.getElementById("lastName");
-        var emailInput = document.getElementById("email");
-        var phoneNumberInput = document.getElementById("phoneNumber");
-
-        await Auth.updateUserAttributes(user, {
-            'email': emailInput,
-            'given_name': fNameInput,
-            'family_name': lNameInput,
-            'phone_number': phoneNumberInput
-        });*/
     };
    
-    
-
     const onFinish = (values) => {
         console.log('Success:', values);
     };
@@ -125,7 +127,8 @@ const Account = () => {
 
      */
     return(
-
+    <div> 
+    { loggedIn ? (
         <Row justify="space-around" >
         <Card class='CardClass' title={<h1>Account Information</h1>} style={{width:'40%'}}>
                 
@@ -145,7 +148,12 @@ const Account = () => {
                             label={<h2 className="inputHeaderSpacing">First Name</h2>} name="fName"
                             rules={[{ required: false, message: 'Please input your first name!' }]}
                         >
-                            <input className="inputFieldShort" id ='firstName' />
+                            <input className="inputFieldShort"
+                                id="firstName"
+                                label="firstName" 
+                                value={givenName}
+                                onChange={e => setGivenName(e.target.value)}
+                            />
                         </Form.Item>
                     </Col>
                     <Col span={12}>
@@ -153,7 +161,12 @@ const Account = () => {
                             label={<h2 className="inputHeaderSpacing">Last Name</h2>} name="lName"
                             rules={[{ required: false, message: 'Please input your last name!' }]}
                         >
-                            <input className="inputFieldShort" id='lastName' />
+                            <input className="inputFieldShort" 
+                                id='lastName'
+                                label="lastName" 
+                                value={familyName}
+                                onChange={e => setFamilyName(e.target.value)}
+                             />
                         </Form.Item>
                     </Col>
                 </Row>
@@ -165,7 +178,12 @@ const Account = () => {
                             rules={[{ type: 'email', message: 'The input is not a valid Email!', },
                                 { required: false, message: 'Please input your Email!', }, ]}
                         >
-                            <input className="inputFieldShort" id="email" />
+                            <input className="inputFieldShort" 
+                                id="email"
+                                label="email" 
+                                value={email}
+                                onChange={e => setEmail(e.target.value)}
+                            />
                         </Form.Item>
                     </Col>
                     <Col span={12}>
@@ -173,7 +191,13 @@ const Account = () => {
                             label={<h2 className="inputHeaderSpacing">Phone Number</h2>} name="phoneNumber"
                             rules={[{ required: false, message: 'Please input your phone number!' }]}
                         >
-                            <input className="inputFieldShort" id='phoneNumber' /*addonBefore={prefixSelector} style={{ width: '100%' }}*//>
+                            <input className="inputFieldShort" 
+                                id='phoneNumber'
+                                label="phoneNumber" 
+                                value={phoneNumber}
+                                onChange={e => setPhoneNumber(e.target.value)} 
+                                /*addonBefore={prefixSelector} style={{ width: '100%' }}*/
+                            />
                         </Form.Item>
                     </Col>
                 </Row>
@@ -205,10 +229,12 @@ const Account = () => {
                 </Form.Item>
              
                     <Form.Item>
-                        <Button type="primary" htmlType="submit" id="pWSubmitButton">Update Account</Button>
+                        <Button type="primary" htmlType="submit" id="pWSubmitButton" onClick={updateUserDetails}>Update Account</Button>
                     </Form.Item>
                 </Form>
         </Card></Row>
+    ) : (<Redirect to="/home"/>) }
+    </div>
 ); }
 
 export default Account

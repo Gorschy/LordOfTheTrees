@@ -1,3 +1,4 @@
+import React, { useContext } from 'react';
 import { Card, Col, Row } from 'antd';
 import { Link } from 'react-router-dom';
 import './dashboard.css';
@@ -6,10 +7,17 @@ import DashIcon1 from '../assets/DashIcon1.png';
 import DashIcon2 from '../assets/DashIcon2.png';
 import DashIcon3 from '../assets/DashIcon3.png';
 import DashImg1 from '../assets/DashImg1.png';
+import { UserContext } from './UserContext';
+import { Redirect } from 'react-router'
 
-const dashboard = () => { return(
-    <div>
-        
+const Dashboard = () => { 
+    
+    const {loggedIn, setLoggedIn} = useContext(UserContext);
+
+    return(
+    <div> 
+    { loggedIn ? (
+        <div>
         <Row justify="space-around" gutter={24}>
         
         <Col span={8}> <Link to="/account">
@@ -32,17 +40,14 @@ const dashboard = () => { return(
         </Card> </Link> </Col>
         
         </Row>
-
         <br/>
-
         <Row justify="space-around">
             <Card> <img className="sprayImage" src={DashImg1} alt="Spray" style={{maxWidth: "100%", minWidth:"10%"}}/> </Card>
         </Row>
-        
-
-
+        </div>
+     ) : (<Redirect to="/home"/>) }        
     </div>
 );}
-export default dashboard;
+export default Dashboard;
 
 // TO DO: FIX IMAGE WRAPPING
