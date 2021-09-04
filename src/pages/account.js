@@ -145,7 +145,7 @@ const Account = () => {
                 <Row gutter={0}>
                     <Col span={12}>
                         <Form.Item
-                            label={<h2 className="inputHeaderSpacing">First Name</h2>} name="fName"
+                            label={<h3 className="inputHeaderSpacing">First Name</h3>} name="fName"
                             rules={[{ required: false, message: 'Please input your first name!' }]}
                         >
                             <input className="inputFieldShort"
@@ -158,7 +158,7 @@ const Account = () => {
                     </Col>
                     <Col span={12}>
                         <Form.Item
-                            label={<h2 className="inputHeaderSpacing">Last Name</h2>} name="lName"
+                            label={<h3 className="inputHeaderSpacing">Last Name</h3>} name="lName"
                             rules={[{ required: false, message: 'Please input your last name!' }]}
                         >
                             <input className="inputFieldShort" 
@@ -174,7 +174,7 @@ const Account = () => {
                 <Row gutter={0}>
                     <Col span={12}>
                         <Form.Item
-                            label={<h2 className="inputHeaderSpacing">Email</h2>} name="email"
+                            label={<h3 className="inputHeaderSpacing">Email</h3>} name="email"
                             rules={[{ type: 'email', message: 'The input is not a valid Email!', },
                                 { required: false, message: 'Please input your Email!', }, ]}
                         >
@@ -188,7 +188,7 @@ const Account = () => {
                     </Col>
                     <Col span={12}>
                         <Form.Item 
-                            label={<h2 className="inputHeaderSpacing">Phone Number</h2>} name="phoneNumber"
+                            label={<h3 className="inputHeaderSpacing">Phone Number</h3>} name="phoneNumber"
                             rules={[{ required: false, message: 'Please input your phone number!' }]}
                         >
                             <input className="inputFieldShort" 
@@ -205,7 +205,7 @@ const Account = () => {
                 <Divider orientation="left"><h2>Change Password</h2></Divider>
 
                 <Form.Item className="space"
-                    label={<h2 className="inputHeaderSpacing">Old Password</h2>}
+                    label={<h3 className="inputHeaderSpacing">Old Password</h3>}
                     name="oldPW"
                     rules={[{ required: false, message: 'Please input your old password!' }]}
                 >
@@ -213,7 +213,7 @@ const Account = () => {
                 </Form.Item>
 
                 <Form.Item className="space"
-                    label={<h2 className="inputHeaderSpacing">New Password</h2>}
+                    label={<h3 className="inputHeaderSpacing">New Password</h3>}
                     name="newPW"
                     rules={[{ required: false, message: 'Please input your new password!' }]}
                 >
@@ -221,7 +221,7 @@ const Account = () => {
                 </Form.Item>
 
                 <Form.Item className="space"
-                    label={<h2 className="inputHeaderSpacing">Confirm New Password</h2>}
+                    label={<h3 className="inputHeaderSpacing">Confirm New Password</h3>}
                     name="newPWConfirm"
                     rules={[{ required: false, message: 'Please confirm your new password!' }]}
                 >

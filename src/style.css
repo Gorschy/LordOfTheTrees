@@ -9,25 +9,39 @@
     --color_lime_green: #95C11F;
     --color_green: #4A7634;
     --color_white: #FFFFFF;
-
+    --color_link_blue: #0645AD;
 
     /*  =============================   */
 
     --card_header_color: var(--color_green);
     --general_text_color: var(--color_deep_black);
+    --general_link_color: var(--color_link_blue);
     --text_header_color: var(--color_forest_green);
     --foreground_color: var(--color_white);
+
+    --input_border_color: var(--color_forest_green);
+    --input_border_hover_color: var(var(--color_green));
 
     --general_font_family: 'Jost';
 
     --card_header_font_size: 40px;
     --card_header_font_weight: 700;
     
+    /* h1 */
     --heading_text_font_size: 24px;
     --heading_text_font_weight: 500;
 
-    --general_font_size: 18px;
-    --general_text_font_weight: 400;
+    /* h2 */
+    --section_header_font_size: 20px;
+    --section_header_font_weight: 400;
+
+    /* h3 */
+    --unit_title_font_size: 18px;
+    --unit_title_font_weight: 300;
+
+    /* div className = "generalText" */
+    --general_font_size: 16px;
+    --general_text_font_weight: 300;
 
     --card_standard_padding: 0px 25px 0px;
     
@@ -57,11 +71,50 @@ div.standardText {
 
 }
 
-h2 { /* This used to be headerText*/
+div.standardTextLink {
     font-family: var(--general_font_family);
     font-size: var(--general_font_size);
-    font-weight: var(--heading_text_font_weight);
+    color: var(--general_link_color);
+    font-weight: var(--general_text_font_weight);
+    text-align: left;
+
+}
+
+
+h2 { /* This used to be headerText*/
+    font-family: var(--general_font_family);
+    font-size: var(--section_header_font_size);
+    font-weight: var(--section_header_font_weight);
     color: var(--text_header_color);
+    text-align: left;
+
+
+}
+
+h3 { 
+    font-family: var(--general_font_family);
+    font-size: var(--unit_title_font_size);
+    font-weight: var(--unit_title_font_weight);
+    color: var(--general_text_color);
+    text-align: left;
+
+}
+
+label {
+    display: block;
+    padding-left: 2px;
+    font-family: var(--general_font_family);
+    font-size: var(--unit_title_font_size);
+    font-weight: var(--unit_title_font_weight);
+    text-align: left;
+    color: var(--general_text_color);
+}
+
+.calculatorInput {
+    font-family: var(--general_font_family);
+    font-size: var(--general_font_size);
+    color: var(--general_text_color);
+    font-weight: var(--general_text_font_weight);
     text-align: left;
 
 }

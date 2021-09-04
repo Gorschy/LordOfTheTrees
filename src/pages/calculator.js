@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTint, faLightbulb, faTrashAlt, faBurn, faFile, faUtensils, faIcons, faRoute } from '@fortawesome/free-solid-svg-icons'
 import { Button, Card , Tabs, Layout } from 'antd';
 import './calculator.css';
+import '../style.css';
 
 const transportIcon = <FontAwesomeIcon style={{marginRight: 8}} icon={faRoute} />;
 const electricityIcon = <FontAwesomeIcon style={{marginRight: 8}} icon={faLightbulb} />;
@@ -132,26 +133,23 @@ function Calculator() {
     <div className='calculatorContent'>
     
       <Card
-        className="calculatorCard"
         id='calculatorCard'
         bordered={false} 
-        title="Carbon Calculator"
+        title={<h1 id="centreContent">Carbon Calculator</h1>}
       >
         <Tabs defaultActiveKey="Transport" onChange={callback}>                          
 
-          <TabPane tab={<span>
-                          {transportIcon}
-                          Transport
-                        </span>} key="Transport">
+          <TabPane tab={<div className="standardText"> {transportIcon}Transport</div>} key="Transport">
+            
             <div>    
               <form className='basicForm'>
 
-                <h3>Vehicle</h3>
+                <h2>Vehicle</h2>
 
-                <label className='calculatorLabel'>Vehicle Type</label>
+                <label>Vehicle Type</label>
                 <select
                   required
-                  className = 'calculatorDropdown'
+                  className="userInput"
                   onChange = {e => setEmissions({ ...emission, vehicleType: parseInt(e.target.value), transportTotal: emission.transportTotal + parseInt(e.target.value)})}
                  
                   
@@ -162,12 +160,12 @@ function Calculator() {
                   <option value="3">3</option>
                 </select>
 
-                <h3>Air Travel</h3>
+                <h2>Air Travel</h2>
 
-                <label className='calculatorLabel'>Cabin Class</label>
+                <label>Cabin Class</label>
                 <select
                   required
-                  className = 'calculatorDropdown'
+                  className = 'userInput'
                   onChange = {e => setEmissions({ ...emission, cabinClass: parseInt(e.target.value), transportTotal: emission.transportTotal + parseInt(e.target.value)})}
                 >
                   <option value="" disabled selected hidden>Please Select</option>
@@ -176,10 +174,10 @@ function Calculator() {
                   <option value="3">3</option>
                 </select>
 
-                <label className='calculatorLabel'>Distance</label>
+                <label>Distance</label>
                 <select
                   required
-                  className = 'calculatorDropdown'
+                  className = 'userInput'
                   onChange = {e => setEmissions({ ...emission, airDistance: parseInt(e.target.value), transportTotal: emission.transportTotal + parseInt(e.target.value)})}
                 >
                   <option value="" disabled selected hidden>Please Select</option>
@@ -188,12 +186,12 @@ function Calculator() {
                   <option value="3">3</option>
                 </select>
 
-                <h3>Public Transport</h3>
+                <h2>Public Transport</h2>
                           
-                <label className='calculatorLabel'>Transport Method</label>
+                <label>Transport Method</label>
                 <select
                   required
-                  className = 'calculatorDropdown'
+                  className = 'userInput'
                   onChange = {e => setEmissions({ ...emission, transportMethod: parseInt(e.target.value), transportTotal: emission.transportTotal + parseInt(e.target.value)})}
                 >
                   <option value="" disabled selected hidden>Please Select</option>
@@ -202,10 +200,10 @@ function Calculator() {
                   <option value="3">3</option>
                 </select>
 
-                <label className='calculatorLabel'>Transport Type</label>
+                <label>Transport Type</label>
                 <select
                   required
-                  className = 'calculatorDropdown'
+                  className = 'userInput'
                   onChange = {e => setEmissions({ ...emission, transportType: parseInt(e.target.value), transportTotal: emission.transportTotal + parseInt(e.target.value)})}
                 >
                   <option value="" disabled selected hidden>Please Select</option>
@@ -214,20 +212,20 @@ function Calculator() {
                   <option value="3">3</option>
                 </select>
 
-                <label className='calculatorLabel'>Distance</label>   
+                <label>Distance</label>   
                 <input
                   onChange = {e => setEmissions({ ...emission, pubDistance: parseInt(e.target.value), transportTotal: emission.transportTotal + parseInt(e.target.value)})}
-                  className='calculatorInput' 
+                  className='userInput' 
                   type='number' 
                   placeholder={uom.distance}
                 />
 
                 { advCalc 
                   ? <div>
-                      <label className='calculatorLabel'>Test</label>
+                      <label>Test</label>
                       <input
                         onChange = {e => setEmissions({ ...emission, ADVANCED_INPUT: parseInt(e.target.value), transportTotal: emission.transportTotal + parseInt(e.target.value)})}
-                        className='calculatorInput'
+                        className='userInput'
                         type='number'
                         placeholder='adv Input'
                       />
@@ -241,17 +239,14 @@ function Calculator() {
             </div>
           </TabPane>
             
-          <TabPane tab={<span>
-                          {electricityIcon}
-                          Electricity
-                        </span>} key="Electricity">
+          <TabPane tab={<div className="standardText"> {electricityIcon}Electricity</div>} key="Electricity">
             <div>    
               <form className='basicForm'>
 
-                <label className='calculatorLabel'>Consumption</label>
+                <label>Consumption</label>
                 <input
                   onChange = {e => setEmissions({ ...emission, consumption: parseInt(e.target.value), electricityTotal: emission.electricityTotal + parseInt(e.target.value)})}
-                  className='calculatorInput'
+                  className='userInput'
                   type='number'
                   placeholder={uom.consumption}
                 />
@@ -262,35 +257,32 @@ function Calculator() {
             </div>
           </TabPane>
 
-          <TabPane tab={<span>
-                          {gasIcon}
-                          Gas
-                        </span>} key="Gas">
+          <TabPane tab={<div className="standardText"> {gasIcon}Gas</div>} key="Gas">
             <div>    
               <form className='basicForm'>
 
-                <label className='calculatorLabel'>LPG Consumption</label>
+                <label>LPG Consumption</label>
                 <input
                   onChange = {e => setEmissions({ ...emission, lpgConsumption: parseInt(e.target.value), gasTotal: emission.gasTotal + parseInt(e.target.value)})}
-                  className='calculatorInput'
+                  className='userInput'
                   type='number'
                   placeholder={uom.gas}
                 />
 
-                <h4 style={{textAlign: 'center'}}>or</h4>
+                <h2 style={{textAlign: 'center'}}>or</h2>
                 
-                <label className='calculatorLabel'>Gas Consumption</label>
+                <label>Gas Consumption</label>
                 <input
                   onChange = {e => setEmissions({ ...emission, gasConsumption: parseInt(e.target.value), gasTotal: emission.gasTotal + parseInt(e.target.value)})}
-                  className='calculatorInput'
+                  className='userInput'
                   type='number'
                   placeholder={uom.gas}
                 />
 
-                <label className='calculatorLabel'>Unit of Measurement</label>
+                <label>Unit of Measurement</label>
                 <select
                   required
-                  className = 'calculatorDropdown'
+                  className = 'userInput'
                   onChange = {e => setEmissions({ ...emission, unitOfMeasurement: parseInt(e.target.value), gasTotal: emission.gasTotal + parseInt(e.target.value)})}
                 >
                   <option value="" disabled selected hidden>Please Select</option>
@@ -299,10 +291,10 @@ function Calculator() {
                   <option value="3">3</option>
                 </select>
 
-                <label className='calculatorLabel'>State or Territory</label>
+                <label>State or Territory</label>
                 <select
                   required
-                  className = 'calculatorDropdown'
+                  className = 'userInput'
                   onChange = {e => setEmissions({ ...emission, stateOrTerritory: parseInt(e.target.value), gasTotal: emission.gasTotal + parseInt(e.target.value)})}
                 >
                   <option value="" disabled selected hidden>Please Select</option>
@@ -317,17 +309,14 @@ function Calculator() {
             </div>
           </TabPane>
 
-          <TabPane tab={<span>
-                          {wasteIcon}
-                          Waste
-                        </span>} key="Waste">
+          <TabPane tab={<div className="standardText"> {wasteIcon}Waste</div>} key="Waste">
             <div>    
               <form className='basicForm'>
                 
-                <label className='calculatorLabel'>Waste Type</label>
+                <label>Waste Type</label>
                 <select
                   required
-                  className = 'calculatorDropdown'
+                  className = 'userInput'
                   onChange = {e => setEmissions({ ...emission, wasteType: parseInt(e.target.value), wasteTotal: emission.wasteTotal + parseInt(e.target.value)})}
                 >
                   <option value="" disabled selected hidden>Please Select</option>
@@ -336,10 +325,10 @@ function Calculator() {
                   <option value="3">3</option>
                 </select>
 
-                <label className='calculatorLabel'>Weight</label>
+                <label>Weight</label>
                 <input
                   onChange = {e => setEmissions({ ...emission, wasteWeight: parseInt(e.target.value), wasteTotal: emission.wasteTotal + parseInt(e.target.value)})}
-                  className='calculatorInput'
+                  className='userInput'
                   type='number'
                   placeholder={uom.waste}
                 />
@@ -350,17 +339,14 @@ function Calculator() {
             </div>
           </TabPane>
 
-          <TabPane tab={<span>
-                          {waterIcon}
-                          Water
-                        </span>} key="Water">
+          <TabPane tab={<div className="standardText"> {waterIcon}Water</div>} key="Water">
             <div>    
               <form className='basicForm'>
                 
-                <label className='calculatorLabel'>Water Utility Location</label>
+                <label>Water Utility Location</label>
                 <select
                   required
-                  className = 'calculatorDropdown'
+                  className = 'userInput'
                   onChange = {e => setEmissions({ ...emission, waterUtilityLocation: parseInt(e.target.value), waterTotal: emission.waterTotal + parseInt(e.target.value)})}
                 >
                   <option value="" disabled selected hidden>Please Select</option>
@@ -375,17 +361,14 @@ function Calculator() {
             </div>
           </TabPane>
 
-          <TabPane tab={<span>
-                          {paperIcon}
-                          Paper
-                        </span>} key="Paper">
+          <TabPane tab={<div className="standardText"> {paperIcon}Paper</div>} key="Paper">
             <div>    
               <form className='basicForm'>
                 
-                <label className='calculatorLabel'>Source</label>
+                <label>Source</label>
                 <select
                   required
-                  className = 'calculatorDropdown'
+                  className = 'userInput'
                   onChange = {e => setEmissions({ ...emission, source: parseInt(e.target.value), paperTotal: emission.paperTotal + parseInt(e.target.value)})}
                 >
                   <option value="" disabled selected hidden>Please Select</option>
@@ -394,10 +377,10 @@ function Calculator() {
                   <option value="3">3</option>
                 </select>
                 
-                <label className='calculatorLabel'>Paper Type</label>
+                <label>Paper Type</label>
                 <select
                   required
-                  className = 'calculatorDropdown'
+                  className = 'userInput'
                   onChange = {e => setEmissions({ ...emission, paperType: parseInt(e.target.value), paperTotal: emission.paperTotal + parseInt(e.target.value)})}
                 >
                   <option value="" disabled selected hidden>Please Select</option>
@@ -406,10 +389,10 @@ function Calculator() {
                   <option value="3">3</option>
                 </select>
 
-                <label className='calculatorLabel'>Weight</label>
+                <label>Weight</label>
                 <input
                   onChange = {e => setEmissions({ ...emission, paperWeight: parseInt(e.target.value), paperTotal: emission.paperTotal + parseInt(e.target.value)})}
-                  className='calculatorInput'
+                  className='userInput'
                   type='number'
                   placeholder={uom.weight}
                 />
@@ -420,17 +403,14 @@ function Calculator() {
             </div>  
           </TabPane>
 
-          <TabPane tab={<span>
-                          {foodAndDrinkIcon}
-                          Food & Drink
-                        </span>} key="FoodAndDrink">
+          <TabPane tab={<div className="standardText"> {foodAndDrinkIcon}Food And Drink</div>} key="FoodAndDrink">
             <div>    
               <form className='basicForm'>
                 
-                <label className='calculatorLabel'>Food Type</label>
+                <label>Food Type</label>
                 <select
                   required
-                  className = 'calculatorDropdown'
+                  className = 'userInput'
                   onChange = {e => setEmissions({ ...emission, foodType: parseInt(e.target.value), foodAndDrinkTotal: emission.foodAndDrinkTotal + parseInt(e.target.value)})}
                 >
                   <option value="" disabled selected hidden>Please Select</option>
@@ -439,10 +419,10 @@ function Calculator() {
                   <option value="3">3</option>
                 </select>
 
-                <label className='calculatorLabel'>Expenditure</label>
+                <label>Expenditure</label>
                 <input
                   onChange = {e => setEmissions({ ...emission, expenditure: parseInt(e.target.value), foodAndDrinkTotal: emission.foodAndDrinkTotal + parseInt(e.target.value)})}
-                  className='calculatorInput'
+                  className='userInput'
                   type='number'
                   placeholder={uom.dollar}
                 />
@@ -453,47 +433,44 @@ function Calculator() {
             </div>  
           </TabPane>
 
-          <TabPane tab={<span>
-                          {eventsIcon}
-                          Events
-                        </span>} key="Events">
+          <TabPane tab={<div className="standardText"> {eventsIcon}Events</div>} key="Events">
             <div>    
               <form className='basicForm'>
 
-                <h3>Accommodation</h3>
+                <h2>Accommodation</h2>
 
-                <label className='calculatorLabel'>Total Spent on Accommodation</label>   
+                <label>Total Spent on Accommodation</label>   
                 <input
                   onChange = {e => setEmissions({ ...emission, totalAccommodation: parseInt(e.target.value), eventsTotal: emission.eventsTotal + parseInt(e.target.value)})}
-                  className='calculatorInput'
+                  className='userInput'
                   type='number'
                   placeholder={uom.dollar}
                 />
 
-                <h3>Food & Drink</h3>
+                <h2>Food And Drink</h2>
 
-                <label className='calculatorLabel'>Total Spent on Meals</label>   
+                <label>Total Spent on Meals</label>   
                 <input
                   onChange = {e => setEmissions({ ...emission, totalMeals: parseInt(e.target.value), eventsTotal: emission.eventsTotal + parseInt(e.target.value)})}
-                  className='calculatorInput'
+                  className='userInput'
                   type='number'
                   placeholder={uom.dollar}
                 />
 
-                <label className='calculatorLabel'>Total Spent on Non-Alcoholic Drinks</label>   
+                <label>Total Spent on Non-Alcoholic Drinks</label>   
                 <input
                   onChange = {e => setEmissions({ ...emission, totalDrinks: parseInt(e.target.value), eventsTotal: emission.eventsTotal + parseInt(e.target.value)})}
-                  className='calculatorInput'
+                  className='userInput'
                   type='number'
                   placeholder={uom.dollar}
                 />
                           
-                <h3>Promotional Materials</h3>
+                <h2>Promotional Materials</h2>
 
-                <label className='calculatorLabel'>Total Spent on Plastic Products</label>   
+                <label>Total Spent on Plastic Products</label>   
                 <input
                   onChange = {e => setEmissions({ ...emission, totalEventProducts: parseInt(e.target.value), eventsTotal: emission.eventsTotal + parseInt(e.target.value)})}
-                  className='calculatorInput'
+                  className='userInput'
                   type='number'
                   placeholder={uom.dollar}
                 />
@@ -506,21 +483,21 @@ function Calculator() {
                         
           <Layout>
             <Content>
-              <Card                    
-                type="inner"
-                title="Carbon Report"                    
-              >
+              <Card id="totalCard" title={<h2 id="centreContent">Carbon Report</h2>}>
                 
-                <h4 className='outputTags'>Transport: {emission.transportTotal}</h4>
-                <h4 className='outputTags'>Electricity: {emission.electricityTotal}</h4>
-                <h4 className='outputTags'>Gas: {emission.gasTotal}</h4>
-                <h4 className='outputTags'>Waste: {emission.wasteTotal}</h4>
-                <h4 className='outputTags'>Water: {emission.waterTotal}</h4>
-                <h4 className='outputTags'>Paper: {emission.paperTotal}</h4>
-                <h4 className='outputTags'>Food & Drink: {emission.foodAndDrinkTotal}</h4>
-                <h4 className='outputTags'>Events: {emission.eventsTotal}</h4>
+                <div className='standardText'>
+                <br />
+                Transport: {emission.transportTotal} <br/>
+                Electricity: {emission.electricityTotal} <br/>
+                Gas: {emission.gasTotal} <br/>
+                Waste: {emission.wasteTotal} <br/>
+                Water: {emission.waterTotal} <br/>
+                Paper: {emission.paperTotal} <br/>
+                Food And Drink: {emission.foodAndDrinkTotal} <br/>
+                Events: {emission.eventsTotal}</div>
                 <br/>
-                <h4 className='outputTotal'>Total: {totalEmissions()}t CO<sub>2</sub></h4>
+
+                <h3 className='outputTotal'>Total: {totalEmissions()}t CO<sub>2</sub></h3>
 
               </Card>
             </Content>
@@ -536,7 +513,7 @@ function Calculator() {
             }}/>
             <div class="slider round"></div>  
           </label>
-          <span class='switchLabel'>Advanced</span>      
+          <h3 class='switchLabel'>Advanced</h3>      
         </div>
 
         <div class="switchContainer">
@@ -546,7 +523,7 @@ function Calculator() {
             }}/>
             <div class="slider round"></div>  
           </label>
-          <span class='switchLabel'>Imperial</span>      
+          <h3 class='switchLabel'>Imperial</h3>      
         </div>
         
       </div>
