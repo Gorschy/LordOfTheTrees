@@ -1,27 +1,19 @@
-import React, { useEffect, useState } from 'react';
 import './App.css';
+import React, { useEffect, useState } from 'react';
 import Amplify, { Auth } from 'aws-amplify';
 import awsconfig from './aws-exports';
-import './components/Navbar/Navbar.css';
 import { Layout } from 'antd';
-import { Route, Switch, Redirect, Link } from 'react-router-dom';
+import { Route, Switch, Redirect} from 'react-router-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
-import home from './pages/home';
-import calculator from './pages/calculator';
-import contactUs from './pages/contactUs';
-import SignIn from './pages/login';
-import dashboard from './pages/dashboard';
-import account from './pages/account';
-import { Button, Menu } from 'antd';
-import Register from './pages/register';
-import Projects from './pages/projects';
-import ConfirmSignUp from './pages/confirmSignUp';
-
 import { UserContext } from './pages/UserContext';
+
 import Navbar from './pages/Navbar';
+import home from './pages/home';
+import path from './_constants/paths';
+
 
 const { Header, Content } = Layout;
-const { Item } = Menu;
+
 
 Amplify.configure(awsconfig);
 
@@ -62,34 +54,28 @@ function App() {
                     
                     <Content className="contentContainer">
                         <div>
-                           
-                            
                             <Switch>
                                 <UserContext.Provider value={{ loggedIn, setLoggedIn }}>    
+                                
                                 <Route exact path="/home" component={home} />
                                 <Route exact path="/">
                                     <Redirect to="/home" />
                                 </Route>
-                                <Route exact path="/calculator" component={calculator} />
-                                <Route exact path="/contactUs" component={contactUs} />
-                                <Route exact path="/register">
-                                    <Register /> 
-                                </Route>
-                                <Route exact path="/confirmSignUp">
-                                    <ConfirmSignUp />
-                                </Route>
-                                <Route exact path="/login"> 
-                                    <SignIn onSignin={onSignIn} />     
-                                </Route>
-                                <Route exact path="/dashboard" component={dashboard} />
-                                <Route exact path="/account" component={account} />
-                                <Route exact path="/projects" component={Projects} />
+
+                                <Route exact path="/calculator" component={path.calculator} />
+                                <Route exact path="/contactUs" component={path.contactUs} />
+                                <Route exact path="/register" component={path.register} />
+                                <Route exact path="/confirmSignUp" component={path.confirmSignUp} />
+                                <Route exact path="/login" component={path.login} onSignIn={onSignIn} />
+                                <Route exact path="/dashboard" component={path.dashboard} />
+                                <Route exact path="/account" component={path.account} />
+                                <Route exact path="/projects" component={path.projects} />
+                                                            
                                 </UserContext.Provider>
-                            </Switch>
-                          
-                                
+                            </Switch>    
                         </div>
                     </Content>
+
                 </Layout>
             </Router>    
 
