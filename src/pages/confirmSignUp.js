@@ -26,7 +26,7 @@ const ConfirmSignUp = () => {
           
         <div>
             <Card className="authCard" title={<h1>Sign Up</h1>}>
-                <h2 className="authLabels">Username</h2>
+                <h2 className="authLabels">Email</h2>
                 <Input className="authField"
                     id="username"
                     label="Username" 

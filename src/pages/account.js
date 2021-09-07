@@ -4,7 +4,7 @@ import { UserContext } from './UserContext';
 import { Auth } from 'aws-amplify';
 import "./account.css";
 import "../style.css";
-import { Route, Redirect } from 'react-router'
+import { Redirect } from 'react-router'
 const Account = () => { 
     //const { Option } = Select;
     const {loggedIn, setLoggedIn} = useContext(UserContext);

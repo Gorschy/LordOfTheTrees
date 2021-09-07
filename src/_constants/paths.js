@@ -3,7 +3,7 @@ import ConfirmSignUp from '../pages/confirmSignUp';
 import Login from '../pages/login';
 import ContactUs from '../pages/contactUs';
 import Dashboard from '../pages/dashboard';
-import Projects from '../pages/projects';
+import Projects from '../pages/projects/projects';
 import Account from '../pages/account';
 import Calculator from '../pages/calculator';
 

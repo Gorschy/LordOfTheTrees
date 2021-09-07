@@ -36,7 +36,7 @@ const Register = () => {
           
         <div>
             <Card className="registerCard" title={<h1>Register</h1>}>
-                <h2 className="registerLabels">Username</h2>
+                <h2 className="registerLabels">Email</h2>
                 <Input className="registerField"
                     id="username"
                     label="Username" 

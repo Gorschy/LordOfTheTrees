@@ -36,7 +36,8 @@ function App() {
     };
 
     //Not sure if this function is really necessary
-    const onSignIn = () => {
+    function onSignIn() {
+        console.log("yeet");
         setLoggedIn(true);
     };
 
@@ -66,7 +67,7 @@ function App() {
                                 <Route exact path="/contactUs" component={path.contactUs} />
                                 <Route exact path="/register" component={path.register} />
                                 <Route exact path="/confirmSignUp" component={path.confirmSignUp} />
-                                <Route exact path="/login" component={path.login} onSignIn={onSignIn} />
+                                <Route exact path="/login" component={path.login} />
                                 <Route exact path="/dashboard" component={path.dashboard} />
                                 <Route exact path="/account" component={path.account} />
                                 <Route exact path="/projects" component={path.projects} />
