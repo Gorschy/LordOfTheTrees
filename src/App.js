@@ -6,7 +6,7 @@ import { Layout } from 'antd';
 import { Route, Switch, Redirect} from 'react-router-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { UserContext } from './pages/UserContext';
-
+import Login from './pages/login';
 import Navbar from './pages/Navbar';
 import home from './pages/home';
 import path from './_constants/paths';
@@ -34,8 +34,6 @@ function App() {
             setLoggedIn(false);
         });
     };
-
-    //Not sure if this function is really necessary
     function onSignIn() {
         console.log("yeet");
         setLoggedIn(true);
@@ -67,7 +65,7 @@ function App() {
                                 <Route exact path="/contactUs" component={path.contactUs} />
                                 <Route exact path="/register" component={path.register} />
                                 <Route exact path="/confirmSignUp" component={path.confirmSignUp} />
-                                <Route exact path="/login" component={path.login} />
+                                <Route exact path="/login"> <Login onSignin={onSignIn} /> </Route>
                                 <Route exact path="/dashboard" component={path.dashboard} />
                                 <Route exact path="/account" component={path.account} />
                                 <Route exact path="/projects" component={path.projects} />
