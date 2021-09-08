@@ -9,7 +9,7 @@ const ConfirmSignUp = () => {
     const [username, setUsername] = useState('');
     const [authCode, setAuthCode] = useState('');
     const history = useHistory();
-
+    const [errors, setErrors] = useState('');
 
     const confirmSignUp = async () => {
         try {
@@ -18,6 +18,7 @@ const ConfirmSignUp = () => {
 
         } catch (error) {
             console.log('error singing in', error);
+            setErrors(error.message);
         }
     };
 
@@ -41,6 +42,7 @@ const ConfirmSignUp = () => {
                     value={authCode}
                     onChange={e => setAuthCode(e.target.value)}
                 />
+                <span className="errorLabel">{errors}</span>
                 <br/><br/>
                 <Button className="authButton" id="confirmSignup" onClick={confirmSignUp} type="primary">
                     Confirm Sign Up                

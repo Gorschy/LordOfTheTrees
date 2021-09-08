@@ -11,7 +11,7 @@ const Register = () => {
     const [family_name, setFamilyName] = useState('');
     const [phone_number, setPhoneNumber] = useState('');
     const history = useHistory();
-    
+    const [errors, setErrors] = useState('');
 
     const signUp = async () => {
         try {
@@ -29,6 +29,7 @@ const Register = () => {
 
         } catch (error) {
             console.log('error singing in', error);
+            setErrors(error.message);
         }
     };
 
@@ -79,12 +80,14 @@ const Register = () => {
                     value={phone_number}
                     onChange={e => setPhoneNumber(e.target.value)}
                 />
-
+                
                 <br/><br/>
-
+                <span className="errorLabel">{errors}</span>
                 <Button className="registerButton" id="signUpButton" onClick={signUp} type="primary">
                     Sign up                 
                 </Button> 
+                
+
             </Card> 
         </div>
     );

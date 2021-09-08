@@ -17,12 +17,15 @@ const Account = () => {
     const [newPassword, setNewPassword] = useState('');
     const [confirmNewPassword, setConfirmNewPassword] = useState('');
 
+
+    const [errors, setErrors] = useState('');
+
     useEffect(() => {
         displayUserDetails();
     }, []);
 
     const displayUserDetails = async () => {
-        //Capture current authed user
+       /* //Capture current authed user
         let user = await Auth.currentAuthenticatedUser();
         const { attributes } = user;
 
@@ -46,20 +49,19 @@ const Account = () => {
         if(attributes.phone_number !== undefined ){
         var phoneNumberInput = document.getElementById("phoneNumber");
         phoneNumberInput.value = attributes.phone_number;
-        }
+        }*/
     };
 
     const updateUserDetails = async () => {
         let user = await Auth.currentAuthenticatedUser();
-        
-        //check if password is valid
-            await Auth.updateUserAttributes(user, {
-                'email': email,
-                'given_name': givenName,
-                'family_name': familyName,
-                'phone_number': phoneNumber
-            });
+        await Auth.updateUserAttributes(user, {
+            'email': email,
+            'given_name': givenName,
+            'family_name': familyName,
+            'phone_number': phoneNumber
+        });
 
+        
     };
    
     const onFinish = (values) => {
@@ -208,8 +210,14 @@ const Account = () => {
                     label={<h3 className="inputHeaderSpacing">Old Password</h3>}
                     name="oldPW"
                     rules={[{ required: false, message: 'Please input your old password!' }]}
-                >
-                    <Input.Password className="inputFieldLong"/>
+                >   
+                    <input className="inputFieldLong" 
+                                id='currentPassword'
+                                label="currentPassword" 
+                                value={currentPassword}
+                                onChange={e => setCurrentPassword(e.target.value)} 
+                                /*addonBefore={prefixSelector} style={{ width: '100%' }}*/
+                            />
                 </Form.Item>
 
                 <Form.Item className="space"
@@ -226,8 +234,9 @@ const Account = () => {
                     rules={[{ required: false, message: 'Please confirm your new password!' }]}
                 >
                     <Input.Password className="inputFieldLong"/>
+                
                 </Form.Item>
-             
+                <span className="errorLabel">{errors}</span>
                     <Form.Item>
                         <Button type="primary" htmlType="submit" id="pWSubmitButton" onClick={updateUserDetails}>Update Account</Button>
                     </Form.Item>

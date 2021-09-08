@@ -47,3 +47,8 @@
 .authLabels {
     margin-left: 4vw;
 }
+
+.errorLabel {
+    margin-left: 4vw;
+    color: red;
+}

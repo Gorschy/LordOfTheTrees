@@ -50,7 +50,7 @@ const SignIn = ({ onSignin }) => {
                     value={password}
                     onChange={e => setPassword(e.target.value)}
                 />
-                <span>{errors}</span>
+                <span className="errorLabel">{errors}</span>
                 <br/><br/>
                 <Button className="buttonType1 loginButton" id="signinButton" onClick={signIn} type="primary">
                     Log In      
