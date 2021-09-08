@@ -25,7 +25,7 @@ const Account = () => {
     }, []);
 
     const displayUserDetails = async () => {
-       /* //Capture current authed user
+        //Capture current authed user
         let user = await Auth.currentAuthenticatedUser();
         const { attributes } = user;
 
@@ -33,23 +33,32 @@ const Account = () => {
         //First Name
         if(attributes.given_name !== undefined ){
             var fNameInput = document.getElementById("firstName");
-            fNameInput.value = attributes.given_name;
+            if(fNameInput){
+                fNameInput.value = attributes.given_name;
+            }
+            
         }
         //Last Name
         if(attributes.family_name !== undefined ){
-        var lNameInput = document.getElementById("lastName");
-        lNameInput.value = attributes.family_name;
+            var lNameInput = document.getElementById("lastName");
+            if(lNameInput){
+                lNameInput.value = attributes.family_name;
+            }
         }
         //Email
         if(attributes.email !== undefined ){
-        var emailInput = document.getElementById("email");
-        emailInput.value = attributes.email;
+            var emailInput = document.getElementById("email");
+            if(lNameInput){
+                emailInput.value = attributes.email;
+            }
         }
         //Phone Number
         if(attributes.phone_number !== undefined ){
-        var phoneNumberInput = document.getElementById("phoneNumber");
-        phoneNumberInput.value = attributes.phone_number;
-        }*/
+            var phoneNumberInput = document.getElementById("phoneNumber");
+            if(lNameInput){
+                phoneNumberInput.value = attributes.phone_number;
+            }
+        }
     };
 
     const updateUserDetails = async () => {
@@ -61,7 +70,7 @@ const Account = () => {
             'phone_number': phoneNumber
         });
 
-        
+
     };
    
     const onFinish = (values) => {
