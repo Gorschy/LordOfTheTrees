@@ -32,6 +32,9 @@ const SignIn = ({ onSignin }) => {
     return (  
         <div>
             <Card className="loginCard" title={<h1>Login</h1>} bordered={false} >
+                
+                <br/>
+
                 <h2 id="loginLabel" >Email</h2>
                 <Input className="loginField"
                     id="username"

@@ -1,5 +1,5 @@
 .loginCard {
-    width: 40vw !important;
+    width: clamp(500px, 40vw, 1000px) !important;
     position: fixed; /* or absolute */
     top: 50%;
     left: 50%;
@@ -7,9 +7,9 @@
 }
 
 .loginField {
-    margin-left: 4vw;
-    width: 32vw;
-    height: 4vh;
+    margin-left: 2vw;
+    width: clamp(460px, 36vw, 960px);
+    height: 40px;
     border-radius: 8px;
     display: inline-block;
     border: 1px solid var(--color_green);
@@ -31,6 +31,16 @@
     margin-left: 14vw;
     margin-top: 1vh;
     margin-bottom: 1vh;
+    width: 12vw;
+    height: 4vh;
+    border-radius: 8px;
+
+    color: var(--color_green);
+
+    font-family: var(--general_font_family);
+    font-size: var(--general_font_size);
+    font-weight: var(--heading_text_font_weight);
+    color: var(--color_white);
 }
 
 #loginLabel {

@@ -18,9 +18,10 @@
     --general_link_color: var(--color_link_blue);
     --text_header_color: var(--color_forest_green);
     --foreground_color: var(--color_white);
+    --background_color: var(--color_forest_green);
 
     --input_border_color: var(--color_forest_green);
-    --input_border_hover_color: var(var(--color_green));
+    --input_border_hover_color: var(--color_green);
 
     --general_font_family: 'Jost';
 
@@ -57,7 +58,7 @@ h1 { /* This used to be cardHeader*/
     font-size: var(--card_header_font_size);
     line-height: 40px;
     margin-bottom: 0px;
-    text-align: 'center';
+    text-align: center;
     vertical-align: top;
 
 }
@@ -116,5 +117,18 @@ label {
     color: var(--general_text_color);
     font-weight: var(--general_text_font_weight);
     text-align: left;
+
+}
+
+.line-clamp{
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+body {
+    background-color: var(--background_color);
 
 }

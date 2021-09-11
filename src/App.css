@@ -1,8 +1,10 @@
 @import '~antd/dist/antd.css';
 
+
 .contentContainer {
   height: 100vh;
   padding: 10px 10px;
+  background-color: var( --background_color);
 }
 
 .site-layout-header {

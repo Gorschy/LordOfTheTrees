@@ -1,44 +1,90 @@
 /*  Card Stylings   */
 
 .homeOurTeamCard  {
-    margin-bottom: 0.7vw;
-    width: 40vw;
-    height: 50vh;
+    margin-bottom: 25px;
+    margin-left: 25px;
+    margin-top: 15px;
+    margin-right: 25px;
+    width: clamp(600px, 50vw, 1000px);
+    
 
+    height: 550px;
     padding: var(--card_standard_padding);
     background-color: var(--foreground_color);
 }
 
 .homeFAQCard {
-    margin-left: 0.7vw;
-    width: 50vw;
-    height: 30vh;
+    margin-left: 25px;
+    margin-right: 25px;
+    width: clamp(650px, 75%, 1000px);
+    height: 400px;
     font-size: 0.75vw;
 
+    justify-items: right;
     padding: var(--card_standard_padding);
     background-color: var(--foreground_color);
+    margin-bottom: 25px;
 }
 
 /*  Image Stylings   */
-.homeImage1 {
-    margin-left: 0.7vw;
-    margin-bottom: 0.7vw;
+@media screen and (max-width: 1400px) {
+    #homeImage3 {
+        display:none !important;
+    }
+    #img1Wrapper {
+        display:none !important;
+    }
+}
+
+@media screen and (max-width: 1900px) {
+    #homeImage2 {
+        display:none !important;
+    }
+    #img2Wrapper {
+        display:none !important;
+    }
+}
+
+#homeImage1 {
     width: 20vw;
     height: 50vh;   
 }
 
-.homeImage2 {
-    margin-left: 0.7vw;
-    margin-bottom: 0.7vw;
-    margin-top: 30vh;
-    width: 19.2vw;
-    height: 20vh;
+#homeImage2 {
+    width: 800px;
+    height: 400px;
 }
 
-.homeImage3 {
-    width: 30vw;
-    height: 30vh;
+#homeImage3 {
+    width: 500;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom: 25px;
 }
 
 
+#img1Wrapper {
+    height: 550px;
+    width: 500px;
+    overflow: hidden;
+    margin-top: 15px;
+    margin-bottom: 25px;
+    margin-right: 25px;
+}
 
+#img2Wrapper {
+    width: 750px;
+    height: 400px;
+    overflow: hidden;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom: 25px;
+}
+
+/* Text Control */
+#ourTeamText {
+    min-width: 450px;
+}
+#faqText {
+    min-width: 450px;
+}
