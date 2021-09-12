@@ -1,31 +1,52 @@
 :root {
     --big_image_size: 60%;
-
+    
 }
 
 /* Card Stylings */
+#projectListCard.ant-card-head{
+    height: 10px;
+    color: red;
+}
 
 #projectListCard {
-    height: 90%;
     background-color: var(--foreground_color);
+    width: 12vw;
+    height: 45.5vh;
+    border-top-left-radius: 0.5em;
+    border-top-right-radius: 0.5em;
+}
+
+#carbonReportListCard {
+    background-color: var(--foreground_color);
+    width: 12vw;
+    height: 45.5vh;
+    border-bottom-left-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
 }
 
 #currentProjectCard {
-    height: 70%;
-    padding: var(--card_standard_padding);
     background-color: var(--foreground_color);
+    width: 70vw;
+    height: 91vh;
+    border-radius: 0.5em;
 }
 
 #projectAdminCard {
-    padding: var(--card_standard_padding);
     text-align: center;
-    height: calc(var(--big_image_size)+1);
     background-color: var(--foreground_color);
+    width: 15vw;
+    height: 45.5vh;
+    border-top-left-radius: 0.5em;
+    border-top-right-radius: 0.5em;
 }
 
 #membersList {
-    padding: var(--card_standard_padding);
     background-color: var(--foreground_color);
+    width: 15vw;
+    height: 45.5vh;
+    border-bottom-left-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
 }
 
 /* Header ID stylings */
@@ -72,5 +93,45 @@
 
 .imageIcon {
     width: var(--icon_image_size);
+}
 
+
+.centerContent {
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    width: 100%; 
+    height: 100%; 
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.projectSummary {
+    padding: 1vh;
+    width: 100%; 
+    height: 91vh;
+    background-color: white; 
+    flex-direction: column;
+    margin-left: 0.5vw;
+    margin-right: 0.5vw;
+    border-radius: 0.5em;
+}
+
+.projectAnalytics {
+    background-color: rgb(139, 164, 247);
+    height: 25vh;
+    width: 100%
+}
+
+.projectBreakdown {
+    background-color: rgb(164, 252, 161);
+    height: 64vh;
+    width: 100%;
+    
 }
