@@ -1,0 +1,22 @@
+type User @model {
+  id: ID!
+  email: String!
+  reports: [Report] @connection(keyName: "byUser", fields: ["id"])
+}
+
+type Report @model @key(name: "byUser", fields: ["userID"]) {
+  id: ID!
+  title: String!
+  userID: ID!
+  user: User @connection(fields: ["userID"])
+  EmissionTypes: [EmissionType] @connection(keyName: "byReport", fields: ["id"])
+}
+
+type EmissionType @model @key(name: "byReport", fields: ["reportID", "content"]) {
+  id: ID!
+  reportID: ID!
+  report: Report @connection(fields: ["reportID"])
+  type: String!
+  content: String!
+}
+
