@@ -1,8 +1,9 @@
 .logo {
     float: left;
-    width: auto;
-    height: 30px;
-    margin: 16px 24px 16px 0;
+    width: 60px;
+    height: 60px;
+    margin-top: 0.2vh;
+   
     justify-content: center;
 }
   
@@ -19,4 +20,19 @@
     position: absolute;
     top: 0;
     right: 0;
+    height: 0;
+}
+
+#navButton {
+    width: 12vw;
+    height: 4vh;
+    border-radius: 8px;
+
+    color: var(--color_green);
+
+    font-family: var(--general_font_family);
+    font-size: var(--general_font_size);
+    font-weight: var(--heading_text_font_weight);
+    color: var(--color_white);
+
 }
