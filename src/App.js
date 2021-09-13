@@ -69,6 +69,7 @@ function App() {
                                 <Route exact path="/dashboard" component={path.dashboard} />
                                 <Route exact path="/account" component={path.account} />
                                 <Route exact path="/projects" component={path.projects} />
+                                <Route exact path="/solutions" component={path.solutions} />
                                                             
                                 </UserContext.Provider>
                             </Switch>    

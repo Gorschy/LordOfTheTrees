@@ -6,6 +6,7 @@ import Dashboard from '../pages/dashboard';
 import Projects from '../pages/projects/projects';
 import Account from '../pages/account';
 import Calculator from '../pages/calculator';
+import Solutions from '../pages/solutions';
 
 const path = {
     register: Register,
@@ -15,7 +16,8 @@ const path = {
     dashboard: Dashboard,
     projects: Projects,
     account: Account,
-    calculator: Calculator
+    calculator: Calculator,
+    solutions: Solutions
 }
 
 export default path;
