@@ -3,7 +3,14 @@ import { Auth } from 'aws-amplify';
 import { Input, Button, Card } from 'antd';
 import { useHistory } from 'react-router-dom';
 import './login.css';
-import '../style.css'
+import '../style.css';
+
+
+/* TODO:
+    - forgot password
+    - keep me signed in?
+*/
+
 const SignIn = ({ onSignin }) => {
 
     const [username, setUsername] = useState('');
@@ -12,6 +19,9 @@ const SignIn = ({ onSignin }) => {
 
     const [errors, setErrors] = useState('');
 
+    const forgotPassword = () => {
+        history.push('/forgotPassword');
+    }
 
     const signIn = async () => {
         
@@ -53,6 +63,9 @@ const SignIn = ({ onSignin }) => {
                     value={password}
                     onChange={e => setPassword(e.target.value)}
                 />
+
+
+                <a className="forgotPassword" onClick={forgotPassword}>Forgot Password? </a> 
                 <span className="errorLabel">{errors}</span>
                 <br/><br/>
                 <Button className="buttonType1 loginButton" id="signinButton" onClick={signIn} type="primary">

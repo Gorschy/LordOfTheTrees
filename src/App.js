@@ -11,7 +11,6 @@ import Navbar from './pages/Navbar';
 import home from './pages/home';
 import path from './_constants/paths';
 
-
 const { Header, Content } = Layout;
 
 
@@ -35,7 +34,6 @@ function App() {
         });
     };
     function onSignIn() {
-        console.log("yeet");
         setLoggedIn(true);
     };
 
@@ -66,6 +64,8 @@ function App() {
                                 <Route exact path="/register" component={path.register} />
                                 <Route exact path="/confirmSignUp" component={path.confirmSignUp} />
                                 <Route exact path="/login"> <Login onSignin={onSignIn} /> </Route>
+                                <Route exact path="/forgotPassword" component={path.forgotPassword} />
+                                <Route exact path="/forgotPasswordAuth" component={path.forgotPasswordAuth} />
                                 <Route exact path="/dashboard" component={path.dashboard} />
                                 <Route exact path="/account" component={path.account} />
                                 <Route exact path="/projects" component={path.projects} />

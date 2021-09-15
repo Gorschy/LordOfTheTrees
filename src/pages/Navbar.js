@@ -18,8 +18,7 @@ const { Item } = Menu;
 const Navbar = () => {
 
         const {loggedIn, setLoggedIn} = useContext(UserContext);
-
-        //migrate to navbar
+        
         const signOut = async () => {
             try {
                 await Auth.signOut();
