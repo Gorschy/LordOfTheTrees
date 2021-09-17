@@ -2,3 +2,25 @@
     height:600px;
 
 }
+
+.markerHeader {
+    font-family: var(--general_font_family);
+    font-size: var(--unit_title_font_size);
+    font-weight: var(--unit_title_font_weight);
+    color: var(--general_text_color);
+    text-align: center;
+    line-height: 0px;
+    padding-bottom: 0px;
+
+}
+
+.markerDescription {
+    padding-top: 0px;
+    line-height: fit-content;
+    font-family: var(--general_font_family);
+    font-size: var(--general_font_size);
+    color: var(--general_text_color);
+    font-weight: var(--general_text_font_weight);
+    text-align: left;
+
+}
