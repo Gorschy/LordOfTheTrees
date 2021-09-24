@@ -1,6 +1,29 @@
 #map {
-    height:600px;
+    height:700px;
+    width:1250px;
+    background-color: var(--background_color);
+    align-items: left;
+    margin-bottom:25px;
+    
+}
 
+#solutionList {
+    background-color: var(--foreground_color);
+    width:max(750px, 100vw - 1300px);
+    margin-right: 10px;
+    padding:var(--card_standard_padding);
+    
+}
+
+@media screen and (max-width: 2050px) {
+    #solutionList {
+        width:calc(100vw - 40px);
+        margin-right: 100px;
+    }
+    #map {
+        width:calc(100vw - 40px);
+        padding-right:20px;
+    }
 }
 
 .markerHeader {

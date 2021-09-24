@@ -1,4 +1,5 @@
 import React, { useMemo } from 'react';
+import { List, Row } from 'antd';
 import '../style.css';
 import './solutions.css';
 import 'leaflet/dist/leaflet.css';
@@ -32,25 +33,59 @@ const waypointIcon = L.icon({
 
 // This is the standard list of waypoints to add to the map. This array is added to by the call to the database.
 // For the moment it is filled with placeholder data for proof of concept.
-var waypointList = [
+var waypointList = []
     // waypointList objects follow the nomenclature of [name, description, position (consisting of lat and longitude)].
-    {
-        "Name"        : "University of Wollongong",
-        "Description" : "I wonder what is here... (UOW, if you couldn't tell.)", 
-        "Position"    : [-34.4053906026069, 150.87848364203003]
+    var populateArray = [
 
+    /*
+    Zac’s Summary
+
+    Title: "Bat And Agave Conservation Project"
+    Description: "Assist and enhance agave and bat populations."
+    Coordinates: [32.248000, -112.916100]
+
+    Title: "Blue Heart Mangrove Restoration"
+    Description: "Preservation and restoration of red mangrove sites in the ‘Blue Heart’ zone and potentially coastal area within the Sunshine Coast Council Group constituency."
+    Coordinates: [-26.5175, 153.0341]
+
+    Title: "Borneo Orangutan Project"
+    Description: "Assist and protect orangutans and their forest homes."
+    Coordinates: [0.1378, 117.4970]
+
+    Title: "CCC Athens Recovery"
+    Description: "Reestablishment of landscape after wildfire."
+    Coordinates: [37.9464, 23.8167]
+
+    Title: "Daintree Rainforest Conservation"
+    Description: "Restore previously farmed land to its original rainforest condition. The Daintree Rainforest is the oldest rainforest on Earth around 180 million years old – older than the Amazon Rainforest and one of the best biologically diverse rainforests in the world."
+    Coordinates: [-16.26188066268747, 145.4441841548669]
+
+*/
+    {
+        "Name"        : "Bat And Agave Conservation Project",
+        "Description" : "Assist and enhance agave and bat populations.",
+        "Position"    : [32.248000, -112.916100]
     }, 
     {
-        "Name"        : "n2",
-        "Description" : "Desc2", 
-        "Position"    : [-21.4053906026069, 111.87848364203003]
-    }, 
+        "Name"        : "Blue Heart Mangrove Restoration",
+        "Description" : "Preservation and restoration of red mangrove sites in the ‘Blue Heart’ zone and potentially coastal area within the Sunshine Coast Council Group constituency.",
+        "Position"    : [-26.5175, 153.0341]
+    },
     {
-        "Name"        : "n3",
-        "Description" : "Desc3", 
-        "Position"    : [-12, 15]
+        "Name"        : "Borneo Orangutan Project",
+        "Description" : "Assist and protect orangutans and their forest homes.",
+        "Position"    : [0.1378, 117.4970]
+    },
+    {
+        "Name"        : "CCC Athens Recovery",
+        "Description" : "Reestablishment of landscape after wildfire.",
+        "Position"    : [37.9464, 23.8167]
+    },
+    {
+        "Name"        : "Daintree Rainforest Conservation",
+        "Description" : "Restore previously farmed land to its original rainforest condition. The Daintree Rainforest is the oldest rainforest on Earth around 180 million years old – older than the Amazon Rainforest and one of the best biologically diverse rainforests in the world.",
+        "Position"    : [-16.26188066268747, 145.4441841548669]
     }
-
 ];
 
 // This is the function that takes an inputted array, theoretically from a database and incrementally pushes it onto the
@@ -73,7 +108,7 @@ function populateMarkers(solutionsArray) {
 // A map is memoized and is displayed with the variable element of "Waypoints".
 // The variable element is created below.
 function CreateMap() {
-   
+
     // Creates the content to be returned.
     const DisplayMap = useMemo( () => (
         <MapContainer 
@@ -81,11 +116,13 @@ function CreateMap() {
             center={startVariables} 
             zoom={startingZoom} 
             scrollWheelZoom={true}
+            maxBounds={[[-90, -180],[90, 180]]}
         >
-        <TileLayer
+        <TileLayer  
             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             minZoom='2'
+            noWrap="true"
         />
         <Waypoints />
         </MapContainer>
@@ -119,17 +156,56 @@ function Waypoints () {
 }
 
 // Function call to the populateMarkers function with a bit of test code for proof of concept.
-populateMarkers([{
-        "Name"        : "test",
-        "Description" : "testdescription", 
-        "Position"    : [24.1, 51.2]
-}]);
+
+populateMarkers(populateArray);
+
+function CreateList () {
+    const DisplayList = useMemo( () => (
+        <List 
+        id="solutionList"
+        dataSource={waypointList}
+        header={<h1>Solutions</h1>}
+        renderItem={item => (
+            <List.Item>
+                <List.Item.Meta 
+                    title={<h2>{item.Name}</h2>}
+                    description={<div className="standardText">{item.Description}</div>}
+                />
+
+            </List.Item>
+        )}
+        
+        />
+
+        
+    ), [], )
+
+    return(
+        <div>
+            {DisplayList}
+        </div>
+    );
+
+}
+
+
+
+
+
 
 // Finally, the actual section that renders the page.
 const Solutions = () => { 
     return(
-        <CreateMap  />
+        <div>
+            <Row>
+            <CreateMap  />
+            
+            <CreateList />
+            </Row>
+        </div>
     ); 
 }
 
 export default Solutions;
+
+
