@@ -57,13 +57,13 @@ export default function contactUs() {
                                     <Col span={12}>
                                     <label for="email">{<h2>Email</h2>}</label>
                                         <Form.Item name="email" rules={[{ required: true }]}>
-                                            <Input type="email" id="emailInputBox" className="form-control" placeholder="Enter Your Email" name="email" />
+                                            <Input type="email" id="emailInputBox" className="form-control" placeholder="Enter Your Email" name="email" maxLength="40"/>
                                         </Form.Item>
                                     </Col>
                                     <Col span={12}>
-                                        <label for="name">{<h2>Name</h2>}</label>
+                                        <label for="name">{<h2>Full Name</h2>}</label>
                                         <Form.Item name="name" rules={[{ required: true }]}>
-                                            <Input type="text" id="nameInputBox" className="form-control" placeholder="Enter Your Name" name="name" />
+                                            <Input type="text" id="nameInputBox" className="form-control" placeholder="Enter Your Name" name="name" maxLength="60" />
                                         </Form.Item>
                                     </Col>
                                     </Row>
@@ -75,7 +75,7 @@ export default function contactUs() {
                                         </Select>
                                 
                                 <div id="contactUsTextArea">
-                                    <textarea id="textEntryBody" className="testform-control" cols="120" rows="12" placeholder="Enter your text here" name="message"  />
+                                    <textarea id="textEntryBody" className="testform-control" cols="120" rows="12" placeholder="Enter your text here" name="message" maxLength="800" />
                                 </div>
                                 <div id="contactUsSubmitButton">
                                     <Input type="submit" id="submitButton" className="btn btn-info" value="Send Message"></Input>
