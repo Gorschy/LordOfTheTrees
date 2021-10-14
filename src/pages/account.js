@@ -163,6 +163,7 @@ const Account = () => {
                                 id="firstName"
                                 label="firstName" 
                                 value={givenName}
+                                maxLength="30"
                                 onChange={e => setGivenName(e.target.value)}
                             />
                         </Form.Item>
@@ -176,6 +177,7 @@ const Account = () => {
                                 id='lastName'
                                 label="lastName" 
                                 value={familyName}
+                                maxLength="30"
                                 onChange={e => setFamilyName(e.target.value)}
                              />
                         </Form.Item>
@@ -193,6 +195,7 @@ const Account = () => {
                                 id="email"
                                 label="email" 
                                 value={email}
+                                maxLength="40"
                                 onChange={e => setEmail(e.target.value)}
                             />
                         </Form.Item>
@@ -206,6 +209,7 @@ const Account = () => {
                                 id='phoneNumber'
                                 label="phoneNumber" 
                                 value={phoneNumber}
+                                maxLength="10"
                                 onChange={e => setPhoneNumber(e.target.value)} 
                                 /*addonBefore={prefixSelector} style={{ width: '100%' }}*/
                             />
@@ -224,6 +228,7 @@ const Account = () => {
                                 id='currentPassword'
                                 label="currentPassword" 
                                 value={currentPassword}
+                                maxLength="30"
                                 onChange={e => setCurrentPassword(e.target.value)} 
                                 /*addonBefore={prefixSelector} style={{ width: '100%' }}*/
                             />
@@ -234,7 +239,7 @@ const Account = () => {
                     name="newPW"
                     rules={[{ required: false, message: 'Please input your new password!' }]}
                 >
-                    <Input.Password className="inputFieldLong"/>
+                    <Input.Password className="inputFieldLong" maxLength="30"/>
                 </Form.Item>
 
                 <Form.Item className="space"
@@ -242,7 +247,7 @@ const Account = () => {
                     name="newPWConfirm"
                     rules={[{ required: false, message: 'Please confirm your new password!' }]}
                 >
-                    <Input.Password className="inputFieldLong"/>
+                    <Input.Password className="inputFieldLong"maxLength="30"/>
                 
                 </Form.Item>
                 <span className="errorLabel">{errors}</span>

@@ -42,6 +42,7 @@ const Register = () => {
                     id="username"
                     label="Username" 
                     value={username}
+                    maxLength="40"
                     onChange={e => setUsername(e.target.value)}
                 />
                 <br/><br/>
@@ -51,6 +52,7 @@ const Register = () => {
                     id="password"
                     label="Password" 
                     value={password}
+                    maxLength="30"
                     onChange={e => setPassword(e.target.value)}
                 />
                 <br/><br/>
@@ -60,6 +62,7 @@ const Register = () => {
                     id="given_name"
                     label="given_name" 
                     value={given_name}
+                    maxLength="30"
                     onChange={e => setGivenName(e.target.value)}
                 />
                 <br/><br/>
@@ -69,6 +72,7 @@ const Register = () => {
                     id="family_name"
                     label="family_name" 
                     value={family_name}
+                    maxLength="30"
                     onChange={e => setFamilyName(e.target.value)}
                 />
                 <br/><br/>
@@ -78,6 +82,7 @@ const Register = () => {
                     id="phone_number"
                     label="phone_number" 
                     value={phone_number}
+                    maxLength="10"
                     onChange={e => setPhoneNumber(e.target.value)}
                 />
                 

@@ -50,6 +50,7 @@ const SignIn = ({ onSignin }) => {
                     id="username"
                     label="Username" 
                     value={username}
+                    maxLength="40"
                     onChange={e => setUsername(e.target.value)}
                 />
                 
@@ -61,6 +62,7 @@ const SignIn = ({ onSignin }) => {
                     id="password"
                     label="Password" 
                     value={password}
+                    maxLength="30"
                     onChange={e => setPassword(e.target.value)}
                 />
 
